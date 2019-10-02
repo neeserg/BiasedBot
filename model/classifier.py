@@ -21,4 +21,13 @@ def tokenize(doc):
     return sent_l
 
 
-
+def classify(message, keys):
+    _max = 0
+    best = keys[0]
+    mes_vec  = nlp(message)
+    for key in keys:
+        sim = nlp(key).similarity(mes_vec)
+        if sim > _max:
+            best = key
+            _max = sim
+    return best

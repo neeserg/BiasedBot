@@ -1,0 +1,6 @@
+flask
+spacy
+pymongo
+WTForms
+flask_restful
+flask-wtf

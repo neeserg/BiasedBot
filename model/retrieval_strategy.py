@@ -2,6 +2,9 @@ from pymongo import MongoClient
 import urllib.parse
 from model.classifier import combo_classify, tokenize 
 
+IP_ADRESS = "115.146.92.158"
+
+
 class Retrieval_strategy:
     def __init__(self, topic):
         ####
@@ -27,7 +30,7 @@ class Retrieval_strategy:
         ## update the pair
     """List of best agetgories sorted by score"""
     def _categorize(self, token): 
-        client = MongoClient('mongodb://%s:%s@0.0.0.0:27017/' % (self._username, self._password))
+        client = MongoClient('mongodb://%s:%s@%s:27017/' % (self._username, self._password, IP_ADRESS))
         db = client.get_database("BiasedBot")
         col = db.get_collection("Categories")
         c = {}
@@ -41,7 +44,7 @@ class Retrieval_strategy:
     
     """Retrieve the best documents according to cosine score"""
     def _retrieved_best(self, category, token, done_set): 
-        client = MongoClient('mongodb://%s:%s@0.0.0.0:27017/' % (self._username, self._password))
+        client = MongoClient('mongodb://%s:%s@%s:27017/' % (self._username, self._password, IP_ADRESS))
         db = client.get_database("BiasedBot")
         col = db.get_collection("Bot Responses")
         scores = []

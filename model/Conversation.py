@@ -3,6 +3,7 @@ from model.retrieval_strategy import Retrieval_strategy
 from pymongo import MongoClient
 import urllib.parse
 
+IP_ADRESS = "115.146.92.158"
 
 class Conversation:
 
@@ -10,7 +11,7 @@ class Conversation:
     def __init__(self, user_id):
         self._username = urllib.parse.quote_plus('admin')
         self._password = urllib.parse.quote_plus('luhpi23h1brb23jr34hr324')
-        client = MongoClient('mongodb://%s:%s@0.0.0.0:27017/' % (self._username, self._password))
+        client = MongoClient('mongodb://%s:%s@%s:27017/' % (self._username, self._password, IP_ADRESS))
         db = client.get_database("BiasedBot")
         col = db.get_collection("Conversation")
         self._current_conversation = col.find_one({"userId": user_id, "active":True})
@@ -31,7 +32,7 @@ class Conversation:
             return False
         else:
             current = self._current_conversation["bot_resp"][-1]
-            client = MongoClient('mongodb://%s:%s@0.0.0.0:27017/' % (self._username, self._password))
+            client = MongoClient('mongodb://%s:%s@%s:27017/' % (self._username, self._password, IP_ADRESS))
             db = client.get_database("BiasedBot")
             col = db.get_collection("Bot Responses")
             current = col.find_one({"_id": current})
@@ -50,7 +51,7 @@ class Conversation:
             keys = self.get_keys(current) 
             topic = classify(message, keys)
             self._current_conversation["topic"] = topic
-            client = MongoClient('mongodb://%s:%s@0.0.0.0:27017/' % (self._username, self._password))
+            client = MongoClient('mongodb://%s:%s@%s:27017/' % (self._username, self._password, IP_ADRESS))
             db = client.get_database("BiasedBot")
             col = db.get_collection("Bot Responses")
             resp = col.find_one({"topic": topic, "attacks": "initial"})
@@ -80,7 +81,7 @@ class Conversation:
         self._current_conversation["bot_resp"].append(_id)
         self._current_conversation["user_resp"].append(message)
         convo_id = self._current_conversation["_id"]
-        client = MongoClient('mongodb://%s:%s@0.0.0.0:27017/' % (self._username, self._password))
+        client = MongoClient('mongodb://%s:%s@%s:27017/' % (self._username, self._password, IP_ADRESS))
         db = client.get_database("BiasedBot")
         col = db.get_collection("Conversation")
         col.update_one({"_id": convo_id}, {"$set": self._current_conversation})
@@ -92,7 +93,7 @@ class Conversation:
         self._current_conversation["user_resp"].append(message)
         self._current_conversation["active"] = False
         convo_id = self._current_conversation["_id"]
-        client = MongoClient('mongodb://%s:%s@0.0.0.0:27017/' % (self._username, self._password))
+        client = MongoClient('mongodb://%s:%s@%s:27017/' % (self._username, self._password, IP_ADRESS))
         db = client.get_database("BiasedBot")
         col = db.get_collection("Conversation")
         col.update_one({"_id": convo_id}, {"$set": self._current_conversation})
@@ -100,7 +101,7 @@ class Conversation:
         return
 
     def get_initial(self):
-        client = MongoClient('mongodb://%s:%s@0.0.0.0:27017/' % (self._username, self._password))
+        client = MongoClient('mongodb://%s:%s@%s:27017/' % (self._username, self._password, IP_ADRESS))
         db = client.get_database("BiasedBot")
         col = db.get_collection("Bot Responses")
         resp = col.find_one({"topic": "initial"})

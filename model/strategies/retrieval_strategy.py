@@ -1,16 +1,17 @@
 from pymongo import MongoClient
 import urllib.parse
-from model.classifier import combo_classify, tokenize 
+from model.nlp.classifier import combo_classify, tokenize
 
 IP_ADRESS = "115.146.92.158"
 
 
 class Retrieval_strategy:
-    def __init__(self, topic):
+    def __init__(self, topic, despsition=1,_filter={}):
         ####
         self._topic = topic
-
-        self._username =  urllib.parse.quote_plus('admin')
+        self._desposition = despsition
+        self._filter = _filter
+        self._username = urllib.parse.quote_plus('admin')
         self._password = urllib.parse.quote_plus('luhpi23h1brb23jr34hr324')
 
     def get_resp(self, message, done_set):
@@ -34,7 +35,7 @@ class Retrieval_strategy:
         db = client.get_database("BiasedBot")
         col = db.get_collection("Categories")
         c = {}
-        for doc in col.find({"topic":self._topic}):
+        for doc in col.find({"topic": self._topic, "desposition": self._desposition}):
             c[doc["name"]] = doc["tokens"]
         client.close()
         scores = {}
@@ -48,7 +49,9 @@ class Retrieval_strategy:
         db = client.get_database("BiasedBot")
         col = db.get_collection("Bot Responses")
         scores = []
-        for doc in col.find({"topic": self._topic, "attacks":{"$regex": category}}):
+        _filter = {"topic": self._topic, "desposition": self._desposition, "attacks":{"$regex": category}}
+        _filter.update(self._filter)
+        for doc in col.find(_filter):
             if doc["_id"] in done_set:
                 continue
             else:

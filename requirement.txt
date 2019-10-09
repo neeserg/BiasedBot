@@ -4,3 +4,4 @@ pymongo
 WTForms
 flask_restful
 flask-wtf
+numpy

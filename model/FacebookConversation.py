@@ -1,13 +1,12 @@
-from model.classifier import classify
-from model.retrieval_strategy import Retrieval_strategy
+from model.nlp.classifier import classify
+from model.strategies.retrieval_strategy import Retrieval_strategy
 from pymongo import MongoClient
 import urllib.parse
 
 IP_ADRESS = "115.146.92.158"
 
-class Conversation:
 
-
+class FacebookConversation:
     def __init__(self, user_id):
         self._username = urllib.parse.quote_plus('admin')
         self._password = urllib.parse.quote_plus('luhpi23h1brb23jr34hr324')
@@ -24,7 +23,7 @@ class Conversation:
             current_conversation["desposition"] = 1
             current_conversation["topic"] = "none"
             col.insert_one(current_conversation)
-        self._current_conversation = col.find_one({"userId": user_id, "active":True})
+            self._current_conversation = col.find_one({"userId": user_id, "active":True})
         client.close()
    
     def get_current(self):
@@ -73,7 +72,6 @@ class Conversation:
 
         self._update_conversation(message, _id)
         return resp
-
 
 
     """Update the message and current message"""

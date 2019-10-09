@@ -3,13 +3,22 @@ import spacy as sp
 
 nlp = sp.load("en_core_web_lg")
 
-def combo_classify(cat_l, token_l):
+def combo_classify(cat_l, token_l, union = True):
     cat = nlp(" ".join(cat_l))
     cat_s = set(cat_l)
     token_s = set(token_l)
     sentence = nlp(" ".join(token_l))
-    sim1 = sentence.similarity(cat)
-    sim = len(cat_s.intersection(token_s))
+    sim1 = 0
+    sim = 0
+    if not cat_s or not token_s:
+        sim1 = 0.1
+    else:
+        sim1 = sentence.similarity(cat)
+    if union:
+        u_size = len(cat_s.union(token_s))
+        sim = len(cat_s.intersection(token_s))/(u_size+1)
+    else:        
+        sim = len(cat_s.intersection(token_s))/(len(token_s)+1)
     return (sim, sim1)
 
 def tokenize(doc):

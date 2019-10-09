@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>Flask Shop</title>
+  </head>
+  <body>
+    <h1>Select your bot</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.topic.label }}
+            {{ form.topic(size=32) }}
+        </p>
+        
+        <p>{{ form.submit() }}</p>
+    </form>
+  </body>
+</html>

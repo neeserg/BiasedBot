@@ -1,5 +1,5 @@
 import requests
-from model.Conversation import Conversation
+from model.FacebookConversation import FacebookConversation
 
 URL = "https://graph.facebook.com/v2.6/me/messages"
 PAGE_ACCESS_TOKEN = 'EAAHNiDyhU9QBAKWlBlelvxnFLXAfMcT8nR2S7ZBpVEq0HnGYHB2r2dfybmkhbEZAhiL0AmbeclhcZBny5D77ksOPI7mNgN0w64dt83WuVnxz9jBeWwlf0v9XYnWaUfHEjBUMLcSmelFTulEdPtmpC01aXsmC0px92m8NQ0TU8f8sdGFIAMIsm212hCysWUZD'

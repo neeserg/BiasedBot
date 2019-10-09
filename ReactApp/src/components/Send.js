@@ -11,6 +11,12 @@ export class Send extends Component {
         this.setState({prompt: ''})
     }
 
+    onEnd = (e) => {
+        e.preventDefault();
+        this.props.addMessage("#reset")
+        this.setState({prompt: ''})
+    }
+
     onChange = (e) => this.setState({ prompt: e.target.value });
 
 
@@ -26,7 +32,9 @@ export class Send extends Component {
                     type="submit" 
                     value="Submit" 
                     className="btn"/>
-                </form>                
+                </form>
+
+                <button onClick = {this.onEnd}> End</button>                
             </div>
         )
     }

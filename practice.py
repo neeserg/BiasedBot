@@ -1,6 +1,7 @@
-from Conversation import Conversation
+from model.ExperimentConversation import Conversation
+import uuid
 
-convo = Conversation("practice")
+convo = Conversation("4f5e62f0-ea83-11e9-9a31-02425b01177c")
 
 while True:
     message = input("user: ")

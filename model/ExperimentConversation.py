@@ -10,12 +10,18 @@ IP_ADRESS = "115.146.92.158"
 
 class Conversation:
     def __init__(self, user_id):
+        #initialise the the mongodb connection 
         self._username = urllib.parse.quote_plus('admin')
         self._password = urllib.parse.quote_plus('luhpi23h1brb23jr34hr324')
         client = MongoClient('mongodb://%s:%s@%s:27017/' % (self._username, self._password, IP_ADRESS))
         db = client.get_database("BiasedBot")
+
+
+        # Retrieve conversation or create it
         col = db.get_collection("Conversation")
         self._current_conversation = col.find_one({"userId": user_id, "active":True})
+
+
         if not self._current_conversation:
             current_conversation = {}
             current_conversation["active"] = True
@@ -28,15 +34,18 @@ class Conversation:
             current_conversation["filter"] = {}
             col.insert_one(current_conversation)
             self._current_conversation = col.find_one({"userId": user_id, "active":True})
+        
         current = self._current_conversation
         param_filter = current["filter"] if "filter" in current else {}
+        
+        # setup the required strategy
         if "strategy" in current and current["strategy"] == "random":
             self.strategy = Random_strategy(current["topic"],current["desposition"],_filter = param_filter)
         else:
             self.strategy = Retrieval_strategy(current["topic"],current["desposition"], _filter = param_filter)
         client.close()
 
-
+    
     def get_next(self, message):       
         if message == "#reset":
             self.end(message)

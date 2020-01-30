@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify, Response, render_template, redirect
 from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField
 from flask_restful import Resource, Api
-from Forms import ExperimenterForm, TopicForm, AssessmentForm
+from Forms import ExperimenterForm, TopicForm
 from model.CRUD import update_conversation, create_conversation, get_response, is_before, is_after
 import uuid
 # from facebook_api import send_reply
@@ -33,7 +33,6 @@ def hello():
             _filter["arguement_type"] = form.arguement_type.data
         converse["filter"] = _filter
         converse["strategy"] = form.strategy.data
-        converse["assessment"] = form.assessment.data
         converse["active"] = True
         create_conversation(converse)
         return redirect("/topic/%s"%uid)
@@ -52,33 +51,8 @@ def topic(userId):
         topic["topic"] = topic_l[1]
         if not update_conversation(userId, topic):
             return redirect("/")
-        before = is_before(userId)
-        if before == "no doc":
-            return redirect("/")
-        elif before == "before":
-            return redirect("/assessment/before/%s"%userId)
-        else:
-            return redirect("/chatbot/%s"%userId)
+        return redirect("/chatbot/%s"%userId)
     return render_template("topic.html", form=form)
-
-@app.route("/assessment/<before>/<userId>", methods=['GET', 'POST'])
-def assessment(before,userId):
-    form = AssessmentForm()
-    if form.validate_on_submit():
-        assessment = {}
-        assessment[before] = {}
-        assessment[before]["apathy"] = form.apathy.data
-        assessment[before]["research"] = form.research.data
-        assessment[before]["openness"] = form.openness.data
-        assessment[before]["disscussion"] =form.disscussion.data
-        assessment[before]["heard"] = form.heard.data
-        if not update_conversation(userId, assessment):
-            return redirect("/")
-        if before == "before":
-            return redirect("/chatbot/%s"%userId)
-        else:
-            return redirect("/end/userId")
-    return render_template("assessment.html", form=form)
 
 @app.route("/chatbot/<userId>", methods=['GET', 'POST'])
 def chat(userId):
@@ -94,10 +68,7 @@ def chat(userId):
 @app.route("/end/<userId>")
 def end_of(userId):
     after = is_after(userId)
-    if after == "after":
-        return redirect("/assessment/after/%s"%userId)
-    else:
-        return "<h1 style='color:blue'>Thank You For The Conversation!!!</h1>"
+    return "<h1 style='color:blue'>Thank You For The Conversation!!!</h1>"
 
 
 # class WebHook(Resource):

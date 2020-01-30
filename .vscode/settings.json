@@ -1,7 +1,7 @@
 {
     "python.pythonPath": "~/Desktop/Environments/Chatbot/bin/python",
     "python.linting.pylintEnabled": false,
-    "python.linting.pep8Enabled": false,
+    "python.linting.pycodestyleEnabled": false,
     "python.linting.enabled": true,
     "python.formatting.provider": "autopep8"
 

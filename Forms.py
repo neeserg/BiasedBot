@@ -16,24 +16,6 @@ class ExperimenterForm(FlaskForm):
     
     strategy = RadioField('strategy', choices=[("random", "random"),
                                                      ("retrieval", "retrieval")], validators=[DataRequired()])
-    assessment = RadioField('assessment', choices=[("before", "before"),
-                                                   ("both", "both"),
-                                                   ("after", "after")], validators=[DataRequired()])
-    submit = SubmitField('Submit')
-
-class AssessmentForm(FlaskForm):
-    agree = [("strongly disagree", "strongly disagree"),
-               ("disagree", "disagree"), 
-               ("neutral", "neutral"),
-               ("agree", "agree"),
-               ("strongly agree", "strongly agree")]
-    yes = [("yes", "yes"),
-           ("no", "no")]
-    apathy = RadioField('you feel strongly towards this topic', choices=agree, validators=[DataRequired()])
-    research = RadioField('you have done a lot of research regarding this topic', choices=agree, validators=[DataRequired()])
-    openness = RadioField('you are likely to change your mind regarding this topic', choices=agree, validators=[DataRequired()])
-    disscussion = RadioField('you have discussed this topic with others in the past', choices=agree, validators=[DataRequired()])
-    heard = RadioField('you have previously heard of this topic', choices=yes, validators=[DataRequired()])
     submit = SubmitField('Submit')
 
 class TopicForm(FlaskForm):

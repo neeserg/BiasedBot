@@ -6,7 +6,7 @@ from model.CRUD import update_conversation, create_conversation, get_response, i
 import uuid
 # from facebook_api import send_reply
 
-app = Flask(__name__, static_folder="ReactApp/build/static", template_folder="ReactApp/build/")
+app = Flask(__name__, static_folder="Frontend/static", template_folder="Frontend/templates/")
 api = Api(app)
 VERIFY_TOKEN = 'qqwmHHGCKO1122P2PP3Q2Q2QQ11b5242225267ju2j2xkou'
 

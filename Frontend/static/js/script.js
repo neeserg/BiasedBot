@@ -1,4 +1,32 @@
+const url = window.location.href;
+let LatestMessage = "hi"
+
+
 const button = document.getElementById("send");
+
+
+
+
+function sendMessage(message){
+    LatestMessage = message;
+    const body= {
+        userId: userId,
+        message: LatestMessage
+    }
+    
+    const option = {
+        method: "POST",
+        body: JSON.stringify(body),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }
+    fetch(url, option)
+        .then(response => response.json())
+        .then(json =>{
+            insert_message("bot", json.message);
+        });
+}
 
 
 function insert_message(user, message){
@@ -12,15 +40,21 @@ function insert_message(user, message){
     document.getElementById("chatWindow").appendChild(container);
 }
 
+
+
+
+
+
+sendMessage(LatestMessage);
+
 button.addEventListener("click",()=>{
 
     const message = document.getElementById("exampleFormControlTextarea1").value;
+    if(message == null || message === ""){
+        return;
+    }
     insert_message("user", message);
-    fetch('https://jsonplaceholder.typicode.com/todos/1')
-        .then(response => response.json())
-        .then(json =>{
-            insert_message("bot", json.title);
-        });
+    sendMessage(message);
 });
 
 

@@ -92,7 +92,8 @@ class Conversation:
         db = client.get_database("BiasedBot")
         col = db.get_collection("Bot Responses")
         topic = self._current_conversation["topic"]
-        resp = col.find_one({"topic": topic, "attacks": "initial"})
+        desposition = self._current_conversation["desposition"]
+        resp = col.find_one({"topic": topic, "desposition": desposition, "attacks": "initial"})
         client.close()
         return resp
     

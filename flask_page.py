@@ -4,7 +4,7 @@ from flask_restful import Resource, Api
 from Forms import ExperimenterForm, TopicForm, AssessmentForm
 from model.CRUD import update_conversation, create_conversation, get_response, is_before, is_after
 import uuid
-# from facebook_api import send_reply
+from facebook_api import send_reply
 
 app = Flask(__name__, static_folder="ReactApp/build/static", template_folder="ReactApp/build/")
 api = Api(app)
@@ -100,30 +100,30 @@ def end_of(userId):
         return "<h1 style='color:blue'>Thank You For The Conversation!!!</h1>"
 
 
-# class WebHook(Resource):
-#     def get(self):
-#         mode  = request.args.get("hub.mode")
-#         token = request.args.get("hub.verify_token")
-#         print(token)
-#         challenge = request.args.get("hub.challenge")
-#         print(challenge)
-#         if token == VERIFY_TOKEN and mode == 'subscribe':
-#             return Response(challenge, 200)
-#         else:
-#             return "INVALID REQUEST", 403
-#     def post(self):
-#         res = request.get_json()
-#         print(res)
-#         if res["object"] != "page":
-#             print("not Ok")
-#             return "not Ok"
-#         else:
-#             for entry in res["entry"]:
-#                 send_reply(entry["messaging"])
-#         return "ok"
+class WebHook(Resource):
+    def get(self):
+        mode  = request.args.get("hub.mode")
+        token = request.args.get("hub.verify_token")
+        print(token)
+        challenge = request.args.get("hub.challenge")
+        print(challenge)
+        if token == VERIFY_TOKEN and mode == 'subscribe':
+            return Response(challenge, 200)
+        else:
+            return "INVALID REQUEST", 403
+    def post(self):
+        res = request.get_json()
+        print(res)
+        if res["object"] != "page":
+            print("not Ok")
+            return "not Ok"
+        else:
+            for entry in res["entry"]:
+                send_reply(entry["messaging"])
+        return "ok"
         
 
-# api.add_resource(WebHook, '/webhook')
+api.add_resource(WebHook, '/webhook')
 if __name__ == '__main__':
     app.debug=True
-    app.run(port = 5000)
+    app.run(port = 5000, host='0.0.0.0')

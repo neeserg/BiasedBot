@@ -1,0 +1,310 @@
+{
+	"climate_initial": {
+		"prompt": "Hey!, I'm Climy. I would like to talk to you about this issue of climate change, everyone seems to be raging about it.Some people are even saying it might be the most important issue to be faced by humanity. Would you agree?",
+		"type": "choice",
+		"choice": [ "strongly agree", "agree","disagree", "strongly disagree"],
+		"next":[
+			{
+				"id":"pos_why",
+				"user_replies":[
+					"strongly agree",
+					"agree"
+				]
+			},
+
+			{
+				"id": "neg_why",
+				"user_replies":[
+					"strongly disagree",
+					"disagree"
+				]
+			}
+
+		]
+
+	},
+
+	"pos_why":
+	{
+		"prompt": "Why do you think that way?",
+		"type": "open",
+		"next": [
+			{
+				"id":"pos_whatabout",
+				"user_replies":[
+					"because 99% of scietist are claiming it is",
+					"It would have dire consequences around the world",
+					"the australian bushfire scenario",
+					"I have been paying attention to the news.!!"
+				]
+			}
+		]
+	},
+
+
+	"neg_why":{
+		"prompt": "Why do you think that way?",
+		"type": "open",
+		"next": [
+			{
+				"id": "ruckus",
+				"user_replies":[
+					"the climate has always been changing",
+					"The consequences of climate change has been overblown" ,
+					"there are other problems faced by humanity that takes precedence",
+					"I have been around ling enough to not take these \"fads\" seriously"
+				]
+			}
+		]
+	},
+
+	"ruckus":{
+		"prompt": "There are a lot of people who are very taken by this, including major scientists. Why do you think they would create such ruckus about this?",
+		"type": "open",
+		"next":[
+			{
+				"id":"activists",
+				"user_replies":[
+					"those guys are idiots",
+					"media is not showing the otherside of the science",
+					"It has been politcized to serve the purposes of popliticians to get elected",
+					"Oh my god, don't make me start with those people"
+				]
+			}
+		]
+	},
+
+	"activists":{
+		"prompt":"I guess the the issue has been politicized, to the point where science and policies seem entangled in a vicious way. What would you say to scientists and activists who truely believe in the dire consequences of climate change?",
+		"type": "open",
+		"next": [
+			{
+				"id":"genuine",
+				"user_replies":[
+				"You are sadly been mistaken",
+				"you guys want to destroy the economy",
+				"you guys are bunch of pinheads",
+				"blue pilled cucks"
+				]
+			}
+		]
+	
+	},	
+
+
+	"genuine":{
+		"prompt":"Do you think these guys are actively trying to destabilize the current system or have genuine concern about future of earth?",
+		"type": "choice",
+		"choice":["concern", "destabilize"],
+		"next": [
+			{
+				"id":"destabilize",
+				"user_replies":[
+					"destabilize"
+				]
+			},
+			{
+				"id":"concern",
+				"user_replies":[
+					"concern"
+				]
+			}
+		]
+	
+	},
+	"destabilize":{
+		"prompt":"Most of these people and their family/friends are benefactor of the current system, why would they want to disrupt it?",
+		"type": "open",
+		"next": [
+			{
+				"id": "iBelieve",
+				"user_replies":[
+					"i dont man, beats me",
+					"they have been brainwashed",
+					"they are ignorant",
+					"these guys are looneys"
+				]
+			}
+		]
+	
+	},
+
+	"concern":{
+		"prompt":"If they have genuine concern about the climate and the current situation. What should be done to eliviate their concern?",
+		"type": "open",
+		"next": [
+			{
+				"id": "iBelieve",
+				"user_replies":[
+					"i dont man, beats me",
+					"they have been brainwashed",
+					"they are ignorant",
+					"these guys are looneys"
+				]
+			}
+		]
+
+	},
+
+	"iBelieve":{
+		"prompt":"I believe that we should hear these guys out and see why they are concerned. See what they are trying to do and what is their source of frustration. Why they are so passionately vocal? I think they just love our Earth as much as us and we can both support each other to take care of it.\n\n What do you think?",
+		"type": "followup",
+		"next": [{"id":"Closing"}]
+
+	},
+
+	"pos_whatabout":
+	{
+		"prompt": "What about the people who are saying that climate has been always changing, and this is nothing special",
+		"type": "open",
+		"next": [
+			{
+				"id":"uNthem",
+				"user_replies":[
+					"those guys are idiots",
+					"mass propoganda is responsible for this, we should not listen to them",
+					"Climate has been changing, but this time we are responsible",
+					"Oh my god, don't make me start with those people"
+				]
+			}
+		]
+	},
+
+	"uNthem":
+	{
+		"prompt": "Climate is changing, I guess, and I guess most scientists are saying that humans are responsible. What would you then say to a worker working in a coal mine for 20 years to make him rethink his career choice this late in his life?",
+		"type": "open",
+		"next": [
+			{
+				"id":"victimOrperpetrator",
+				"user_replies":[
+					"You are responsible for the end of the world",
+					"I am not sure",
+					"Your children might have to live with the consequences of your decisions",
+					"Those guys are fucking stupid"
+				]
+			}
+		]
+	},
+
+
+	"victimOrperpetrator":
+	{
+		"prompt": "Do you believe those people are the potential victims or perpetrators of the upcoming climate change?",
+		"type": "choice",
+		"choice": ["victims", "perpetrators"],
+		"next": [
+			{
+				"id":"victims",
+				"user_replies":[
+					"victims"
+				]
+			
+			},
+
+			{
+				"id":"perpetrators",
+				"user_replies":[
+					"perpetrators"
+				]
+			
+			}
+		]
+	},
+
+	"victims":
+	{
+		"prompt": "Do you think there are specific people who are responsible for climate change?",
+		"type": "choice",
+		"choice": ["yes", "no"],
+		"next": [
+			{
+				"id":"whois",
+				"user_replies":[
+					"yes"
+				]
+			
+			},
+
+			{
+				"id":"Interesting",
+				"user_replies":[
+					"no"
+				]
+			
+			}
+		]
+	},
+
+	"whois":
+	{
+
+		"prompt": "Who do u think deserves the blame?",
+		"type": "open",
+		"next": [
+			{
+				"id":"perpetrators",
+				"user_replies":[
+					"corporations",
+					"popliticians",
+					"people",
+					"us",
+					"someone",
+					"no one"
+				]
+			
+			}
+		]
+
+	},
+
+
+	"perpetrators": 
+	{
+		"prompt": "Do you think there are guys who have malice in their hearts, and are actively seeking irreversible climate change?",
+		"type": "open",
+		"next": [
+			{
+				"id":"Interesting",
+				"user_replies":[
+					"yes",
+					"no",
+					"maybe",
+					"i don't know"
+				]
+			
+			}
+		]
+
+	},
+
+	"Interesting":
+	{
+		"prompt": "Interesting... Hmmm. Well I believe people are victims of attachment of their way of life and livelihood. I believe we should stop villifying these guys as stupid, greedy or evil. We should try to formulate a policies that don't punish the industry, but implement policies to insentivise transitory behaviours to a renewable energy source.\n\n What do you think?",
+		"type": "followup",
+		"next": [{
+			"id":"Closing"
+		}]
+	},
+
+
+
+	"Closing":
+	{
+		"prompt": "this was an awsome conversation and looking forward to talking more with you. Do you have any final thoughts and sentiments",
+		"type": "followup",
+		"next": [{
+			"id":"google_form"
+		}]
+	},
+
+	"google_form":{
+		"prompt": "here is the link to google form",
+		"type": "followup",
+		"next": [{
+			"id":"google_form"
+		}]
+	}
+
+
+}

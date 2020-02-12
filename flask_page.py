@@ -1,100 +1,37 @@
-from flask import Flask, request, jsonify, Response, render_template, redirect
-from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField
+from flask import Flask,request, jsonify,render_template
 from flask_restful import Resource, Api
-from Forms import ExperimenterForm, TopicForm
-from model.CRUD import update_conversation, create_conversation, get_response, is_before, is_after
+from model.strategies.empathyStrategy import EmpathyStrategy
 import uuid
-from facebook_api import send_reply
 
 app = Flask(__name__, static_folder="Frontend/static", template_folder="Frontend/templates/")
 api = Api(app)
-VERIFY_TOKEN = 'qqwmHHGCKO1122P2PP3Q2Q2QQ11b5242225267ju2j2xkou'
 
 app.config.from_object(__name__)
 app.config['SECRET_KEY'] = '12djknk2jnkxlalqnlkn23kndla'
 
-@app.route("/<testing>/<stuff>")
-def test(testing, stuff):
-    return testing+" "+stuff
+class EmpathyBot(Resource):
 
-@app.route("/", methods=['GET', 'POST'])
-def hello():
-    form = ExperimenterForm()
-    if form.validate_on_submit():
-        converse = {}
-        uid = str(uuid.uuid1())
-        converse["userId"] = uid
-        converse["bot_resp"] = []
-        converse["user_resp"] = []
-        _filter = {}
-        if form.parameter.data and  form.parameter.data != "none":
-            _filter["type"] = form.parameter.data
-        if form.arguement_type.data and  form.arguement_type.data != "none":
-            _filter["arguement_type"] = form.arguement_type.data
-        converse["filter"] = _filter
-        converse["strategy"] = form.strategy.data
-        converse["active"] = True
-        create_conversation(converse)
-        return redirect("/topic/%s"%uid)
+    def get(self, prompt_id):
+        bot = EmpathyStrategy()        
+        print(bot.get_prompt(prompt_id))
+        return jsonify(bot.get_prompt(prompt_id))
 
-    return render_template("experimenter.html", form=form)
-
-@app.route("/topic/<userId>", methods=['GET', 'POST'])
-def topic(userId):
-    form = TopicForm()
-    if form.validate_on_submit():
-        topic = form.topic.data
-        topic_l = topic.split(',')
-        print(topic)
-        topic = {}
-        topic["desposition"] = int(topic_l[0])
-        topic["topic"] = topic_l[1]
-        if not update_conversation(userId, topic):
-            return redirect("/")
-        return redirect("/chatbot/%s"%userId)
-    return render_template("topic.html", form=form)
-
-@app.route("/chatbot/<userId>", methods=['GET', 'POST'])
-def chat(userId):
-    if request.method == 'POST':
-        user_message = request.get_json()
-        print(user_message)
-        print(userId)
-        response = get_response(userId, user_message["message"])
-        print(response)
-        return jsonify(response)
-    return render_template("index.html", userId = userId)
-
-@app.route("/end/<userId>")
-def end_of(userId):
-    after = is_after(userId)
-    return "<h1 style='color:blue'>Thank You For The Conversation!!!</h1>"
-
-
-class WebHook(Resource):
-    def get(self):
-        mode  = request.args.get("hub.mode")
-        token = request.args.get("hub.verify_token")
-        print(token)
-        challenge = request.args.get("hub.challenge")
-        print(challenge)
-        if token == VERIFY_TOKEN and mode == 'subscribe':
-            return Response(challenge, 200)
-        else:
-            return "INVALID REQUEST", 403
-    def post(self):
-        res = request.get_json()
-        print(res)
-        if res["object"] != "page":
-            print("not Ok")
-            return "not Ok"
-        else:
-            for entry in res["entry"]:
-                send_reply(entry["messaging"])
-        return "ok"
+    def post(self,prompt_id):
+        json_data = request.get_json(force=True)
+        bot = EmpathyStrategy()        
+        print(bot.get_next(json_data))
+        return jsonify(bot.get_next(json_data))
         
 
-api.add_resource(WebHook, '/webhook')
+
+@app.route("/empathybot/", methods=['GET'])
+def chat():
+    userId = str(uuid.uuid1())
+    return render_template("index.html", userId = userId)
+
+
+api.add_resource(EmpathyBot, '/empathybot/resources/<string:prompt_id>')
+
+
 if __name__ == '__main__':
-    app.debug=True
-    app.run(port = 5000, host ='0.0.0.0')
+    app.run(host='127.0.0.1', port=5000 ,debug=True)

@@ -7,11 +7,11 @@
 <script>const userId =  "{{userId}}"</script>
 </head>
 <body>
-    <div class = "chatbox" id="chatWindow">
+    <div class = "chatbox" id="chatwindow">
     </div>
     <div class = "interface"> 
                     <div class="form-group">
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" onkeypress="sendOnEnter(event)"></textarea>
                       </div>
            <button id="send" type="button" class="btn btn-primary">SEND</button>
     </div>

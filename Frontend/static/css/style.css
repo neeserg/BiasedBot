@@ -1,15 +1,16 @@
 
  
- .chatbox{
+ #chatwindow{
    background-color: rgb(252, 245, 245);;
    height: 90vh;
    padding: 5vh;
    padding-bottom: 0vh;
+   overflow: auto;
  }
  
  .interface{
    background-color:  rgba(10, 83, 114, 0.9);
-   height: 10vh;
+   height: 10vh;  
    display: flex;
  }
  .form-group{
@@ -27,6 +28,7 @@
   padding: 10px;
   padding-left: 30px;
   text-align: right;
+  white-space: pre-line;
 }
 
 .user_container{
@@ -37,6 +39,8 @@
 .bot_container{
   display: flex;
   justify-content: flex-start;
+  flex-direction:column;
+  margin-right: 40vw;
 }
 
 .message_bot{
@@ -46,6 +50,7 @@
   padding: 10px;
   padding-right: 30px;
   text-align: left;
+  white-space: pre-line;
 }
 .form-control{
   max-height: 100%;
@@ -62,4 +67,11 @@ body {
   background: rgba(1, 1, 1, 1);
   height: 100%;
   padding: 0;
+}
+
+.choice_container{
+  display: flex;
+  justify-content: center;
+  flex-direction:column;
+  padding: 5px;
 }

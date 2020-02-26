@@ -1,4 +1,4 @@
-from flask import Flask,request, jsonify,render_template
+from flask import Flask,request, jsonify,render_template, redirect
 from flask_restful import Resource, Api
 from model.strategies.empathyStrategy import EmpathyStrategy
 import uuid
@@ -24,10 +24,16 @@ class EmpathyBot(Resource):
         
 
 
-@app.route("/empathybot/", methods=['GET'])
+@app.route("/empathybot", methods=['GET',"POST"])
 def chat():
+    if request.method == "POST":
+        return redirect("/empathybot")
     userId = str(uuid.uuid1())
     return render_template("index.html", userId = userId)
+
+@app.route("/")
+def landing():
+    return render_template("landing.html")
 
 
 api.add_resource(EmpathyBot, '/empathybot/resources/<string:prompt_id>')

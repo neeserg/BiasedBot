@@ -4,7 +4,25 @@ let prompt_id = "climate_initial"
 
 const button = document.getElementById("send");
 
+function thinking(){
+    document.getElementById("exampleFormControlTextarea1").value ="";
+    document.getElementById("exampleFormControlTextarea1").setAttribute("disabled", "disabled");
+    const container = document.createElement("div");
+    container.classList.add(`bot_container`);
+    container.setAttribute("id", "thought_container")
+    const message_bot = document.createElement("div");
+    message_bot.classList.add(`message_bot`);
+    const thought = document.createElement("p");
+    thought.setAttribute("id", "thinking");
+    thought.textContent = "oooo";
+    message_bot.appendChild(thought);
+    container.appendChild(message_bot);
+    document.getElementById("chatwindow").appendChild(container);
+    let chatWindow = document.getElementById("chatwindow");
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+    container.focus()
 
+}
 
 
 function sendMessage(message){
@@ -22,11 +40,18 @@ function sendMessage(message){
             'Content-Type': 'application/json'
         }
     }
-    fetch(url+'resources/'+prompt_id, option)
+
+    thinking();
+    setTimeout(() => {
+        fetch(url+'/resources/'+prompt_id, option)
         .then(response => response.json())
         .then(json =>{
+            document.getElementById("thought_container").remove();
             insert_bot(json);
+
         });
+
+    }, 5000);
 }
 
 
@@ -47,7 +72,6 @@ function insert_user(message){
 
 
 function insert_bot(message){
-    document.getElementById("exampleFormControlTextarea1").value ="";
     prompt_id = message.prompt_id;
     if(message.type === "choice"){
         const container = document.createElement("div");
@@ -97,16 +121,28 @@ function insert_bot(message){
 
     let chatWindow = document.getElementById("chatwindow");
     chatWindow.scrollTop = chatWindow.scrollHeight;
+    document.getElementById("exampleFormControlTextarea1").removeAttribute("disabled");
+    document.getElementById("exampleFormControlTextarea1").select();
 }
 
 
 //Get initial message from the server
-fetch(url+'resources/'+prompt_id)
+thinking()
+setTimeout(()=>{
+    fetch(url+'/resources/'+prompt_id)
     .then(res =>res.json())
     .then(res => {
-        insert_bot(res)
-        prompt_id = prompt_id
+        document.getElementById("thought_container").remove();
+        insert_bot(res);
+        prompt_id = prompt_id;
     });
+
+}, 5000);
+
+// send on press of the button
+
+
+
 
 button.addEventListener("click",()=>{
 
@@ -118,7 +154,7 @@ button.addEventListener("click",()=>{
     sendMessage(message);
 });
 
-
+// send on press of enter
 function sendOnEnter(event){
     var key = event.keyCode;
     if(key === 13){

@@ -1,0 +1,49 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+#title{
+    font-size: x-large;
+    font-family: 'Franklin Gothic Medium';
+    color: azure;
+}
+#head{
+    width: 100vw;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+
+.justi_centre{
+margin: auto;
+}
+
+#info{
+    width: 100vw;
+    height: 50vh;
+    padding: 5%;
+    padding-top: 10%;
+    background-color: rgb(83, 83, 83);
+    color: ghostwhite;
+}
+
+#chat_options{
+    width: 100vw;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    color: azure;
+}
+
+#choices{
+    width: 30vw;
+    height: 15vh;
+    margin: 2vh;
+}
+
+#lets_chat{
+    background-color: lightgreen;
+}

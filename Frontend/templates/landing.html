@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../static/css/landing.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<title>Chatbot</title>
+</head>
+<body>
+    <div id = "head"> <p class = "justi_centre" id ="title"> Rhetoric Bot</p> </div>
+    <div id = "info"> 
+        <p>The purpose of this research is to explore comfortable web environments to talk about issues that would be otherwise too uncofortable to talked about with others, specially others who 
+            share dissimilar beliefs as us. A chatbot could provide an private channel to talk about heated topics to grounded entity that is not
+            try to provoke you or just echo your sentiment back. 
+        </p>
+
+        
+
+        Bellow are a list of bots who are designed to converse with people regarding political issue 
+    </div>
+    <div id= "chat_options">
+        <form action="/empathybot", method="POST">
+            <select id="choices" size = "5" name="topic">
+                <option>Climate Change</option>
+              </select>
+              <input type="submit" value="Chat!!" id="lets_chat">
+        </form>
+       
+    </div>
+</body>
+</html>

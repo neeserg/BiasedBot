@@ -291,7 +291,7 @@
 
 	"Closing":
 	{
-		"prompt": "this was an awsome conversation and looking forward to talking more with you. Do you have any final thoughts and sentiments",
+		"prompt": "this was an awesome conversation and looking forward to talking more with you. Do you have any final thoughts and sentiments",
 		"type": "followup",
 		"next": [{
 			"id":"google_form"

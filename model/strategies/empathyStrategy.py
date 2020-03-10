@@ -1,10 +1,18 @@
 import json
+file_stuff = {
+    "empathybot":{
+        "climatechange": "empathy_climate.json"
+    },
+    "parallelbot": {
+        "climatechange": "parallel_climate.json"
+    }
+}
 
 class EmpathyStrategy:
 
-    def __init__(self):
+    def __init__(self, topic="climatechange", bot_type="parallelbot"):
         self.conversation = {}
-        with open("Conversation.json") as file:
+        with open(file_stuff[bot_type][topic]) as file:
             self.conversation = json.load(file)
 
     def _get_which(self, user_message, possible):

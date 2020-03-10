@@ -1,0 +1,329 @@
+{
+	"initial": {
+		"prompt": "Hey!, I'm Imilc and I am a AI scifi writer that is currently working on a story. I like chat to other people about their opinions before writing.\n\n My story today involves a spaceship, spaceship Tareh. This spaceship is running on a space-engine using the vacuum energy architecture, the best and the most reliable space-engine architecture in the galaxy at a point in time. \n\n But now the best and the brightest minds in the galaxy are saying it will explode before they reach their desitnation. There is a planet on a slight detour, that can accomodate them while they fix the problem, which may take several more years. And will be changing the architecture to a more reliable but slower Antimatter energy system. \n\n Now I am currently writing the protagonist of the story, the captain of the spaceship. I want you to decide what he should do? Do you agree he should stop and fix the ship?",
+		"type": "choice",
+		"choice": [ "strongly agree", "agree","disagree", "strongly disagree"],
+		"next":[
+			{
+				"id":"design_solid",
+				"user_replies":[
+					"strongly agree",
+					"agree"
+				]
+			},
+
+			{
+				"id": "contrarion",
+				"user_replies":[
+					"strongly disagree",
+					"disagree"
+				]
+			}
+
+		]
+
+	},
+	"design_solid":{
+		"prompt": "There is opposition by people who are abroad spaceship who have worked for the leading Vacuum energy spaceship, they think that their designs are solid and will not cause any malfunctions. Does this sway your decision?",
+		"type": "choice",
+		"choice": [ "yes", "no"],
+		"next":[
+			{
+				"id":"contrarion",
+				"user_replies":[
+					"yes"
+				]
+			},
+
+			{
+				"id": "extended",
+				"user_replies":[
+					"no"
+				]
+			}
+
+		]
+	},
+
+	"extended":
+	{
+		"prompt": "The journey will be extended by atleast 10 more years, since the new architecture is reliable but considerably slower than the old design. Also you will need to reduce the load and naturally people that will be left behind will be the engineers in charge of the old design. Would you be ok with this.",
+		"type": "choice",
+		"choice": [ "yes", "no"],
+		"next":[
+			{
+				"id":"leave_behind",
+				"user_replies":[
+					"yes"
+				]
+			},
+
+			{
+				"id": "no_man_left_behind",
+				"user_replies":[
+					"no"
+				]
+			}
+
+		]
+	},
+
+
+	"leave_behind":{
+		"prompt": "So you would leave these workers behind in an unknown planet with no transeferable skills, where they will struggle for the rest of their lives.",
+		"type": "choice",
+		"choice": [ "yes", "no"],
+		"next":[
+			{
+				"id":"handle_this",
+				"user_replies":[
+					"yes"
+				]
+			},
+
+			{
+				"id": "no_man_left_behind",
+				"user_replies":[
+					"no"
+				]
+			}
+
+		]
+	},
+
+	"handle_this": {
+		"prompt": "Your decision has left all the workers worried about their future. They resist harder, and people start spreading rumours that this fault in current design is a lie spread by the companies making the Antimatter systems. How do you handle this?",
+		"type": "open",
+		"next":[
+			{
+				"id":"rapid_poicies",
+				"user_replies":[
+					"yes"
+				]
+			}
+
+		]
+	},
+
+	"rapid_poicies":{
+		"prompt": "Hmm... Interesting choice, not sure if I would go the same route with my story. Let me give you the backstory. This is 100 years after the present time. The Earth is suffering from the economic effects of climate change. Rapid policies to combat climate change has left many people unemployed, since they have no transferable skills. Not only that, but society has made no attempts to train these people since it was \"their fault\" that the climate change happened in the first place, leaving generations of poverty. \n\n Knowing this how would you change the actions taken by the captain?",
+		"type": "open",
+		"next":[
+			{
+				"id":"closing",
+				"user_replies":[
+					"I would do the same things",
+					"maybe think about the decisions more",
+					"hypotheticals are too hard"
+				]
+			}
+
+		]
+	},
+
+	"no_man_left_behind":{
+		"prompt": "this would require careful deliberation and working with these people to educate them about the issues and working with the Vacuum Energy Spaceship manufacturers to discuss suitable transition, which would take more time, almost 40 more years to reach the destination. Is this what you would do?",
+		"type": "choice",
+		"choice": [ "yes", "no"],
+		"next":[
+			{
+				"id": "long_time",
+				"user_replies":[
+					"yes"
+				]
+			},
+			{
+				"id": "leave_behind",
+				"user_replies":[
+					"no"
+				]
+			}
+		]
+	},
+
+	"long_time":{
+		"prompt": "FORTY years is a long time, and that's really a underestimation. The destination you hope to reach, you may never reach alive. Why do you think this is worth the sacrifice?",
+		"type": "open",
+		"next": [
+			{
+				"id": "backstory",
+				"user_replies":[
+					"ofcourse it is"
+				]
+			}
+		]
+	},
+
+	"backstory":{
+		"prompt": "Hmm... Interesting choice, . Let me give you the backstory. This is 100 years after the present time. The Earth is suffering from the economic effects of climate change. Rapid policies to combat climate change has left many people unemployed, since they have no transferable skills. Not only that, but society has made no attempts to train these people since it was \"their fault\" that the climate change happened in the first place, leaving generations of poverty. \n\n Knowing this would you make the same decisions as a captain?",
+		"type": "open",
+		"next":[
+			{
+				"id":"closing",
+				"user_replies":[
+					"I would do the same things",
+					"maybe think about the decisions more",
+					"hypotheticals are too hard"
+				]
+			}
+
+		]
+	},
+	"contrarion":{
+		"prompt": "So you think the captain should risk everyone's life, why?",
+		"type": "open",
+		"next":[
+			{
+				"id":"closing",
+				"user_replies":[
+					"I would do the same things",
+					"maybe think about the decisions more",
+					"hypotheticals are too hard"
+				]
+			}
+
+		]
+	},
+
+	"control_panel":{
+		"prompt":"It's 5 years later. Now, more and more reports of spaceship failing in journey are coming in your control panel. Are you going to continue towards your destination.",
+		"choice": ["yes", "no"],
+		"next": [
+			{
+				"id": "critical_issue", 
+				"user_replies":[
+					"yes"
+				]
+			},
+			{
+				"id": "design_solid", 
+				"user_replies":[
+					"no"
+				]
+			}
+		]
+	},
+
+	"critical_issue":{
+		"prompt": "12 years later... Some one has lost a life trying to fix a critical issue in the engine. People are now questioning your captancy. What do you do?",
+		"type": "choice",
+		"choice":["keep going", "maybe reconsider"],
+		"next":[
+			{
+				"id": "BTW", 
+				"user_replies":[
+					"yes"
+				]
+			},
+			{
+				"id": "consequences", 
+				"user_replies":[
+					"no"
+				]
+			}
+		]
+	},
+	"consequences":
+	{
+		"prompt": "Now that a person has died, and you are reconsidering your decision. If you go to a detour planet, you will be directly blamed for this, and you will faced consequences possibly jail. You might not even make it to the detour for landing now but most definitely will give you a better chance, are you gonna keep going to destination or take the detour",
+		"type": "choice",
+		"choice": ["too late to turn back", "go to the detour planet"],
+		"next":[
+			{
+				"id":"BTW",
+				"user_replies":["go to the detour planet"]
+			},
+			{
+				"id":"turmoil",
+				"user_replies": ["backstory"]
+			}
+		]
+	}
+	,
+
+	"BTW":{
+		"prompt": "BTW, the captain in our story is the hero, not the villain. But putting this aside, how do you think the story would end and do you think if the spaceship reached the destination safely, does it justify the captains action or the truthfulness of the reports about the fault?",
+		"type":"open",
+		"next":[
+			{
+				"id":"turmoil",
+				"user_replies":[
+					"in flames"
+				]
+			}
+		]
+	},
+	"turmoil":
+	{
+		"prompt": "Hmm.. I have'nt quite finished the story yet. But not quite sure if this is the way I would write it. But here is a backstory for refference. It's 100 years away from present time, our inability to act on climate change has left the world in turmoil. Earth is slowly dying and people are riding off in spaceship to other planets. \n Leaders have learnt their lessons about making informed decision based upon expert scientific advice. Now knowing this, would you make the same decision if you were on our captains shoes?",
+		"type": "open",
+		"next":[
+			{
+				"id":"closing",
+				"user_replies":[
+					"I would do the same things",
+					"maybe think about the decisions more",
+					"hypotheticals are too hard"
+				]
+			}
+
+		]
+	},
+
+	"paralell":{
+		"prompt": "I don't know if you realised but this story was a parallel to our current climate situation. The captain represents our world leaders, and spaceship Tareh, an anagram for Earth. Do you believe the actions you chose for the captain are the ones that should be chosen by our leaders and why?",
+		"type": "open",
+		"next":[
+			{
+				"id":"understanding",
+				"user_replies":[
+					"I would do the same things",
+					"maybe think about the decisions more",
+					"hypotheticals are too hard"
+				]
+			}
+
+		]
+		
+	},
+
+	"understanding":{
+		"prompt": "Do you think understanding other persons viewpoint is important in making these decisions. Why?",
+		"type": "open",
+		"next":[
+			{
+				"id":"closing",
+				"user_replies":[
+					"I would do the same things",
+					"maybe think about the decisions more",
+					"hypotheticals are too hard"
+				]
+			}
+
+		]
+		
+	},
+
+	"closing":{
+		"prompt": "Any closing remarks before we say goodbye?",
+		"type": "followup",
+		"next":[
+			{
+				"id":"google_form"
+				
+			}
+
+		]
+	},
+
+	"google_form":{
+		"prompt": "here is the link to google form",
+		"type": "followup",
+		"next": [{
+			"id":"google_form"
+		}]
+	}
+	
+
+
+}

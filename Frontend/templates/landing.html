@@ -18,11 +18,13 @@
         Bellow are a list of bots who are designed to converse with people regarding political issue 
     </div>
     <div id= "chat_options">
-        <form action="/empathybot", method="POST">
+        <form action="/{{bot_type}}", method="POST">
             <select id="choices" size = "5" name="topic">
-                <option>Climate Change</option>
+                {% for a in topics%}
+                <option value="{{a[0]}}">{{a[1]}}</option>
+                {% endfor %}
               </select>
-              <input type="submit" value="Chat!!" id="lets_chat">
+              <input type="submit" id="lets_chat">
         </form>
        
     </div>

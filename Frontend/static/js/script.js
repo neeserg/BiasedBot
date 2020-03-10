@@ -1,6 +1,5 @@
+let prompt_id = "initial"
 const url = window.location.href;
-let prompt_id = "climate_initial"
-
 
 const button = document.getElementById("send");
 

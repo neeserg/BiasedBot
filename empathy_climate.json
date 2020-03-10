@@ -1,5 +1,5 @@
 {
-	"climate_initial": {
+	"initial": {
 		"prompt": "Hey!, I'm Climy. I would like to talk to you about this issue of climate change, everyone seems to be raging about it.Some people are even saying it might be the most important issue to be faced by humanity. Would you agree?",
 		"type": "choice",
 		"choice": [ "strongly agree", "agree","disagree", "strongly disagree"],

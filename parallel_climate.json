@@ -188,6 +188,7 @@
 	"control_panel":{
 		"prompt":"It's 5 years later. Now, more and more reports of spaceship failing in journey are coming in your control panel. Are you going to continue towards your destination.",
 		"choice": ["yes", "no"],
+		"type":"choice",
 		"next": [
 			{
 				"id": "critical_issue", 
@@ -212,13 +213,13 @@
 			{
 				"id": "BTW", 
 				"user_replies":[
-					"yes"
+					"keep going"
 				]
 			},
 			{
 				"id": "consequences", 
 				"user_replies":[
-					"no"
+					"maybe reconsider"
 				]
 			}
 		]
@@ -231,11 +232,11 @@
 		"next":[
 			{
 				"id":"BTW",
-				"user_replies":["go to the detour planet"]
+				"user_replies":["too late to turn back"]
 			},
 			{
 				"id":"turmoil",
-				"user_replies": ["backstory"]
+				"user_replies": ["go to the detour planet"]
 			}
 		]
 	}
@@ -270,7 +271,7 @@
 		]
 	},
 
-	"paralell":{
+	"parallel":{
 		"prompt": "I don't know if you realised but this story was a parallel to our current climate situation. The captain represents our world leaders, and spaceship Tareh, an anagram for Earth. Do you believe the actions you chose for the captain are the ones that should be chosen by our leaders and why?",
 		"type": "open",
 		"next":[

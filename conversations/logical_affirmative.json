@@ -284,7 +284,28 @@
             }
         ]
     
-    },
+	},
+	
+	"common":{
+        "prompt":"So you don’t believe in cause and effect?",
+        "type": "choice",
+        "choice":["yes", "no"],
+        "next": [
+            {
+                "id":"lasting_effect",
+                "user_replies":[
+                    "yes"
+                ]
+            },
+            {
+                "id":"card_game",
+                "user_replies":[
+                    "no"
+                ]
+            }
+        ]
+    
+	},
 
     "lasting_effect":{
         "prompt":"Do you believe discriminatory laws in the past could have had a lasting effect on how the society is structured today?",

@@ -29,12 +29,12 @@ def land(bot_type):
     if request.method == "POST":
         topic = request.form["topic"]
         return redirect("/%s/%s"%(bot_type, topic))
-    topics = [("climatechange", "Climate Change"), ("affirmative_action","Affirmative Action"),("free_speech", "Free Speech")]
+    topics = [ ("affirmative_action","Affirmative Action"),("free_speech", "Free Speech")]
     return render_template("landing.html", bot_type = bot_type, topics = topics)
 
 @app.route("/")
 def landing():
-    topics = [("climatechange", "Climate Change"), ("affirmative_action", "Affirmative Action"),("free_speech", "Free Speech")]
+    topics = [("affirmative_action", "Affirmative Action"),("free_speech", "Free Speech")]
     return render_template("landing.html",  bot_type = "empathybot", topics = topics)
 
 @app.route("/<string:bot_type>/<string:topic>")

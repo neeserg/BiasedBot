@@ -1,10 +1,25 @@
 import json
+from model.database.UserReplies import UserReplies
 file_stuff = {
     "empathybot":{
-        "climatechange": "empathy_climate.json"
+        "climatechange": "conversations/empathy_climate.json"
     },
     "parallelbot": {
-        "climatechange": "parallel_climate.json"
+        "climatechange": "conversations/parallel_climate.json"
+    },
+    "logical":{
+        "affirmative_action": "conversations/logical_affirmative.json",
+        "free_speech": "conversations/logical_free.json"
+    },
+
+    "character":{
+        "affirmative_action": "conversations/character_affirmative.json",
+        "free_speech": "conversations/character_free.json"
+    },
+
+    "lara":{
+        "affirmative_action": "conversations/lara_affirmative.json",
+        "free_speech": "conversations/lara_free.json"
     }
 }
 
@@ -12,6 +27,8 @@ class EmpathyStrategy:
 
     def __init__(self, topic="climatechange", bot_type="parallelbot"):
         self.conversation = {}
+        self.topic = topic
+        self.bot_type = bot_type
         with open(file_stuff[bot_type][topic]) as file:
             self.conversation = json.load(file)
 
@@ -37,6 +54,15 @@ class EmpathyStrategy:
         else:
             return {"prompt_id":prompt_id, "prompt":"%s not found"%prompt_id, "type": "error"}
     
+    def insert(self, message, next_id):
+        message["next_id"] = next_id
+        userReplies = UserReplies()
+        usermessage = {"user": message["user_id"], "prompt": message["prompt_id"], "next": message["next_id"], "message": message["message"]}
+        usermessage["topic"] = self.topic
+        usermessage["type"] = self.bot_type
+        result = userReplies.insert(usermessage)
+        return result
+
     def get_next(self, message):
         user_message = message["message"]
         current_id = message["prompt_id"]
@@ -44,30 +70,34 @@ class EmpathyStrategy:
             reply = {"prompt_id": current_id, "prompt": "the conversation id does not exist", "type": self.conversation[current_id]["type"]}
             return reply
         curr_conv = self.conversation[current_id]
-        
+        next_id = "undefined"
+
+        ##handle choice responses
         if(curr_conv["type"] == "choice"):
+            ## if user replies a statement not in the choice return an error
             if(user_message.strip().lower() not in curr_conv["choice"]):
                 reply = {"prompt_id": current_id, "prompt": "Not part of the available choices", "type": curr_conv["type"], 
                         "choice":curr_conv["choice"]}
                 return reply
+            ## handle response
             else:
                 next_id = self._get_which(user_message, curr_conv["next"])
+                # if the id does not exist then something wrong wioth tree
                 if (next_id == "Not Found"):
                     reply = {"prompt_id": current_id, "prompt": "the conversation id does not exist", "type": curr_conv["type"], 
                         "choice":curr_conv["choice"]}
-                    return reply
+                    return reply              
+                
                 else:
-                    next_conv = self.conversation[next_id]
-                    
-                    if(next_conv["type"] == "choice"):
-                        reply = {"prompt_id": next_id,"prompt": next_conv["prompt"], "choice": next_conv["choice"], 
-                                "type": next_conv["type"]}
+                    #unsuccessful insertion of message
+                    if(not self.insert(message, next_id)):
+                        reply = {"prompt_id": current_id, "prompt": "Something went wrong with my brain, please try again", "type": curr_conv["type"], 
+                        "choice":curr_conv["choice"]}
                         return reply
-                    else:
-                        reply = {"prompt_id": next_id,"prompt": next_conv["prompt"], "type": next_conv["type"]}
-                        return reply
-        
+       
+        ## handle non choice responses
         else:
+            #can't handle multiple options in open setting right now, no parsing or machine learning yet
             if(len(self.conversation[current_id]["next"]) > 1):
                 ##do some machinelearning to decide what the next step is
                 reply = {"prompt_id": current_id, "prompt": "currently there is no machine learning", "type": curr_conv["type"]}
@@ -75,16 +105,21 @@ class EmpathyStrategy:
             else:
                 next_id = curr_conv["next"][0]["id"]
                 
+                # if the id does not exist then something wrong wioth tree
                 if (next_id not in self.conversation):
                     reply = {"prompt_id": current_id, "prompt": "the conversation id does not exist", "type": curr_conv["type"]}
                     return reply
-                
-                
-                next_conv = self.conversation[next_id]
-                if(next_conv["type"] == "choice"):
-                    reply = {"prompt_id": next_id,"prompt": next_conv["prompt"], "choice": next_conv["choice"], 
-                            "type": next_conv["type"]}
+                #update failed
+                if (not self.insert(message, next_id)):
+                    reply = {"prompt_id": current_id, "prompt": "Something went wrong with my brain, please try again", "type": curr_conv["type"]}
                     return reply
-                else:
-                    reply = {"prompt_id": next_id,"prompt": next_conv["prompt"], "type": next_conv["type"]}
-                    return reply
+
+        #all checks should be successful by here
+        next_conv = self.conversation[next_id]
+        if(next_conv["type"] == "choice"):
+            reply = {"prompt_id": next_id,"prompt": next_conv["prompt"], "choice": next_conv["choice"], 
+                    "type": next_conv["type"]}
+            return reply
+        else:
+            reply = {"prompt_id": next_id,"prompt": next_conv["prompt"], "type": next_conv["type"]}
+            return reply

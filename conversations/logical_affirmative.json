@@ -1,0 +1,442 @@
+{
+    "initial": {
+        "prompt":"Should policies such as affirmative action be in place to help certain groups based on their gender, ethnicity or religion?",
+        "type": "choice",
+		"choice": [ "strongly agree", "agree","disagree", "strongly disagree"],
+		"next":[
+			{
+				"id":"pos_why",
+				"user_replies":[
+					"strongly agree",
+					"agree"
+				]
+			},
+
+			{
+				"id": "neg_why",
+				"user_replies":[
+					"strongly disagree",
+					"disagree"
+				]
+			}
+
+		]
+
+    },
+
+    "pos_why":{
+        "prompt":"Why do you believe this?",
+        "type": "open",
+		"next": [
+			{
+				"id":"born_equal",
+				"user_replies":[
+
+				]
+			}
+		]
+    },
+
+    "born_equal":{
+        "prompt":"Can we ever live in a world where everyone is equal?",
+        "type": "choice",
+        "choice":["yes", "no"],
+        "next": [
+            {
+                "id":"NBA",
+                "user_replies":[
+                    "yes"
+                ]
+            },
+            {
+                "id":"such_world",
+                "user_replies":[
+                    "no"
+                ]
+            }
+
+        ]
+    
+    },
+
+    "NBA":{
+        "prompt":"So you think if an average man decides to play in the NBA, he has the same chance to succeed as a 7 foot athletic guy.",
+        "type": "open",
+        "next": [
+            {
+                "id":"balance",
+                "user_replies":[
+                    
+                ]
+            }
+        ]
+    
+    },
+    
+
+    "such_world":{
+	"prompt":"Would you even want to live in such a world?",
+	"type": "choice",
+	"choice":["yes", "no"],
+	"next": [
+		{
+			"id":"individuality",
+			"user_replies":[
+				"yes"
+			]
+		},
+		{
+			"id":"balance",
+			"user_replies":[
+				"no"
+			]
+		}
+	]
+
+},
+
+"individuality":{
+	"prompt":"You would give up on your individuality, personality and identity for equality?",
+	"type": "open",
+	"next": [
+		{
+			"id":"balance",
+			"user_replies":[
+				
+			]
+		}
+	]
+
+},
+
+"balance":{
+	"prompt":"I think our attempts to tip the scale in either direction to create a “balance” is an impossible task. And it is a malformed goal, we should own our differences, our history and all the things that make us.",
+	"type": "open",
+	"next": [
+		{
+			"id":"judge_someone",
+			"user_replies":[
+				
+			]
+		}
+	]
+
+},
+
+"judge_someone":{
+	"prompt":"Do you think race, ethnicity, religion, class or gender is enough to judge someone?",
+	"type": "choice",
+	"choice":["yes", "no"],
+	"next": [
+		{
+			"id":"those_people",
+			"user_replies":[
+				"yes"
+			]
+		},
+		{
+			"id":"statistically",
+			"user_replies":[
+				"no"
+			]
+		}
+	]
+
+},
+
+"those_people":{
+	"prompt":"So what do you think of when you see a indegenous gay man, a white straight woman or a tans indian individual. Would you think one of those people are more likely to be a smarter person? who?",
+	"type": "choice",
+	"choice":["tans indian individual", "white straight woman", "indegenous gay man", "got to know them"],
+	"next": [
+		{
+			"id":"why?",
+			"user_replies":[
+                "tans indian individual", 
+                "white straight woman", 
+                "indegenous gay man"
+			]
+		},
+		{
+			"id":"statistically",
+			"user_replies":[
+				"got to know them"
+			]
+		}
+	]
+
+},
+
+
+"why?":{
+	"prompt":"why do you think this person would be smarter?",
+	"type": "open",
+	"next": [
+		{
+			"id":"race/gender",
+			"user_replies":[
+				
+			]
+		}
+	]
+
+},
+
+"statistically":{
+	"prompt":"What about to determine statistically who is likely to succeed?",
+	"type": "choice",
+	"choice":["yes", "no"],
+	"next": [
+		{
+			"id":"laws",
+			"user_replies":[
+				"yes"
+			]
+		},
+		{
+			"id":"race/gender",
+			"user_replies":[
+				"no"
+			]
+		}
+	]
+
+},
+
+"target":{
+	"prompt":"So we can use crime statistics to target certain demography?",
+	"type": "choice",
+	"choice":["yes", "no"],
+	"next": [
+		{
+			"id":"who_decides",
+			"user_replies":[
+				"yes"
+			]
+		},
+		{
+			"id":"race/gender",
+			"user_replies":[
+				"no"
+			]
+		}
+	]
+
+},
+
+"who_decides":{
+	"prompt":"Who decides how we use the stats to?",
+	"type": "open",
+	"next": [
+		{
+			"id":"race/gender",
+			"user_replies":[
+				
+			]
+		}
+	]
+
+},
+
+"race/gender":{
+	"prompt":"I think race/gender based laws are a slippery slope. I think if we start basing laws on those factors then we are setting a precedence for the future. Discriminatory laws are not a fix for unequal society, in fact the only measure of equality in society should be how laws treat everyone in society and it should treat everyone equally.",
+	"type": "open",
+	"next": [
+		{
+			"id":"closing",
+			"user_replies":[
+				
+			]
+		}
+	]
+
+},
+
+    "neg_why":{
+        "prompt": "Why do you believe this?",
+		"type": "open",
+		"next": [
+			{
+				"id":"event_n_cause",
+				"user_replies":[
+
+				]
+			}
+		]
+    },
+
+    "event_n_cause":{
+        "prompt":"Do you believe every event has a cause and the society is the way it is today because of the actions of the past?",
+        "type": "choice",
+        "choice":["yes", "no"],
+        "next": [
+            {
+                "id":"lasting_effect",
+                "user_replies":[
+                    "yes"
+                ]
+            },
+            {
+                "id":"common",
+                "user_replies":[
+                    "no"
+                ]
+            }
+        ]
+    
+    },
+
+    "lasting_effect":{
+        "prompt":"Do you believe discriminatory laws in the past could have had a lasting effect on how the society is structured today?",
+        "type": "choice",
+        "choice":["yes", "no"],
+        "next": [
+            {
+                "id":"card_game",
+                "user_replies":[
+                    "yes"
+                ]
+            },
+            {
+                "id":"only_fair",
+                "user_replies":[
+                    "no"
+                ]
+            }
+        ]
+    
+    },
+
+
+"card_game":{
+	"prompt":"Suppose you were handing out cards to a group of people, you accidently missed a guy and he doesn’t have a full set. Would you not give him an extra card to compensate. Or would you just let him play an unfair game.",
+	"type": "open",
+	"next": [
+		{
+			"id":"only_fair",
+			"user_replies":[
+				
+			]
+		}
+	]
+
+},
+
+"only_fair":{
+	"prompt":"I think it’s only fair to compensate for mistakes that happened in the past. Our society can be fair for everyone.",
+	"type": "open",
+	"next": [
+		{
+			"id":"hardship_counts",
+			"user_replies":[
+				
+			]
+		}
+	]
+
+},
+
+
+"hardship_counts":{
+	"prompt":"Do you think someone’s hardships count towards something when considering an individual for a role?",
+	"type": "choice",
+	"choice":["yes", "no"],
+	"next": [
+		{
+			"id":"work_harder",
+			"user_replies":[
+				"yes"
+			]
+		},
+		{
+			"id":"tennis_comp",
+			"user_replies":[
+				"no"
+			]
+		}
+	]
+
+},
+
+"tennis_comp":{
+	"prompt":"If you were asked to select the best tennis player out of two people. One, Steve, who was last place in Australian Open and the other, Bob, who was first in your local community competition. You would pick Bob over Steve? Regardless of the adversity they experienced",
+	"type": "open",
+	"next": [
+		{
+			"id":"provide_opportunities",
+			"user_replies":[
+				
+			]
+		}
+	]
+
+},
+
+"work_harder":{
+	"prompt":"So would you not want someone who had to work much harder to get to where they are because of factors they couldn’t control.",
+	"type": "choice",
+	"choice":["yes", "no"],
+	"next": [
+		{
+			"id":"most_people",
+			"user_replies":[
+				"yes"
+			]
+		},
+		{
+			"id":"provide_opportunities",
+			"user_replies":[
+				"no"
+			]
+		}
+	]
+
+},
+
+"most_people":{
+	"prompt":"Most people who belong to a certain race/gender/socioeconomic background had to work much harder to get to where they are. So having a quota, ensures that an institution gets the best of every talent pool. Isn’t this logical",
+	"type": "open",
+	"next": [
+		{
+			"id":"provide_opportunities",
+			"user_replies":[
+				
+			]
+		}
+	]
+
+},
+
+"provide_opportunities":{
+	"prompt":"I think having policies that provide opportunities to those who are most disadvantaged in society provides reparation to the damage that was done in the past. It also ensures that we are getting the most talented individual who might otherwise go unnoticed because of their background.",
+	"type": "open",
+	"next": [
+		{
+			"id":"closing",
+			"user_replies":[
+				
+			]
+		}
+	]
+
+},
+
+"closing":
+	{
+		"prompt": "this was an awesome conversation and looking forward to talking more with you. Do you have any final thoughts and sentiments",
+		"type": "open",
+		"next": [{
+			"id":"google_form"
+		}]
+	},
+
+	"google_form":{
+		"prompt": "here is the link to google form",
+		"type": "open",
+		"next": [{
+			"id":"google_form"
+		}]
+    }
+
+
+}

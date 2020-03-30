@@ -1,0 +1,301 @@
+{
+    "initial": {
+        "prompt":"Should policies such as affirmative action be in place to help certain groups based on their gender, ethnicity or religion?",
+        "type": "choice",
+		"choice": [ "strongly agree", "agree","disagree", "strongly disagree"],
+		"next":[
+			{
+				"id":"pos_why",
+				"user_replies":[
+					"strongly agree",
+					"agree"
+				]
+			},
+
+			{
+				"id": "neg_why",
+				"user_replies":[
+					"strongly disagree",
+					"disagree"
+				]
+			}
+
+		]
+
+    },
+
+    "pos_why":{
+        "prompt":"Why do you believe this?",
+        "type": "open",
+		"next": [
+			{
+				"id":"more_privileged",
+				"user_replies":[
+				]
+			}
+		]
+    },
+
+    "more_privileged":{
+        "prompt":"There are groups in society that are clearly more privileged than others, I believe they profit from the discriminatory policies from the past. Agree?",
+        "type": "open",
+        "next": [
+            {
+                "id":"our_government",
+                "user_replies":[
+                    
+                ]
+            }
+        ]
+    
+	},
+	
+	"our_government":{
+		"prompt":"I also think that there are disadvantaged groups in society that need help from our government. Any thoughts?",
+		"type": "open",
+		"next": [
+			{
+				"id":"not_target",
+				"user_replies":[
+					
+				]
+			}
+		]
+	
+	},
+
+	"not_target":{
+		"prompt":"However, I also think that policies should not target any groups based on their race or gender directly.",
+		"type": "open",
+		"next": [
+			{
+				"id":"held_back",
+				"user_replies":[
+					
+				]
+			}
+		]
+	
+	},
+
+	"held_back":{
+		"prompt":"Have you ever been held back in society based on your demographic attributes?",
+		"type": "choice",
+		"choice":["yes", "no"],
+		"next": [
+			{
+				"id":"pos_make_feel",
+				"user_replies":[
+					"yes"
+				]
+			},
+			{
+				"id":"pos_would_feel",
+				"user_replies":[
+					"no"
+				]
+			}
+		]
+	
+	},
+
+
+	"pos_make_feel":{
+		"prompt":"How did that make you feel?",
+		"type": "open",
+		"next": [
+			{
+				"id":"very_hard",
+				"user_replies":[
+					
+				]
+			}
+		]
+	
+	},
+
+	"pos_would_feel":{
+		"prompt":"How would you feel if the government was able to stop you from achieving your goals because you were born a certain way?",
+		"type": "open",
+		"next": [
+			{
+				"id":"very_hard",
+				"user_replies":[
+					
+				]
+			}
+		]
+	
+	},
+
+
+
+	"neg_why":{
+        "prompt":"Why do you believe this?",
+        "type": "open",
+		"next": [
+			{
+				"id":"worthy_skepticism",
+				"user_replies":[
+				]
+			}
+		]
+	},
+	
+	"worthy_skepticism":{
+		"prompt":"I think any law that discriminates against a group of people based on race/gender should be met with worthy skepticism.",
+		"type": "open",
+		"next": [
+			{
+				"id":"meritocracy",
+				"user_replies":[
+					
+				]
+			}
+		]
+	
+	},
+
+
+	"meritocracy":{
+		"prompt":"I also think that society should aim to be a meritocracy where the skillful are rewarded plentifully based on their abilities alone. Any thoughts?",
+		"type": "open",
+		"next": [
+			{
+				"id":"same_skill",
+				"user_replies":[
+					
+				]
+			}
+		]
+	
+	},
+
+	"same_skill":{
+		"prompt":"However I also think there are people, who due to their demographic background, are not able to reach the same skill level as their privileged peers to compete with them fairly.",
+		"type": "open",
+		"next": [
+			{
+				"id":"different_family",
+				"user_replies":[
+					
+				]
+			}
+		]
+	
+	},
+
+	"different_family":{
+		"prompt":"Have you ever missed out on opportunities that you would have gotten if you were born in a different family?",
+		"type": "choice",
+		"choice":["yes", "no"],
+		"next": [
+			{
+				"id":"neg_make_feel",
+				"user_replies":[
+					"yes"
+				]
+			},
+			{
+				"id":"neg_would_feel",
+				"user_replies":[
+					"no"
+				]
+			}
+		]
+	
+	},
+
+	"neg_make_feel":{
+		"prompt":"How did it make you feel?",
+		"type": "open",
+		"next": [
+			{
+				"id":"very_hard",
+				"user_replies":[
+					
+				]
+			}
+		]
+	
+	},
+
+	"neg_would_feel":{
+		"prompt":"How would you feel if you were born in a different family who were unable to give you the same opportunities that you had available to you.",
+		"type": "open",
+		"next": [
+			{
+				"id":"very_hard",
+				"user_replies":[
+					
+				]
+			}
+		]
+	
+	},
+
+
+
+	"very_hard":{
+		"prompt":"This in the end is a very hard topic to discuss, since the past clearly has an effect on the future and actions that have been taken in the past have left certain minority groups disadvantaged. But by basing policies on demographic attributes, the government is sanctioning discriminatory laws. Laws should be in place to lift up the disadvantaged without penalising the advantaged.",
+		"type": "followup",
+		"next": [
+			{
+				"id":"you_think",
+				"user_replies":[
+					
+				]
+			}
+		]
+	
+	},
+
+	"you_think":{
+		"prompt":"What do you think?",
+		"type": "open",
+		"next": [
+			{
+				"id":"solution",
+				"user_replies":[
+					
+				]
+			}
+		]
+	
+	},
+
+	"solution":{
+		"prompt":"Do you think we can lift up the less privileged demographic without race/gender based laws?",
+		"type": "open",
+		"next": [
+			{
+				"id":"closing",
+				"user_replies":[
+					
+				]
+			}
+		]
+	
+	},
+
+
+
+
+	"closing":
+	{
+		"prompt": "this was an awesome conversation and looking forward to talking more with you. Do you have any final thoughts and sentiments",
+		"type": "open",
+		"next": [{
+			"id":"google_form"
+		}]
+	},
+
+	"google_form":{
+		"prompt": "here is the link to google form",
+		"type": "open",
+		"next": [{
+			"id":"google_form"
+		}]
+    }
+
+}

@@ -1,0 +1,50 @@
+"":{
+	"prompt":"",
+	"type": "choice",
+	"choice":["yes", "no"],
+	"next": [
+		{
+			"id":"",
+			"user_replies":[
+				"yes"
+			]
+		},
+		{
+			"id":"",
+			"user_replies":[
+				"no"
+			]
+		}
+	]
+
+}
+
+
+"":{
+	"prompt":"",
+	"type": "open",
+	"next": [
+		{
+			"id":"",
+			"user_replies":[
+				
+			]
+		}
+	]
+
+}
+
+
+"":{
+	"prompt":"",
+	"type": "followup",
+	"next": [
+		{
+			"id":"",
+			"user_replies":[
+				
+			]
+		}
+	]
+
+}

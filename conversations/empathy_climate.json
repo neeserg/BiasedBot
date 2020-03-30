@@ -239,7 +239,7 @@
 	"whois":
 	{
 
-		"prompt": "Who do u think deserves the blame?",
+		"prompt": "Who do you think deserves the blame?",
 		"type": "open",
 		"next": [
 			{
@@ -280,7 +280,7 @@
 
 	"Interesting":
 	{
-		"prompt": "Interesting... Hmmm. Well I believe people are victims of attachment of their way of life and livelihood. I believe we should stop villifying these guys as stupid, greedy or evil. We should try to formulate a policies that don't punish the industry, but implement policies to insentivise transitory behaviours to a renewable energy source.\n\n What do you think?",
+		"prompt": "Interesting... Hmmm. Well I believe people are victims of attachment of their way of life and livelihood. I believe we should stop villifying these guys as stupid, greedy or evil. We should try to formulate policies that don't punish the industry, but implement policies to incentivise transitory behaviours to a renewable energy source.\n\n What do you think?",
 		"type": "followup",
 		"next": [{
 			"id":"Closing"

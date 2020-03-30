@@ -21,3 +21,4 @@
 /ReactApp/npm-debug.log*
 /ReactApp/yarn-debug.log*
 /ReactApp/yarn-error.log*
+model/database/authentication.json

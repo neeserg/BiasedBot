@@ -12,15 +12,15 @@ app.config['SECRET_KEY'] = '12djknk2jnkxlalqnlkn23kndla'
 class EmpathyBot(Resource):
 
     def get(self, bot_type, topic, prompt_id):
-        bot = EmpathyStrategy(topic=topic, bot_type=bot_type)        
-        print(bot.get_prompt(prompt_id))
-        return jsonify(bot.get_prompt(prompt_id))
+        bot = EmpathyStrategy(topic=topic, bot_type=bot_type)
+        response = bot.get_prompt(prompt_id)
+        return jsonify(response)
 
     def post(self,bot_type,topic,prompt_id):
         json_data = request.get_json(force=True)
-        bot = EmpathyStrategy(topic=topic, bot_type=bot_type)       
-        print(bot.get_next(json_data))
-        return jsonify(bot.get_next(json_data))
+        bot = EmpathyStrategy(topic=topic, bot_type=bot_type)  
+        response = bot.get_next(json_data)     
+        return jsonify(response)
         
 
 
@@ -29,12 +29,12 @@ def land(bot_type):
     if request.method == "POST":
         topic = request.form["topic"]
         return redirect("/%s/%s"%(bot_type, topic))
-    topics = [("climatechange", "Climate Change")]
+    topics = [("climatechange", "Climate Change"), ("affirmative_action","Affirmative Action"),("free_speech", "Free Speech")]
     return render_template("landing.html", bot_type = bot_type, topics = topics)
 
 @app.route("/")
 def landing():
-    topics = [("climatechange", "Climate Change")]
+    topics = [("climatechange", "Climate Change"), ("affirmative_action", "Affirmative Action"),("free_speech", "Free Speech")]
     return render_template("landing.html",  bot_type = "empathybot", topics = topics)
 
 @app.route("/<string:bot_type>/<string:topic>")

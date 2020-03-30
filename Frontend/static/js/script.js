@@ -27,7 +27,7 @@ function thinking(){
 function sendMessage(message){
 
     const body= {
-        userId: userId,
+        user_id: user_id,
         message: message,
         prompt_id: prompt_id
     }
@@ -102,27 +102,53 @@ function insert_bot(message){
         });
 
         document.getElementById("chatwindow").appendChild(container);
+        let chatWindow = document.getElementById("chatwindow");
+        chatWindow.scrollTop = chatWindow.scrollHeight;
+        document.getElementById("exampleFormControlTextarea1").removeAttribute("disabled");
+        document.getElementById("exampleFormControlTextarea1").select();
+        
+
+    }
+
+    else if(message.type === "followup"){
+
+
+        const container = document.createElement("div");
+        container.classList.add(`bot_container`);
+        const displayMessage = document.createTextNode(message.prompt);
+        const message_bot = document.createElement("div");
+        message_bot.classList.add(`message_bot`);
+        message_bot.appendChild(displayMessage);
+        container.appendChild(message_bot);
+        document.getElementById("chatwindow").appendChild(container);
+        let chatWindow = document.getElementById("chatwindow");
+        chatWindow.scrollTop = chatWindow.scrollHeight;
+        document.getElementById("exampleFormControlTextarea1").removeAttribute("disabled");
+        document.getElementById("exampleFormControlTextarea1").select();
+        sendMessage("");
+
+
 
     }
     //just normal conversation
     else{
 
-    const container = document.createElement("div");
-    container.classList.add(`bot_container`);
-    const displayMessage = document.createTextNode(message.prompt);
-    const message_bot = document.createElement("div");
-    message_bot.classList.add(`message_bot`);
-    message_bot.appendChild(displayMessage);
-    container.appendChild(message_bot);
-    document.getElementById("chatwindow").appendChild(container);
+        const container = document.createElement("div");
+        container.classList.add(`bot_container`);
+        const displayMessage = document.createTextNode(message.prompt);
+        const message_bot = document.createElement("div");
+        message_bot.classList.add(`message_bot`);
+        message_bot.appendChild(displayMessage);
+        container.appendChild(message_bot);
+        document.getElementById("chatwindow").appendChild(container);
+        let chatWindow = document.getElementById("chatwindow");
+        chatWindow.scrollTop = chatWindow.scrollHeight;
+        document.getElementById("exampleFormControlTextarea1").removeAttribute("disabled");
+        document.getElementById("exampleFormControlTextarea1").select();
 
     }
 
-    let chatWindow = document.getElementById("chatwindow");
-    chatWindow.scrollTop = chatWindow.scrollHeight;
-    document.getElementById("exampleFormControlTextarea1").removeAttribute("disabled");
-    document.getElementById("exampleFormControlTextarea1").select();
-}
+}//end function
 
 
 //Get initial message from the server

@@ -91,7 +91,7 @@ function insert_bot(message){
         message.choice.forEach(element => {
         
         const button = document.createElement("button");
-        button.appendChild("option");
+        button.classList.add("option");
         button.textContent = element;
         button.addEventListener("click",()=>{
             insert_user(element);

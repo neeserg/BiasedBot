@@ -5,3 +5,4 @@ WTForms
 flask_restful
 flask-wtf
 numpy
+uuid

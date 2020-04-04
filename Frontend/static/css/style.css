@@ -3,13 +3,16 @@
   height: 85vh;
   padding: 5px;
   padding-bottom: 0vh;
-  overflow: auto;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   font-family: 'Roboto';
   font-size: 20px;
   display: flex;
   flex-direction: column;
 }
-
+#chatwindow>*{
+  flex-shrink: 0;
+}
 #interface{
   height: 10vh;  
   display: flex;

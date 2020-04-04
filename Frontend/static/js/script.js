@@ -16,10 +16,10 @@ function thinking(){
     thought.textContent = "oooo";
     message_bot.appendChild(thought);
     container.appendChild(message_bot);
-    document.getElementById("chatwindow").appendChild(container);
     let chatWindow = document.getElementById("chatwindow");
+    chatWindow.appendChild(container);
     chatWindow.scrollTop = chatWindow.scrollHeight;
-    container.focus()
+    
 
 }
 
@@ -62,9 +62,12 @@ function insert_user(message){
     message_user.classList.add(`message_user`);
     message_user.appendChild(displayMessage);
     container.appendChild(message_user);
-    document.getElementById("chatwindow").appendChild(container);
     let chatWindow = document.getElementById("chatwindow");
+    chatWindow.appendChild(container);
     chatWindow.scrollTop = chatWindow.scrollHeight;
+    
+    
+    
 }
 
 
@@ -102,9 +105,10 @@ function insert_bot(message){
             
         });
 
-        document.getElementById("chatwindow").appendChild(container);
         let chatWindow = document.getElementById("chatwindow");
+        chatWindow.appendChild(container);
         chatWindow.scrollTop = chatWindow.scrollHeight;
+        
         document.getElementById("textMessage").removeAttribute("disabled");
         document.getElementById("textMessage").select();
         
@@ -121,9 +125,10 @@ function insert_bot(message){
         message_bot.classList.add(`message_bot`);
         message_bot.appendChild(displayMessage);
         container.appendChild(message_bot);
-        document.getElementById("chatwindow").appendChild(container);
         let chatWindow = document.getElementById("chatwindow");
+        chatWindow.appendChild(container);
         chatWindow.scrollTop = chatWindow.scrollHeight;
+        
         document.getElementById("textMessage").removeAttribute("disabled");
         document.getElementById("textMessage").select();
         sendMessage("");
@@ -141,9 +146,10 @@ function insert_bot(message){
         message_bot.classList.add(`message_bot`);
         message_bot.appendChild(displayMessage);
         container.appendChild(message_bot);
-        document.getElementById("chatwindow").appendChild(container);
         let chatWindow = document.getElementById("chatwindow");
+        chatWindow.appendChild(container);
         chatWindow.scrollTop = chatWindow.scrollHeight;
+        
         document.getElementById("textMessage").removeAttribute("disabled");
         document.getElementById("textMessage").select();
 

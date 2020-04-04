@@ -4,8 +4,8 @@ const url = window.location.href;
 const button = document.getElementById("send");
 
 function thinking(){
-    document.getElementById("exampleFormControlTextarea1").value ="";
-    document.getElementById("exampleFormControlTextarea1").setAttribute("disabled", "disabled");
+    document.getElementById("textMessage").value ="";
+    document.getElementById("textMessage").setAttribute("disabled", "disabled");
     const container = document.createElement("div");
     container.classList.add(`bot_container`);
     container.setAttribute("id", "thought_container")
@@ -91,7 +91,8 @@ function insert_bot(message){
         message.choice.forEach(element => {
         
         const button = document.createElement("button");
-        button.textContent = element
+        button.appendChild("option");
+        button.textContent = element;
         button.addEventListener("click",()=>{
             insert_user(element);
             sendMessage(element)
@@ -104,8 +105,8 @@ function insert_bot(message){
         document.getElementById("chatwindow").appendChild(container);
         let chatWindow = document.getElementById("chatwindow");
         chatWindow.scrollTop = chatWindow.scrollHeight;
-        document.getElementById("exampleFormControlTextarea1").removeAttribute("disabled");
-        document.getElementById("exampleFormControlTextarea1").select();
+        document.getElementById("textMessage").removeAttribute("disabled");
+        document.getElementById("textMessage").select();
         
 
     }
@@ -123,8 +124,8 @@ function insert_bot(message){
         document.getElementById("chatwindow").appendChild(container);
         let chatWindow = document.getElementById("chatwindow");
         chatWindow.scrollTop = chatWindow.scrollHeight;
-        document.getElementById("exampleFormControlTextarea1").removeAttribute("disabled");
-        document.getElementById("exampleFormControlTextarea1").select();
+        document.getElementById("textMessage").removeAttribute("disabled");
+        document.getElementById("textMessage").select();
         sendMessage("");
 
 
@@ -143,8 +144,8 @@ function insert_bot(message){
         document.getElementById("chatwindow").appendChild(container);
         let chatWindow = document.getElementById("chatwindow");
         chatWindow.scrollTop = chatWindow.scrollHeight;
-        document.getElementById("exampleFormControlTextarea1").removeAttribute("disabled");
-        document.getElementById("exampleFormControlTextarea1").select();
+        document.getElementById("textMessage").removeAttribute("disabled");
+        document.getElementById("textMessage").select();
 
     }
 
@@ -171,7 +172,7 @@ setTimeout(()=>{
 
 button.addEventListener("click",()=>{
 
-    const message = document.getElementById("exampleFormControlTextarea1").value;
+    const message = document.getElementById("textMessage").value;
     if(message == null || message === ""){
         return;
     }
@@ -183,7 +184,7 @@ button.addEventListener("click",()=>{
 function sendOnEnter(event){
     var key = event.keyCode;
     if(key === 13){
-        const message = document.getElementById("exampleFormControlTextarea1").value;
+        const message = document.getElementById("textMessage").value;
         insert_user( message);
         sendMessage(message);
     }

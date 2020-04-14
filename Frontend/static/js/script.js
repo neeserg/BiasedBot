@@ -2,7 +2,11 @@ let prompt_id = "initial";
 const url = window.location.origin + `/resources/${experiment}/${bot_type}/${topic}/`;
 
 const button = document.getElementById("send");
-
+var body = document.body; // Safari
+var html = document.documentElement; // Chrome, Firefox, IE and Opera places the overflow at the <html> level, unless else is specified. Therefore, we use the documentElement property for these browsers
+ 
+body.scrollTop += body.scrollHeight;
+html.scrollTop += html.scrollHeight;
 function thinking(){
     document.getElementById("textMessage").value ="";
     document.getElementById("textMessage").setAttribute("disabled", "disabled");
@@ -19,8 +23,8 @@ function thinking(){
     let chatWindow = document.getElementById("chatwindow");
     chatWindow.appendChild(container);
     chatWindow.scrollTop = chatWindow.scrollHeight;
-    
 
+    
 }
 
 

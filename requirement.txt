@@ -6,3 +6,5 @@ flask_restful
 flask-wtf
 numpy
 uuid
+tensorflow
+tensorflow_hub

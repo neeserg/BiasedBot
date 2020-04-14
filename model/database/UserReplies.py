@@ -27,3 +27,7 @@ class UserReplies:
                 return True
             
         return False
+
+
+    def get_url(self, topic, type, user_id):
+        return "Thank you very much"

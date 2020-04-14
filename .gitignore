@@ -22,3 +22,5 @@
 /ReactApp/yarn-debug.log*
 /ReactApp/yarn-error.log*
 model/database/authentication.json
+model/nlp/model_file_url
+ngrok/

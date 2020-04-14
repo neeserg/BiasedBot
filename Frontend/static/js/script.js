@@ -1,5 +1,5 @@
-let prompt_id = "initial"
-const url = window.location.href;
+let prompt_id = "initial";
+const url = window.location.origin + `/resources/${experiment}/${bot_type}/${topic}/`;
 
 const button = document.getElementById("send");
 
@@ -42,7 +42,7 @@ function sendMessage(message){
 
     thinking();
     setTimeout(() => {
-        fetch(url+'/resources/'+prompt_id, option)
+        fetch(url+prompt_id, option)
         .then(response => response.json())
         .then(json =>{
             document.getElementById("thought_container").remove();
@@ -50,7 +50,7 @@ function sendMessage(message){
 
         });
 
-    }, 5000);
+    }, 20);
 }
 
 
@@ -145,6 +145,15 @@ function insert_bot(message){
         const message_bot = document.createElement("div");
         message_bot.classList.add(`message_bot`);
         message_bot.appendChild(displayMessage);
+        if("url" in message){
+            const link = message.url;
+            let anch = document.createElement("a");
+            const url_text = document.createTextNode(message.url_text);
+            anch.appendChild (url_text);
+            anch.href = link;
+            message_bot.appendChild(anch);
+        }
+        
         container.appendChild(message_bot);
         let chatWindow = document.getElementById("chatwindow");
         chatWindow.appendChild(container);
@@ -161,7 +170,7 @@ function insert_bot(message){
 //Get initial message from the server
 thinking()
 setTimeout(()=>{
-    fetch(url+'/resources/'+prompt_id)
+    fetch(url+prompt_id)
     .then(res =>res.json())
     .then(res => {
         document.getElementById("thought_container").remove();
@@ -169,7 +178,7 @@ setTimeout(()=>{
         prompt_id = prompt_id;
     });
 
-}, 5000);
+}, 3000);
 
 // send on press of the button
 

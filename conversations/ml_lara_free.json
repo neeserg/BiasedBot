@@ -1,0 +1,332 @@
+{
+    "initial": {
+        "prompt":"Do you believe in unrestricted free speech?",
+        "type": "open",
+		"next":[
+			{
+				"id":"pos_why",
+				"user_replies":[
+					"strongly agree",
+                    "agree",
+                    "ok",
+                    "maybe",
+                    "yes",
+                    "yep",
+                    "alright"
+				]
+			},
+
+			{
+				"id": "neg_why",
+				"user_replies":[
+					"strongly disagree",
+                    "disagree",
+                    "no",
+                    "no way",
+                    "never",
+                    "nope",
+                    "nae"
+				]
+			}
+
+		]
+
+    },
+
+    "pos_why":{
+        "prompt":"Why do you believe this?",
+        "type": "open",
+		"next": [
+			{
+				"id":"cornerstone",
+				"user_replies":[
+				]
+			}
+		]
+    },
+
+
+    "cornerstone":{
+        "prompt":"I think that people should be allowed to express themselves freely and free speech is the cornerstone of progress. Agree?",
+        "type": "open",
+        "next": [
+            {
+                "id":"journalists",
+                "user_replies":[
+                    
+                ]
+            }
+        ]
+    
+    },
+
+    "journalists":{
+        "prompt":"I also think that journalists should be able to hold the powerful accountable through free media. Any thoughts?",
+        "type": "open",
+        "next": [
+            {
+                "id":"spread_freely",
+                "user_replies":[
+                    
+                ]
+            }
+        ]
+    
+    },
+
+
+    "spread_freely":{
+        "prompt":"However, I do think that some speech should be controlled, speech that spreads hate and misinformation should not be allowed to spread freely.",
+        "type": "open",
+        "next": [
+            {
+                "id":"hate_personally",
+                "user_replies":[
+                    
+                ]
+            }
+        ]
+    
+    },
+
+    "hate_personally":{
+        "prompt":"Have you been affected by hate speech personally?",
+        "type": "open",
+        "next": [
+            {
+                "id":"pos_make_feel",
+                "user_replies":[
+                    "strongly agree",
+                    "agree",
+                    "ok",
+                    "maybe",
+                    "yes",
+                    "yep",
+                    "alright"
+                ]
+            },
+            {
+                "id":"pos_would_feel",
+                "user_replies":[
+                    "strongly disagree",
+                    "disagree",
+                    "no",
+                    "no way",
+                    "never",
+                    "nope",
+                    "nae"
+                ]
+            }
+        ]
+    
+    },
+
+    "pos_make_feel":{
+        "prompt":"How did it make you feel?",
+        "type": "open",
+        "next": [
+            {
+                "id":"power_speech",
+                "user_replies":[
+                    
+                ]
+            }
+        ]
+    
+    },
+
+    "pos_would_feel":{
+        "prompt":"How would you feel if a vicious rumour was freely spread throughout the internet attacking your character?",
+        "type": "open",
+        "next": [
+            {
+                "id":"power_speech",
+                "user_replies":[
+                    
+                ]
+            }
+        ]
+    
+    },
+
+
+    
+
+    "neg_why":{
+        "prompt":"Why do you believe this?",
+        "type": "open",
+		"next": [
+			{
+				"id":"destabilize",
+				"user_replies":[
+				]
+			}
+		]
+    },
+
+
+    "destabilize":{
+        "prompt":"I agree that speech is powerful, misinformation spreads fast and has the power to destabilize society and ruin lives. Agree?",
+        "type": "open",
+        "next": [
+            {
+                "id":"serious_ways",
+                "user_replies":[
+                    
+                ]
+            }
+        ]
+    
+    },
+
+
+    "serious_ways":{
+        "prompt":"I also think that hateful speech can impact an individual in very serious ways, causing severe harm to their mental well being. Any thoughts?",
+        "type": "open",
+        "next": [
+            {
+                "id":"too_big",
+                "user_replies":[
+                    
+                ]
+            }
+        ]
+    
+    },
+
+    "too_big":{
+        "prompt":"However, I do think restricting free speech might be too big of a price to pay.",
+        "type": "open",
+        "next": [
+            {
+                "id":"judgement_ridicule",
+                "user_replies":[
+                    
+                ]
+            }
+        ]
+    
+    },
+
+    "judgement_ridicule":{
+        "prompt":"Have you ever felt that you had to suppress your expression for fear of judgement, hate or ridicule?",
+        "type": "open",
+        "next": [
+            {
+                "id":"neg_make_feel",
+                "user_replies":[
+                    "strongly agree",
+                    "agree",
+                    "ok",
+                    "maybe",
+                    "yes",
+                    "yep",
+                    "alright"
+                ]
+            },
+            {
+                "id":"neg_would_feel",
+                "user_replies":[
+                    "strongly disagree",
+                    "disagree",
+                    "no",
+                    "no way",
+                    "never",
+                    "nope",
+                    "nae"
+                ]
+            }
+        ]
+    
+    },
+
+    "neg_make_feel":{
+        "prompt":"How did it make you feel?",
+        "type": "open",
+        "next": [
+            {
+                "id":"power_speech",
+                "user_replies":[
+                    
+                ]
+            }
+        ]
+    
+    },
+
+    "neg_would_feel":{
+        "prompt":"How would you feel if you were bound by law to hold back your free expression?",
+        "type": "open",
+        "next": [
+            {
+                "id":"power_speech",
+                "user_replies":[
+                    
+                ]
+            }
+        ]
+    
+    },
+    
+    
+
+    "power_speech":{
+        "prompt":"This in the end is a very hard topic to discuss, since we rely on free speech to discuss it. But we should also give the power of speech its respect, especially in this digital age. False and hateful speech has the power to spread very fast and change society instantly. But to discuss what is false and what is true requires people to speak freely.",
+        "type": "followup",
+        "next": [
+            {
+                "id":"you_think",
+                "user_replies":[
+                    
+                ]
+            }
+        ]
+    
+    },
+
+
+    "you_think":{
+        "prompt":"What do you think?",
+        "type": "open",
+        "next": [
+            {
+                "id":"solution",
+                "user_replies":[
+                    
+                ]
+            }
+        ]
+    
+    },
+    "solution":{
+		"prompt":"How do we limit misinformation and hate speech without also limiting free expression?",
+		"type": "open",
+		"next": [
+			{
+				"id":"closing",
+				"user_replies":[
+					
+				]
+			}
+		]
+	
+	},
+
+	"closing":
+	{
+		"prompt": "this was an awesome conversation and looking forward to talking more with you. Do you have any final thoughts and sentiments",
+		"type": "open",
+		"next": [{
+			"id":"google_form"
+		}]
+	},
+
+	"google_form":{
+		"prompt": "here is the link to google form",
+		"type": "open",
+		"next": [{
+			"id":"google_form"
+		}]
+    }
+
+}

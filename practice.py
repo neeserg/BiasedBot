@@ -1,11 +1,13 @@
-from model.ExperimentConversation import Conversation
-import uuid
+from flask import Flask,request, jsonify
 
-convo = Conversation("4f5e62f0-ea83-11e9-9a31-02425b01177c")
 
-while True:
-    message = input("user: ")
-    resp = convo.get_next(message)
-    print(resp)
-    if resp == "End Of Conversation":
-        break
+app = Flask(__name__)
+
+@app.route('/', methods=['GET', 'POST'])
+def func():
+    if request.method =="POST":
+        print(request.get_json())
+        return "done"
+    return 
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000 ,debug=True)

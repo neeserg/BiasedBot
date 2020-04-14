@@ -1,6 +1,7 @@
 from flask import Flask,request, jsonify,render_template, redirect
 from flask_restful import Resource, Api
 from model.strategies.empathyStrategy import EmpathyStrategy
+from model.database.Experiment import Experiment
 import uuid
 
 app = Flask(__name__, static_folder="Frontend/static", template_folder="Frontend/templates/")
@@ -11,19 +12,24 @@ app.config['SECRET_KEY'] = '12djknk2jnkxlalqnlkn23kndla'
 
 class EmpathyBot(Resource):
 
-    def get(self, bot_type, topic, prompt_id):
-        bot = EmpathyStrategy(topic=topic, bot_type=bot_type)
+    def get(self, experiment,bot_type, topic, prompt_id):
+        if experiment =="experiment":
+            bot = EmpathyStrategy(topic=topic, bot_type=bot_type, exper=experiment)
+        else:
+             bot = EmpathyStrategy(topic=topic, bot_type=bot_type) 
         response = bot.get_prompt(prompt_id)
         return jsonify(response)
 
-    def post(self,bot_type,topic,prompt_id):
+    def post(self, experiment,bot_type,topic,prompt_id):
         json_data = request.get_json(force=True)
-        bot = EmpathyStrategy(topic=topic, bot_type=bot_type)  
+        if experiment =="experiment":
+            bot = EmpathyStrategy(topic=topic, bot_type=bot_type, exper=experiment)
+        else:
+             bot = EmpathyStrategy(topic=topic, bot_type=bot_type) 
         response = bot.get_next(json_data)     
         return jsonify(response)
         
-
-
+###################################################################################################################################################################################
 @app.route("/<string:bot_type>", methods=['GET', 'POST'])
 def land(bot_type):
     if request.method == "POST":
@@ -35,13 +41,72 @@ def land(bot_type):
 @app.route("/")
 def landing():
     topics = [("affirmative_action", "Affirmative Action"),("free_speech", "Free Speech")]
-    return render_template("landing.html",  bot_type = "empathybot", topics = topics)
+    return render_template("landing.html",  bot_type = "logic", topics = topics)
 
 @app.route("/<string:bot_type>/<string:topic>")
 def chat(bot_type, topic):
-    return render_template("index.html", user_id = str( uuid.uuid1() ))
+    user_id ="hghjgjhg,k"
+    return render_template("index.html", user_id = user_id, \
+        experiment = "practice",bot_type = bot_type, topic= topic)
 
-api.add_resource(EmpathyBot, '/<string:bot_type>/<string:topic>/resources/<string:prompt_id>')
+
+#########################EXPERIMENT API####################################################################################################################################################
+
+@app.route("/form/<string:bot_type1>/<string:bot_type2>/<string:topic1>/<string:topic2>")
+def experiment(bot_type1, bot_type2, topic1,topic2):
+    user_id = str( uuid.uuid1())
+    domain = "https://neesergp.typeform.com/to"
+    before = "RInkXP"
+    after = "yLqwfQ"
+    url = "%s/%s?user_id=%s&nexttopic=%s&nexttype=%s"%\
+        (domain,before,user_id, topic1, bot_type1)
+    url1 = "%s/%s?user_id=%s&nexttopic=%s&nexttype=%s&topic=%s&bot_type=%s"%\
+        (domain, after,user_id, topic2, bot_type2, topic1, bot_type1)
+    
+    url2 = "%s/%s?user_id=%s&nexttopic=%s&nexttype=%s&topic=%s&bot_type=%s"%\
+        (domain, after, user_id, "done", "done", topic2, bot_type2)
+
+    from_data = {"user_id":user_id,
+                  "chat":[],
+                  "forms":[],
+                  "before": url,
+                  bot_type1+topic1: url1,
+                  bot_type2+topic2: url2,}
+    experiment = Experiment()
+    experiment.create_experiment(from_data)
+    return redirect(url)
+
+
+@app.route("/experiment/<string:bot_type>/<string:topic>/<string:user_id>")
+def chat_experiment(bot_type, topic, user_id,):
+    return render_template("newIndex.html", user_id = user_id, experiment = "experiment",\
+        bot_type = bot_type, topic = topic)
+
+
+
+@app.route("/webhook/form", methods=['GET', 'POST'])
+def webhook_form():
+    if request.method == "POST":
+        experiment = Experiment()
+        answer = request.get_json()
+        form ={}
+        user_id = answer["form_response"]["hidden"]["user_id"]
+        form["user_id"] = user_id
+        if "topic" in answer["form_response"]["hidden"]:
+            topic = answer["form_response"]["hidden"]["topic"]
+            bot_type = answer["form_response"]["hidden"]["bot_type"]
+            form["bot_type"] = bot_type
+            form["topic"] = topic
+        form["experiment"] = answer
+        worked = experiment.update_form(form)
+        if worked:
+            return "OK"
+        else:
+            return "NO Ok"
+
+    return "Ok"
+
+api.add_resource(EmpathyBot, '/resources/<string:experiment>/<string:bot_type>/<string:topic>/<string:prompt_id>')
 
 
 if __name__ == '__main__':

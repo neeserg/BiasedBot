@@ -54,7 +54,7 @@ function sendMessage(message){
 
         });
 
-    }, 20);
+    }, 3000);
 }
 
 

@@ -41,7 +41,7 @@ def land(bot_type):
 @app.route("/")
 def landing():
     topics = [("affirmative_action", "Affirmative Action"),("free_speech", "Free Speech")]
-    return render_template("landing.html",  bot_type = "logic", topics = topics)
+    return render_template("landing.html",  bot_type = "logical", topics = topics)
 
 @app.route("/<string:bot_type>/<string:topic>")
 def chat(bot_type, topic):

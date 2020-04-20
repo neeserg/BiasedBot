@@ -79,7 +79,7 @@ def experiment(bot_type1, bot_type2, topic1,topic2):
 
 @app.route("/experiment/<string:bot_type>/<string:topic>/<string:user_id>")
 def chat_experiment(bot_type, topic, user_id,):
-    return render_template("newIndex.html", user_id = user_id, experiment = "experiment",\
+    return render_template("index.html", user_id = user_id, experiment = "experiment",\
         bot_type = bot_type, topic = topic)
 
 

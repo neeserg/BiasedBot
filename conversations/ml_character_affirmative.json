@@ -319,7 +319,7 @@
 
     "reasonably_wealthy":
     {
-        "prompt":"Robert was born in a reasonably wealthy family and went to great private school. But this did not stop him from taking full advantage of the opportunities he was given. He aspired to be an Astronaut, worked really hard and passed all the tests with flying colours. When it came time to select a new lead for the space program, a less qualified person was picked over him to promote diversity in the industry.",
+        "prompt":""Robert was born as a second generation imigrant from china. From an early age he dreamt of going to an ivy league school to study law. He worked very hard, got great grades with extracurricular activities to match. When it came time to go to the university he dreamt of going, he was very confident that he would be selected. It turns out that the university has a law that makes sure only a certain percentage of a race can be granted admission. He got rejected and was very hurt  when he found out about the university policy.",
         "type": "followup",
         "next": [
             {
@@ -331,7 +331,7 @@
     },
 
     "dreams":{
-        "prompt":"Do you think Robert should miss out on his dreams, just because of the privilege he experienced?",
+        "prompt":"Do you think Robert should miss out on his dreams, just because of the race he was born?",
         "type": "open",
         "next": [
             {
@@ -363,7 +363,7 @@
     },
     
     "less_qualified":{
-        "prompt":"So you think someone less qualified should get a job because of their ethnicity?",
+        "prompt":"So you think someone less qualified should get the admission because of their ethnicity?",
         "type": "open",
         "next": [
             {
@@ -378,7 +378,7 @@
 
 
     "eligibility":{
-        "prompt":"How can we ever measure someone’s eligibility other than the actions they have taken in their lives regardless of their background?",
+        "prompt":"What can be the  measure someone’s eligibility, other than the actions they have taken in their lives?",
         "type": "open",
         "next": [
             {
@@ -420,7 +420,7 @@
     },
 
     "wealthy_white":{
-        "prompt": "Conor grew up in a somewhat wealthy white family. Although he lived in a big house, and from the outside, it looked like he was living a cushy life, his home life was terrible. He had an abusive parent, who had mentally scarred him for his life. His whole life he has been severely depressed and has tried to commit suicide on many occasions. And on many occasions, his plea for help has been seen as “ungrateful crying by a privileged man”.",
+        "prompt": "Conor grew up in a somewhat wealthy white family. Although he lived in a big house, and from the outside, it looked like he was living a cushy life, his home life was terrible. He had an abusive parent, who had mentally scarred him for his life. His whole life he has been severely depressed and has tried to commit suicide on many occasions. And on many occasions, his plea for help has been seen as “ungrateful”.",
         "type": "followup",
         "next": [
             {

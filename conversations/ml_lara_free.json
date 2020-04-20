@@ -45,18 +45,14 @@
     },
     "topic_prompt": {
         "prompt":"Do you believe in unrestricted free speech?",
-        "type": "open",
+        "type": "choice",
+        "choice": [ "strongly agree", "agree","disagree", "strongly disagree"],
         "next":[
             {
                 "id":"pos_why",
                 "user_replies":[
                     "strongly agree",
-                    "agree",
-                    "ok",
-                    "maybe",
-                    "yes",
-                    "yep",
-                    "alright"
+                    "agree"
                 ]
             },
 
@@ -64,12 +60,7 @@
                 "id": "neg_why",
                 "user_replies":[
                     "strongly disagree",
-                    "disagree",
-                    "no",
-                    "no way",
-                    "never",
-                    "nope",
-                    "nae"
+                    "disagree"
                 ]
             }
 

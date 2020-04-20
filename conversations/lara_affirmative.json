@@ -33,6 +33,7 @@
                 ]
             }]
     },
+    
     "topic_intro":{
         "prompt": "I would like to talk Affirmative Action for now. There are laws like that incentivise companies that \"positively discriminate\" or hire someone based on their ethnicity, gender or (dis)abilities. These laws are there to fix some inequalities that exist between people along a demographic divide.",
         "type": "followup",

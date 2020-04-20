@@ -47,18 +47,14 @@
     },
     "topic_prompt": {
         "prompt":"Should policies such as affirmative action be in place to help certain groups based on their gender, ethnicity or religion?",
-        "type": "open",
+        "type": "choice",
+        "choice": [ "strongly agree", "agree","disagree", "strongly disagree"],
         "next":[
             {
                 "id":"pos_why",
                 "user_replies":[
                     "strongly agree",
-                    "agree",
-                    "ok",
-                    "maybe",
-                    "yes",
-                    "yep",
-                    "alright"
+                    "agree"
                 ]
             },
 
@@ -66,12 +62,7 @@
                 "id": "neg_why",
                 "user_replies":[
                     "strongly disagree",
-                    "disagree",
-                    "no",
-                    "no way",
-                    "never",
-                    "nope",
-                    "nae"
+                    "disagree"
                 ]
             }
 
@@ -319,7 +310,7 @@
 
     "reasonably_wealthy":
     {
-        "prompt":""Robert was born as a second generation imigrant from china. From an early age he dreamt of going to an ivy league school to study law. He worked very hard, got great grades with extracurricular activities to match. When it came time to go to the university he dreamt of going, he was very confident that he would be selected. It turns out that the university has a law that makes sure only a certain percentage of a race can be granted admission. He got rejected and was very hurt  when he found out about the university policy.",
+        "prompt":"Robert was born as a second generation imigrant from china. From an early age he dreamt of going to an ivy league school to study law. He worked very hard, got great grades with extracurricular activities to match. When it came time to go to the university he dreamt of going, he was very confident that he would be selected. It turns out that the university has a law that makes sure only a certain percentage of a race can be granted admission. He got rejected and was very hurt  when he found out about the university policy.",
         "type": "followup",
         "next": [
             {

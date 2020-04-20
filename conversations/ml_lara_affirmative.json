@@ -46,18 +46,14 @@
     },
     "topic_prompt": {
         "prompt":"Should policies such as affirmative action be in place to help certain groups based on their gender, ethnicity or religion?",
-        "type": "open",
+        "type": "choice",
+        "choice": [ "strongly agree", "agree","disagree", "strongly disagree"],
         "next":[
             {
                 "id":"pos_why",
                 "user_replies":[
                     "strongly agree",
-                    "agree",
-                    "ok",
-                    "maybe",
-                    "yes",
-                    "yep",
-                    "alright"
+                    "agree"
                 ]
             },
 
@@ -70,6 +66,7 @@
             }
 
         ]
+
 
     },
 

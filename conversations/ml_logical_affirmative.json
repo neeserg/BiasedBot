@@ -46,18 +46,14 @@
     },
     "topic_prompt": {
         "prompt":"Should their be policies to help certain groups based on their gender, ethnicity or religion by the means of \"Positive Discrimination\"?",
-        "type": "open",
+        "type": "choice",
+        "choice": [ "strongly agree", "agree","disagree", "strongly disagree"],
         "next":[
             {
                 "id":"pos_why",
                 "user_replies":[
                     "strongly agree",
-                    "agree",
-                    "ok",
-                    "maybe",
-                    "yes",
-                    "yep",
-                    "alright"
+                    "agree"
                 ]
             },
 
@@ -65,12 +61,7 @@
                 "id": "neg_why",
                 "user_replies":[
                     "strongly disagree",
-                    "disagree",
-                    "no",
-                    "no way",
-                    "never",
-                    "nope",
-                    "nae"
+                    "disagree"
                 ]
             }
 

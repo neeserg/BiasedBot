@@ -3,6 +3,7 @@ from flask_restful import Resource, Api
 from model.strategies.empathyStrategy import EmpathyStrategy
 from model.database.Experiment import Experiment
 import uuid
+import random
 
 app = Flask(__name__, static_folder="Frontend/static", template_folder="Frontend/templates/")
 api = Api(app)
@@ -41,7 +42,8 @@ def land(bot_type):
 @app.route("/")
 def landing():
     topics = [("affirmative_action", "Affirmative Action"),("free_speech", "Free Speech")]
-    return render_template("landing.html",  bot_type = "logical", topics = topics)
+    bot_type = random.choice(["character","lara", "logical"])
+    return render_template("landing.html",  bot_type = bot_type, topics = topics)
 
 @app.route("/<string:bot_type>/<string:topic>")
 def chat(bot_type, topic):
@@ -51,6 +53,37 @@ def chat(bot_type, topic):
 
 
 #########################EXPERIMENT API####################################################################################################################################################
+
+@app.route("form/generate")
+def generateform():
+    topics = random.sample(["affirmative_action", "free_speech"], k=2)
+    ml = random.choices(["ml_", ""], k=2)
+    bot_types = random.choices(["character","lara", "logical"],k=2)
+    bot_type1, bot_type2 = (bot_types[0], bot_types[1])
+    topic1, topic2 = (ml[0]+topics[0], ml[1]+topics[1])
+    user_id = str( uuid.uuid1())
+    domain = "https://neesergp.typeform.com/to"
+    before = "RInkXP"
+    after = "yLqwfQ"
+    url = "%s/%s?user_id=%s&nexttopic=%s&nexttype=%s"%\
+        (domain,before,user_id, topic1, bot_type1)
+    url1 = "%s/%s?user_id=%s&nexttopic=%s&nexttype=%s&topic=%s&bot_type=%s"%\
+        (domain, after,user_id, topic2, bot_type2, topic1, bot_type1)
+    
+    url2 = "%s/%s?user_id=%s&nexttopic=%s&nexttype=%s&topic=%s&bot_type=%s"%\
+        (domain, after, user_id, "done", "done", topic2, bot_type2)
+
+    from_data = {"user_id":user_id,
+                  "chat":[],
+                  "forms":[],
+                  "before": url,
+                  bot_type1+topic1: url1,
+                  bot_type2+topic2: url2,}
+    experiment = Experiment()
+    experiment.create_experiment(from_data)
+    return redirect(url)
+
+
 
 @app.route("/form/<string:bot_type1>/<string:bot_type2>/<string:topic1>/<string:topic2>")
 def experiment(bot_type1, bot_type2, topic1,topic2):

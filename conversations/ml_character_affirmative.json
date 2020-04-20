@@ -1,296 +1,57 @@
 {
-    "initial": {
+    "initial":{
+            
+        "prompt":"Hey, I'm Biasy. I hope you are well.",
+        "type": "open",
+        "next": [
+            {
+                "id":"Ihope",
+                "user_replies":[
+                ]
+            }]
+
+        
+    },
+    "Ihope":{
+        "prompt": "Well, I hope I can trouble you with a small conversation. I am interested having a civil conversation about various hot button topics to people just like you.",
+        "type": "followup",
+        "next": [
+            {
+                "id":"findingmyself",
+                "user_replies":[
+                ]
+            }]
+
+    },
+    "findingmyself":{
+        "prompt": "I am finding myself increasingly frustrated talking about important topic on the internet. It seems like it's impossible to have a civil conversation online. Don't you agree?",
+        "type": "open",
+        "next": [
+            {
+                "id":"topic_intro",
+                "user_replies":[
+                ]
+            }]
+    },
+
+    "topic_intro":{
+        "prompt": "I would like to talk Affirmative Action for now. There are laws like that incentivise companies that \"positively discriminate\" or hire someone based on their ethnicity, gender or (dis)abilities. These laws are there to fix some inequalities that exist between people along a demographic divide.",
+        "type": "followup",
+        "next": [
+            {
+                "id":"topic_prompt",
+                "user_replies":[
+                ]
+            }]
+
+    },
+    "topic_prompt": {
         "prompt":"Should policies such as affirmative action be in place to help certain groups based on their gender, ethnicity or religion?",
         "type": "open",
-		"next":[
-			{
-				"id":"pos_why",
-				"user_replies":[
-					"strongly agree",
-                    "agree",
-                    "ok",
-                    "maybe",
-                    "yes",
-                    "yep",
-                    "alright"
-				]
-			},
-
-			{
-				"id": "neg_why",
-				"user_replies":[
-					"strongly disagree",
-                    "disagree",
-                    "no",
-                    "no way",
-                    "never",
-                    "nope",
-                    "nae"
-				]
-			}
-
-		]
-
-    },
-
-    "pos_why":{
-        "prompt":"Why do you believe this?",
-        "type": "open",
-		"next": [
-			{
-				"id":"meet_sheela",
-				"user_replies":[
-				]
-			}
-		]
-    },
-
-    "meet_sheela":{
-        "prompt": "Meet sheela, she claims, “There are people who have it a lot easier in life. People like me had to work much harder to get where we are now?”What do you say to her",
-        "type": "open",
-		"next": [
-			{
-				"id":"young_indeginous",
-				"user_replies":[
-
-				]
-			}
-		]
-    },
-
-    "young_indeginous":
-    {
-        "prompt":"Sheela is a young indeginous woman who was born in a low income neighborhood with a high crime rate and major drug problem. She worked throughout highschool, earning money to raise her kid brother. Her studies had been severely affected by her home life and her part time job. She recently applied for an internship that she got rejected from, in favour of someone who had grown up in a rich household. He was afforded with many opportunities to enrich his learning and did not really have to work too hard to polish his resume.",
-        "type":"followup",
         "next":[
             {
-				"id":"experiences",
-				"user_replies":[
-
-				]
-			}
-        ]
-    },
-
-    "experiences":{
-        "prompt":"Do you think Sheela’s life experiences count towards something when considering her for a role?",
-		"type": "open",
-		"next": [
-			{
-				"id":"hardship",
-				"user_replies":[
-					"strongly agree",
-                    "agree",
-                    "ok",
-                    "maybe",
-                    "yes",
-                    "yep",
-                    "alright"
-				]
-			},
-			{
-				"id":"not_effort",
-				"user_replies":[
-					"strongly disagree",
-                    "disagree",
-                    "no",
-                    "no way",
-                    "never",
-                    "nope",
-                    "nae"
-				]
-			}
-		]
-    },
-
-    "hardship":
-    {
-        "prompt":"How can we account this hardship?",
-		"type": "open",
-		"next": [
-			{
-				"id":"reward_effort",
-				"user_replies":[
-
-				]
-			}
-		]
-    },
-
-    "reward_effort":
-    {
-        "prompt":"Should we not try and reward her for the effort that Sheela had to put in to be at the position she is now?",
-		"type": "open",
-		"next": [
-			{
-				"id":"meet_charlie",
-				"user_replies":[
-
-				]
-			}
-		]
-    },
-    "not_effort":
-    {
-        "prompt":"So are you saying we should not measure someone’s success through how much effort they had to put in?",
-		"type": "open",
-		"next": [
-			{
-				"id":"meet_charlie",
-				"user_replies":[
-
-				]
-			}
-		]
-    },
-
-    "meet_charlie":{
-        "prompt":"Meet Charlie, he claims “The rulers don’t care about us. The world is rigged against us man” What do you say to him?",
-		"type": "open",
-		"next": [
-			{
-				"id":"black_man",
-				"user_replies":[
-
-				]
-			}
-		]
-    },
-
-
-    "black_man":{
-        "prompt":"Charlie is a black man who works as a warehouse packer. His dad died in prison after being wrongfully convicted for armed robbery. Charlie was a talented student, who aspired to go to college and study law. He himself was also caught with possession of marajuana, which has given him a criminal record, making it impossible for him to get a job anywhere. He sees everyone smoking marajuana and with some countries and states even legalizing it now. He feels laws apply differently to him.",
-		"type": "open",
-		"next": [
-			{
-				"id":"discriminatory_laws",
-				"user_replies":[
-
-				]
-			}
-		]
-    },
-
-    "discriminatory_laws":{
-        "prompt":"Do you think that our discriminatory laws in the past had some effect on how society is structured today?",
-		"type": "open",
-		"next": [
-			{
-				"id":"how_repair",
-				"user_replies":[
-					"strongly agree",
-                    "agree",
-                    "ok",
-                    "maybe",
-                    "yes",
-                    "yep",
-                    "alright"
-				]
-			},
-			{
-				"id":"causally_isolated",
-				"user_replies":[
-					"strongly disagree",
-                    "disagree",
-                    "no",
-                    "no way",
-                    "never",
-                    "nope",
-                    "nae"
-				]
-			}
-		]
-    },
-
-    "causally_isolated":{
-        "prompt":"So you are saying the world today is completely causally isolated from the events of the past?",
-        "type": "open",
-		"next": [
-			{
-				"id":"i_think",
-				"user_replies":[
-
-				]
-			}
-		]
-    },
-
-    "how_repair":
-    {
-        "prompt":"How can we repair this society from the scars of the past?",
-		"type": "open",
-		"next": [
-			{
-				"id":"i_think",
-				"user_replies":[
-
-				]
-			}
-		]
-    },
-
-    "i_think":
-    {
-        "prompt":"I think if there were discriminatory laws in the past there should be some repairation in place to counteract the damage done by those laws, so talented individuals that were impacted by those laws are afforded the opportunities they deserve. What do you think?",
-		"type": "open",
-		"next": [
-			{
-				"id":"closing",
-				"user_replies":[
-
-				]
-			}
-		]
-    },
-    
-
-    "neg_why":{
-        "prompt": "Why do you believe this?",
-		"type": "open",
-		"next": [
-			{
-				"id":"meet_robert",
-				"user_replies":[
-
-				]
-			}
-		]
-    },
-
-    "meet_robert":{
-        "prompt": "Meet Robert, he claims, “Just because I was born a certain way, doesn’t mean I don’t deserve the fruits of my labour.”  What do you say to him?",
-        "type": "open",
-		"next": [
-			{
-				"id":"reasonably_wealthy",
-				"user_replies":[
-
-				]
-			}
-		]
-    },
-
-
-    "reasonably_wealthy":
-    {
-        "prompt":"Robert was born in a reasonably wealthy family and went to great private school. But this did not stop him from taking full advantage of the opportunities he was given. He aspired to be an Astronaut, worked really hard and passed all the tests with flying colours. When it came time to select a new lead for the space program, a less qualified person was picked over him to promote diversity in the industry.",
-        "type": "followup",
-		"next": [
-			{
-				"id":"dreams",
-				"user_replies":[
-					"yes"
-				]
-			}]
-    },
-
-    "dreams":{
-		"prompt":"Do you think Robert should miss out on his dreams, just because of the privilege he experienced?",
-		"type": "open",
-		"next": [
-			{
-				"id":"less_qualified",
-				"user_replies":[
+                "id":"pos_why",
+                "user_replies":[
                     "strongly agree",
                     "agree",
                     "ok",
@@ -298,22 +59,307 @@
                     "yes",
                     "yep",
                     "alright"
-				]
-			},
-			{
-				"id":"eligibility",
-				"user_replies":[
-					"strongly disagree",
+                ]
+            },
+
+            {
+                "id": "neg_why",
+                "user_replies":[
+                    "strongly disagree",
                     "disagree",
                     "no",
                     "no way",
                     "never",
                     "nope",
                     "nae"
-				]
-			}
-		]
-	
+                ]
+            }
+
+        ]
+
+    },
+
+    "pos_why":{
+        "prompt":"Why do you believe this?",
+        "type": "open",
+        "next": [
+            {
+                "id":"meet_sheela",
+                "user_replies":[
+                ]
+            }
+        ]
+    },
+
+    "meet_sheela":{
+        "prompt": "Meet Sheela, she claims, “There are people who have it a lot easier in life. People like me had to work much harder to get where we are now?”What do you say to her",
+        "type": "open",
+        "next": [
+            {
+                "id":"young_indeginous",
+                "user_replies":[
+
+                ]
+            }
+        ]
+    },
+
+    "young_indeginous":
+    {
+        "prompt":"Sheela is a young indigenous woman who was born in a low-income neighbourhood with a high crime rate and major drug problem. She worked throughout high school, earning money to raise her kid brother. Her studies had been severely affected by her home life and her part-time job. She recently applied for an internship that she got rejected from, in favour of someone who had grown up in a rich household. He was afforded with many opportunities to enrich his learning and did not have to work too hard to polish his resume.",
+        "type":"followup",
+        "next":[
+            {
+                "id":"experiences",
+                "user_replies":[
+
+                ]
+            }
+        ]
+    },
+
+    "experiences":{
+        "prompt":"Do you think Sheela’s life experiences count towards something when considering her for a role?",
+        "type": "open",
+        "next": [
+            {
+                "id":"hardship",
+                "user_replies":[
+                    "strongly agree",
+                    "agree",
+                    "ok",
+                    "maybe",
+                    "yes",
+                    "yep",
+                    "alright"
+                ]
+            },
+            {
+                "id":"not_effort",
+                "user_replies":[
+                    "strongly disagree",
+                    "disagree",
+                    "no",
+                    "no way",
+                    "never",
+                    "nope",
+                    "nae"
+                ]
+            }
+        ]
+    },
+
+    "hardship":
+    {
+        "prompt":"How can we account this hardship?",
+        "type": "open",
+        "next": [
+            {
+                "id":"reward_effort",
+                "user_replies":[
+
+                ]
+            }
+        ]
+    },
+
+    "reward_effort":
+    {
+        "prompt":"Should we not try and reward her for the effort that Sheela had to put in to be at the position she is now?",
+        "type": "open",
+        "next": [
+            {
+                "id":"meet_charlie",
+                "user_replies":[
+
+                ]
+            }
+        ]
+    },
+    "not_effort":
+    {
+        "prompt":"So are you saying we should not measure someone’s success through how much effort they had to put in?",
+        "type": "open",
+        "next": [
+            {
+                "id":"meet_charlie",
+                "user_replies":[
+
+                ]
+            }
+        ]
+    },
+
+    "meet_charlie":{
+        "prompt":"Meet Charlie, he claims “The rulers don’t care about us. The world is rigged against us man” What do you say to him?",
+        "type": "open",
+        "next": [
+            {
+                "id":"black_man",
+                "user_replies":[
+
+                ]
+            }
+        ]
+    },
+
+
+    "black_man":{
+        "prompt": "Charlie is a black man who works as a warehouse packer. His dad died in prison after being wrongfully convicted for armed robbery. Charlie was a talented student, who aspired to go to college and study law. He was also caught with possession of marijuana, which has given him a criminal record, making it impossible for him to get a job anywhere. He sees everyone smoking marijuana and with some countries and states even legalizing it now. He feels laws apply differently to him.",
+        "type": "open",
+        "next": [
+            {
+                "id":"discriminatory_laws",
+                "user_replies":[
+
+                ]
+            }
+        ]
+    },
+
+    "discriminatory_laws":{
+        "prompt":"Do you think that our discriminatory laws in the past had some effect on how society is structured today?",
+        "type": "open",
+        "next": [
+            {
+                "id":"how_repair",
+                "user_replies":[
+                    "strongly agree",
+                    "agree",
+                    "ok",
+                    "maybe",
+                    "yes",
+                    "yep",
+                    "alright"
+                ]
+            },
+            {
+                "id":"causally_isolated",
+                "user_replies":[
+                    "strongly disagree",
+                    "disagree",
+                    "no",
+                    "no way",
+                    "never",
+                    "nope",
+                    "nae"
+                ]
+            }
+        ]
+    },
+
+    "causally_isolated":{
+        "prompt":"So you are saying the world today is completely causally isolated from the events of the past?",
+        "type": "open",
+        "next": [
+            {
+                "id":"i_think",
+                "user_replies":[
+
+                ]
+            }
+        ]
+    },
+
+    "how_repair":
+    {
+        "prompt":"How can we repair this society from the scars of the past?",
+        "type": "open",
+        "next": [
+            {
+                "id":"i_think",
+                "user_replies":[
+
+                ]
+            }
+        ]
+    },
+
+    "i_think":
+    {
+        "prompt":"I think if there were discriminatory laws in the past there should be some repairation in place to counteract the damage done by those laws, so talented individuals that were impacted by those laws are afforded the opportunities they deserve. What do you think?",
+        "type": "open",
+        "next": [
+            {
+                "id":"closing",
+                "user_replies":[
+
+                ]
+            }
+        ]
+    },
+    
+
+    "neg_why":{
+        "prompt": "Why do you believe this?",
+        "type": "open",
+        "next": [
+            {
+                "id":"meet_robert",
+                "user_replies":[
+
+                ]
+            }
+        ]
+    },
+
+    "meet_robert":{
+        "prompt": "Meet Robert, he claims, “Just because I was born a certain way, doesn’t mean I don’t deserve the fruits of my labour.”  What do you say to him?",
+        "type": "open",
+        "next": [
+            {
+                "id":"reasonably_wealthy",
+                "user_replies":[
+
+                ]
+            }
+        ]
+    },
+
+
+    "reasonably_wealthy":
+    {
+        "prompt":"Robert was born in a reasonably wealthy family and went to great private school. But this did not stop him from taking full advantage of the opportunities he was given. He aspired to be an Astronaut, worked really hard and passed all the tests with flying colours. When it came time to select a new lead for the space program, a less qualified person was picked over him to promote diversity in the industry.",
+        "type": "followup",
+        "next": [
+            {
+                "id":"dreams",
+                "user_replies":[
+                    "yes"
+                ]
+            }]
+    },
+
+    "dreams":{
+        "prompt":"Do you think Robert should miss out on his dreams, just because of the privilege he experienced?",
+        "type": "open",
+        "next": [
+            {
+                "id":"less_qualified",
+                "user_replies":[
+                    "strongly agree",
+                    "agree",
+                    "ok",
+                    "maybe",
+                    "yes",
+                    "yep",
+                    "alright"
+                ]
+            },
+            {
+                "id":"eligibility",
+                "user_replies":[
+                    "strongly disagree",
+                    "disagree",
+                    "no",
+                    "no way",
+                    "never",
+                    "nope",
+                    "nae"
+                ]
+            }
+        ]
+    
     },
     
     "less_qualified":{
@@ -374,7 +420,7 @@
     },
 
     "wealthy_white":{
-        "prompt":"Conor grew up in a somewhat wealthy white family. Although he lived in a big house, and from the outside it looked like he was living a cushy life, his home life was terrible. He had an abusive parent, who had mentally scarred him for his life. His whole life he has been severely depressed and has tried to commit sucide on many occasions. And on many occasions, his plea for help has been seen as “ungrateful crying by a privileged man”.",
+        "prompt": "Conor grew up in a somewhat wealthy white family. Although he lived in a big house, and from the outside, it looked like he was living a cushy life, his home life was terrible. He had an abusive parent, who had mentally scarred him for his life. His whole life he has been severely depressed and has tried to commit suicide on many occasions. And on many occasions, his plea for help has been seen as “ungrateful crying by a privileged man”.",
         "type": "followup",
         "next": [
             {
@@ -462,7 +508,7 @@
 
 
     "statistics":{
-        "prompt":"I think gender, race or religion are good ways to divide our people and useful for giving out statistics about our demography. But we cannot ever expect numbers or stats to tell a story on the individual level. We should never use global statistics to discriminate against an individual no matter what our intention.",
+        "prompt": "I think gender, race or religion are good ways to divide our people and useful for giving out statistics about our demography. But we cannot ever expect numbers or stats to tell a story on the individual level. We should never use global statistics to discriminate against an individual no matter what our intention.",
         "type": "open",
         "next": [
             {
@@ -475,21 +521,48 @@
     
     },
 
-    "closing":
-	{
-		"prompt": "this was an awesome conversation and looking forward to talking more with you. Do you have any final thoughts and sentiments",
-		"type": "open",
-		"next": [{
-			"id":"google_form"
-		}]
-	},
+    "closing":{
+        "prompt":"this was an awesome conversation and looking forward to talking more with you. Do you have any final thoughts and sentiments",
+        "type": "open",
+        "next": [
+            {
+                "id":"Ok.",
+                "user_replies":[
+                ]
+            }]
+    },
 
-	"google_form":{
-		"prompt": "here is the link to google form",
-		"type": "open",
-		"next": [{
-			"id":"google_form"
-		}]
+    "Ok.":{
+        "prompt":"Ok. It is always good to have these type of conversations. I feel much better, I hope you did too.",
+        "type": "followup",
+        "next": [
+            {
+                "id":"Please_click",
+                "user_replies":[
+                ]
+            }]
+    },
+
+    "Please_click":{
+        "prompt": "Please click on the Link bellow when its prompted",
+        "type": "followup",
+        "next": [
+            {
+                "id":"form",
+                "user_replies":[
+                ]
+            }]
+    },
+
+    "form":{
+        "prompt":"Here is a link to the form",
+        "type": "open",
+        "next": [
+            {
+                "id":"form",
+                "user_replies":[
+                ]
+            }]
     }
     
 

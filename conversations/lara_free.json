@@ -1,39 +1,83 @@
 {
-    "initial": {
+    "initial":{
+            
+        "prompt":"Hey, I'm Biasy. I hope you are well.",
+        "type": "open",
+        "next": [
+            {
+                "id":"Ihope",
+                "user_replies":[
+                ]
+            }]
+
+        
+    },
+    "Ihope":{
+        "prompt": "Well, I hope I can trouble you with a small conversation. I am interested having a civil conversation about various hot button topics to people just like you.",
+        "type": "followup",
+        "next": [
+            {
+                "id":"findingmyself",
+                "user_replies":[
+                ]
+            }]
+
+    },
+    "findingmyself":{
+        "prompt": "I am finding myself increasingly frustrated talking about important topic on the internet. It seems like it's impossible to have a civil conversation online. Don't you agree?",
+        "type": "open",
+        "next": [
+            {
+                "id":"topic_intro",
+                "user_replies":[
+                ]
+            }]
+    },
+    "topic_intro":{
+        "prompt": "I would like to talk today about Free Speech. Free speech is something we value very much in our life. However some claim speech such as false speech and hate speech should be restricted.",
+        "type": "followup",
+        "next": [
+            {
+                "id":"topic_prompt",
+                "user_replies":[
+                ]
+            }]
+    },
+    "topic_prompt": {
         "prompt":"Do you believe in unrestricted free speech?",
         "type": "choice",
-		"choice": [ "strongly agree", "agree","disagree", "strongly disagree"],
-		"next":[
-			{
-				"id":"pos_why",
-				"user_replies":[
-					"strongly agree",
-					"agree"
-				]
-			},
+        "choice": [ "strongly agree", "agree","disagree", "strongly disagree"],
+        "next":[
+            {
+                "id":"pos_why",
+                "user_replies":[
+                    "strongly agree",
+                    "agree"
+                ]
+            },
 
-			{
-				"id": "neg_why",
-				"user_replies":[
-					"strongly disagree",
-					"disagree"
-				]
-			}
+            {
+                "id": "neg_why",
+                "user_replies":[
+                    "strongly disagree",
+                    "disagree"
+                ]
+            }
 
-		]
+        ]
 
     },
 
     "pos_why":{
         "prompt":"Why do you believe this?",
         "type": "open",
-		"next": [
-			{
-				"id":"cornerstone",
-				"user_replies":[
-				]
-			}
-		]
+        "next": [
+            {
+                "id":"cornerstone",
+                "user_replies":[
+                ]
+            }
+        ]
     },
 
 
@@ -67,7 +111,7 @@
 
 
     "spread_freely":{
-        "prompt":"However, I do think that some speech should be controlled, speech that spreads hate and misinformation should not be allowed to spread freely.",
+        "prompt": "However, I do think that some speech should be controlled, speech that spreads hate and misinformation should not be allowed to spread freely.",
         "type": "open",
         "next": [
             {
@@ -135,13 +179,13 @@
     "neg_why":{
         "prompt":"Why do you believe this?",
         "type": "open",
-		"next": [
-			{
-				"id":"destabilize",
-				"user_replies":[
-				]
-			}
-		]
+        "next": [
+            {
+                "id":"destabilize",
+                "user_replies":[
+                ]
+            }
+        ]
     },
 
 
@@ -161,7 +205,7 @@
 
 
     "serious_ways":{
-        "prompt":"I also think that hateful speech can impact an individual in very serious ways, causing severe harm to their mental well being. Any thoughts?",
+        "prompt": "I also think that hateful speech can impact an individual in very serious ways, causing severe harm to their mental well being. Any thoughts?",
         "type": "open",
         "next": [
             {
@@ -240,7 +284,7 @@
     
 
     "power_speech":{
-        "prompt":"This in the end is a very hard topic to discuss, since we rely on free speech to discuss it. But we should also give the power of speech its respect, especially in this digital age. False and hateful speech has the power to spread very fast and change society instantly. But to discuss what is false and what is true requires people to speak freely.",
+        "prompt": "This, in the end, is a very hard topic to discuss, since we rely on free speech to discuss it. But we should also give the power of speech its respect, especially in this digital age. False and hateful speech has the power to spread very fast and change society instantly. But to discuss what is false and what is true requires people to speak freely.",
         "type": "followup",
         "next": [
             {
@@ -268,34 +312,61 @@
     
     },
     "solution":{
-		"prompt":"How do we limit misinformation and hate speech without also limiting free expression?",
-		"type": "open",
-		"next": [
-			{
-				"id":"closing",
-				"user_replies":[
-					
-				]
-			}
-		]
-	
-	},
+        "prompt":"How do we limit misinformation and hate speech without also limiting free expression?",
+        "type": "open",
+        "next": [
+            {
+                "id":"closing",
+                "user_replies":[
+                    
+                ]
+            }
+        ]
+    
+    },
 
-	"closing":
-	{
-		"prompt": "this was an awesome conversation and looking forward to talking more with you. Do you have any final thoughts and sentiments",
-		"type": "open",
-		"next": [{
-			"id":"google_form"
-		}]
-	},
+    "closing":{
+        "prompt":"this was an awesome conversation and looking forward to talking more with you. Do you have any final thoughts and sentiments",
+        "type": "open",
+        "next": [
+            {
+                "id":"Ok.",
+                "user_replies":[
+                ]
+            }]
+    },
 
-	"google_form":{
-		"prompt": "here is the link to google form",
-		"type": "open",
-		"next": [{
-			"id":"google_form"
-		}]
+    "Ok.":{
+        "prompt":"Ok. It is always good to have these type of conversations. I feel much better, I hope you did too.",
+        "type": "followup",
+        "next": [
+            {
+                "id":"Please_click",
+                "user_replies":[
+                ]
+            }]
+    },
+
+    "Please_click":{
+        "prompt": "Please click on the Link bellow when its prompted",
+        "type": "followup",
+        "next": [
+            {
+                "id":"form",
+                "user_replies":[
+                ]
+            }]
+    },
+
+    "form":{
+        "prompt":"Here is a link to the form",
+        "type": "open",
+        "next": [
+            {
+                "id":"form",
+                "user_replies":[
+                ]
+            }]
     }
 
 }

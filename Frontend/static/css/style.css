@@ -1,6 +1,6 @@
 
 #chatwindow{
-  height: 85vh;
+  height: 82vh;
   padding: 5px;
   padding-bottom: 0vh;
   overflow-y: auto;
@@ -13,10 +13,15 @@
 #chatwindow>*{
   flex-shrink: 0;
 }
-#interface{
+#type_stuff{
   height: 10vh;  
   display: flex;
 }
+#interface{
+  display: flex;
+  flex-direction: column;
+}
+
 #textMessage{
   border-radius: 10px;
   width: 80%;
@@ -117,14 +122,14 @@ body {
 
 }
 .option{
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.993);
   color: #071f3f;
-  padding: 30px;
+  padding: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
   font: bold 11px Arial;
   text-decoration: none;
-  box-shadow: 2px 5px rgba(34, 148, 255, 0.473);
+  box-shadow: -4px 2px 4px 0px rgb(34, 148, 255);;
   margin: 2.5px;
   border-radius: 10px;
   cursor: pointer;
@@ -141,11 +146,14 @@ body {
   transform: translateY(4px);
 }
 
-.choice_container{
+#choice_container{
  display: flex;
- justify-content: center;
- flex-direction:column;
+ justify-content: space-around;
  padding: 5px;
+ padding-left: 15%;
+ padding-right: 15%;
+ background-color: #45669a5e;
+ border-radius: 10px;
 }
 
 
@@ -192,7 +200,7 @@ body {
 
  #sidebar{
   height: 100vh;
-  width: 300px;
+  width: 500px;
  }
  #chat_interface{
   height: 100vh;

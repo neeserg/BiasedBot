@@ -1,5 +1,50 @@
 {
-    "initial": {
+    "initial":{
+            
+        "prompt":"Hey, I'm Biasy. I hope you are well.",
+        "type": "open",
+        "next": [
+            {
+                "id":"Ihope",
+                "user_replies":[
+                ]
+            }]
+
+        
+    },
+    "Ihope":{
+        "prompt": "Well, I hope I can trouble you with a small conversation. I am interested having a civil conversation about various hot button topics to people just like you.",
+        "type": "followup",
+        "next": [
+            {
+                "id":"findingmyself",
+                "user_replies":[
+                ]
+            }]
+
+    },
+    "findingmyself":{
+        "prompt": "I am finding myself increasingly frustrated talking about important topic on the internet. It seems like it's impossible to have a civil conversation online. Don't you agree?",
+        "type": "open",
+        "next": [
+            {
+                "id":"topic_intro",
+                "user_replies":[
+                ]
+            }]
+    },
+    "topic_intro":{
+        "prompt": "I would like to talk Affirmative Action for now. There are laws like that incentivise companies that \"positively discriminate\" or hire someone based on their ethnicity, gender or (dis)abilities. These laws are there to fix some inequalities that exist between people along a demographic divide.",
+        "type": "followup",
+        "next": [
+            {
+                "id":"topic_prompt",
+                "user_replies":[
+                ]
+            }]
+
+    },
+    "topic_prompt": {
         "prompt":"Should their be policies to help certain groups based on their gender, ethnicity or religion by the means of \"Positive Discrimination\"?",
         "type": "open",
         "next":[
@@ -40,12 +85,12 @@
             {
                 "id":"born_equal",
                 "user_replies":[
-                    "we don't live in a equal society",
+                    "We don't live in an equal society",
                     "equality",
-                    "people are the same",
+                    "People are the same",
                     "to boost their quality of life",
                     "equality should be equal",
-                    "they deserve the same oprtunities as us"
+                    "They deserve the same opportunities as us"
                 ]
             }
 
@@ -258,7 +303,7 @@
     "type": "open",
     "next": [
         {
-            "id":"laws",
+            "id":"target",
             "user_replies":[
                 "strongly agree",
                     "agree",
@@ -332,49 +377,15 @@
 },
 
 "race/gender":{
-    "prompt":"I think race/gender based laws are a slippery slope. I think if we start basing laws on those factors then we are setting a precedence for the future. Discriminatory laws are not a fix for unequal society, in fact the only measure of equality in society should be how laws treat everyone in society and it should treat everyone equally.",
+    "prompt": "I think race/gender-based laws are a slippery slope. I think if we start basing laws on those factors then we are setting a precedence for the future. Discriminatory laws are not a fix for unequal society, in fact, the only measure of equality in society should be how laws treat everyone in society and it should treat everyone equally.",
     "type": "open",
     "next": [
         {
-            "id":"born_equal1",
+            "id":"closing",
             "user_replies":[
                 
             ]
         }
-    ]
-
-},
-
-
-"born_equal1":{
-    "prompt":"Can we ever live in a world where everyone is equal?",
-    "type": "open",
-    "next": [
-        {
-            "id":"NBA1",
-            "user_replies":[
-                "strongly agree",
-                "agree",
-                "ok",
-                "maybe",
-                "yes",
-                "yep",
-                "alright"
-            ]
-        },
-        {
-            "id":"such_world",
-            "user_replies":[
-                "strongly disagree",
-                "disagree",
-                "no",
-                "no way",
-                "never",
-                "nope",
-                "nae"
-            ]
-        }
-
     ]
 
 },
@@ -498,7 +509,7 @@
 
 
 "card_game":{
-    "prompt":"Suppose you were handing out cards to a group of people, you accidently missed a guy and he doesn’t have a full set. Would you not give him an extra card to compensate. Or would you just let him play an unfair game.",
+    "prompt": "Suppose you were handing out cards to a group of people, you accidentally missed a guy and he doesn’t have a full set. Would you not give him an extra card to compensate. Or would you just let him play an unfair game.",
     "type": "open",
     "next": [
         {
@@ -558,7 +569,7 @@
 },
 
 "tennis_comp":{
-    "prompt":"If you were asked to select the best tennis player out of two people. One, Steve, who was last place in Australian Open and the other, Bob, who was first in your local community competition. You would pick Bob over Steve? Regardless of the adversity they experienced",
+    "prompt": "If you were asked to select the best tennis player out of two people. One, Steve, who was the last place in the Australian Open and the other, Bob, who was first in your local community competition. You would pick Bob over Steve? Regardless of the adversity, they experienced",
     "type": "open",
     "next": [
         {
@@ -604,7 +615,7 @@
 },
 
 "most_people":{
-    "prompt":"Most people who belong to a certain race/gender/socioeconomic background had to work much harder to get to where they are. So having a quota, ensures that an institution gets the best of every talent pool. Isn’t this logical",
+    "prompt": "Most people who belong to a certain race/gender/socioeconomic background had to work much harder to get to where they are. So having a quota, ensures that an institution gets the best of every talent pool. Isn’t this logical",
     "type": "open",
     "next": [
         {
@@ -618,7 +629,7 @@
 },
 
 "provide_opportunities":{
-    "prompt":"I think having policies that provide opportunities to those who are most disadvantaged in society provides reparation to the damage that was done in the past. It also ensures that we are getting the most talented individual who might otherwise go unnoticed because of their background.",
+    "prompt": "I think having policies that provide opportunities to those who are most disadvantaged in society provides reparation to the damage that was done in the past. It also ensures that we are getting the most talented individual who might otherwise go unnoticed because of their background.",
     "type": "open",
     "next": [
         {
@@ -633,26 +644,49 @@
 
 
 
-
-
-
-
-"closing":
-    {
-        "prompt": "this was an awesome conversation and looking forward to talking more with you. Do you have any final thoughts and sentiments",
-        "type": "open",
-        "next": [{
-            "id":"google_form"
+"closing":{
+    "prompt":"this was an awesome conversation and looking forward to talking more with you. Do you have any final thoughts and sentiments",
+    "type": "open",
+    "next": [
+        {
+            "id":"Ok.",
+            "user_replies":[
+            ]
         }]
-    },
+},
 
-    "google_form":{
-        "prompt": "here is the link to google form",
-        "type": "open",
-        "next": [{
-            "id":"google_form"
+"Ok.":{
+    "prompt":"Ok. It is always good to have these type of conversations. I feel much better, I hope you did too.",
+    "type": "followup",
+    "next": [
+        {
+            "id":"Please_click",
+            "user_replies":[
+            ]
         }]
-    }
+},
+
+"Please_click":{
+    "prompt": "Please click on the Link bellow when its prompted",
+    "type": "followup",
+    "next": [
+        {
+            "id":"form",
+            "user_replies":[
+            ]
+        }]
+},
+
+"form":{
+    "prompt":"Here is a link to the form",
+    "type": "open",
+    "next": [
+        {
+            "id":"form",
+            "user_replies":[
+            ]
+        }]
+}
 
 
 }

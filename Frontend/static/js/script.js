@@ -27,6 +27,28 @@ function thinking(){
     
 }
 
+function insertChoices(choices){
+    const choice_container = document.createElement("div");
+        choice_container.id = "choice_container"
+        
+        choices.forEach(element => {
+        
+        const button = document.createElement("button");
+        button.classList.add("option");
+        button.textContent = element;
+        button.addEventListener("click",()=>{
+            insert_user(element);
+            sendMessage(element)
+            document.getElementById("choice_container").remove()
+        })
+        choice_container.appendChild(button) 
+            
+        });
+
+        document.getElementById("interface").prepend(choice_container)
+
+
+}
 
 function sendMessage(message){
 
@@ -90,24 +112,7 @@ function insert_bot(message){
 
         
         // Now display the choices shown to user and attach buttons to it
-        const choice_container = document.createElement("div");
-        choice_container.classList.add('choice_container');
-        
-
-
-        message.choice.forEach(element => {
-        
-        const button = document.createElement("button");
-        button.classList.add("option");
-        button.textContent = element;
-        button.addEventListener("click",()=>{
-            insert_user(element);
-            sendMessage(element)
-        })
-        choice_container.appendChild(button)
-        container.appendChild(choice_container); 
-            
-        });
+        insertChoices(message.choice);
 
         let chatWindow = document.getElementById("chatwindow");
         chatWindow.appendChild(container);

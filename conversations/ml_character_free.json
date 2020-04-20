@@ -1,68 +1,111 @@
 {
+    "initial":{
+            
+        "prompt":"Hey, I'm Biasy. I hope you are well.",
+        "type": "open",
+        "next": [
+            {
+                "id":"Ihope",
+                "user_replies":[
+                ]
+            }]
 
-    "initial": {
+        
+    },
+    "Ihope":{
+        "prompt": "Well, I hope I can trouble you with a small conversation. I am interested having a civil conversation about various hot button topics to people just like you.",
+        "type": "followup",
+        "next": [
+            {
+                "id":"findingmyself",
+                "user_replies":[
+                ]
+            }]
+
+    },
+    "findingmyself":{
+        "prompt": "I am finding myself increasingly frustrated talking about important topic on the internet. It seems like it's impossible to have a civil conversation online. Don't you agree?",
+        "type": "open",
+        "next": [
+            {
+                "id":"topic_intro",
+                "user_replies":[
+                ]
+            }]
+    },
+    "topic_intro":{
+        "prompt": "I would like to talk today about Free Speech. Free speech is something we value very much in our life. However some claim speech such as false speech and hate speech should be restricted.",
+        "type": "followup",
+        "next": [
+            {
+                "id":"topic_prompt",
+                "user_replies":[
+                ]
+            }]
+    },
+    "topic_prompt": {
         "prompt":"Do you believe in unrestricted free speech?",
         "type": "open",
-		"next":[
-			{
-				"id":"pos_why",
-				"user_replies":[
-					"strongly agree",
+        "next":[
+            {
+                "id":"pos_why",
+                "user_replies":[
+                    "strongly agree",
                     "agree",
                     "ok",
                     "maybe",
                     "yes",
                     "yep",
                     "alright"
-				]
-			},
+                ]
+            },
 
-			{
-				"id": "neg_why",
-				"user_replies":[
-					"strongly disagree",
+            {
+                "id": "neg_why",
+                "user_replies":[
+                    "strongly disagree",
                     "disagree",
                     "no",
                     "no way",
                     "never",
                     "nope",
                     "nae"
-				]
-			}
+                ]
+            }
 
-		]
+        ]
 
     },
 
     "neg_why":{
         "prompt":"Why do you believe this?",
         "type": "open",
-		"next": [
-			{
-				"id":"meet_jerry",
-				"user_replies":[
+        "next": [
+            {
+                "id":"meet_jerry",
+                "user_replies":[
 
-				]
-			}
-		]
+                ]
+            }
+        ]
     },
 
     "meet_jerry":{
         "prompt": "Meet Jerry, he claims, “It’s comedy it should not be stopped, jokes are a reminder to detach our ideas from our identity.” What do you say to him?",
         "type": "open",
-		"next": [
-			{
-				"id":"struggling",
-				"user_replies":[
+        "next": [
+            {
+                "id":"struggling",
+                "user_replies":[
 
-				]
-			}
-		]
+                ]
+            }
+        ]
     },
 
 
     "struggling":{
-        "prompt":"Jerry is a struggling comedian. He loves to make people laugh and unite them. He likes to make risky jokes, jokes about himself and treats comedy as a cathartic experience. He likes to joke about serious topics so he can make people laugh. This line that he likes to walk on is very thin and sometimes he makes mistakes in his delivery. One such time he got in trouble for joking about a serious topic and now he cannot find a venue to do the thing he loves.",
+        "prompt": "Jerry is a struggling comedian. He loves to make people laugh and unite them. He likes to make risky jokes, jokes about himself and treats comedy as a cathartic experience. He likes to joke about serious topics so he can make people laugh. This line that he likes to walk on is very thin and sometimes he makes mistakes in his delivery. One such time he got in trouble for joking about a serious topic and now he cannot find a venue to do the thing he loves.",
         "type": "followup",
         "next": [
             {
@@ -136,7 +179,7 @@
     },
 
     "best_art":{
-        "prompt":"Limiting free speech could limit great musicians, artists, filmmakers and comedians. We should give the guys freedom to express themselves freely. Art is not always comfortable and the best of them never is.",
+        "prompt": "Limiting free speech could limit great musicians, artists, filmmakers and comedians. We should give the guys the freedom to express themselves freely. Art is not always comfortable and the best of them never is.",
         "type": "open",
         "next": [
             {
@@ -164,7 +207,7 @@
     },
 
     "journalist":{
-        "prompt":"Sally is a journalist. She is in between a lengthy investigation about a criminal conspiracy in the government. The government is subsequently trying to pass a law to make sure her investigation is not allowed to be released. She could face jail time just for doing her job.",
+        "prompt": "Sally is a journalist. She is in between a lengthy investigation about a criminal conspiracy in the government. The government is subsequently trying to pass a law to make sure her investigation is not allowed to be released. She could face jail time just for doing her job.",
         "type": "followup",
         "next": [
             {
@@ -210,7 +253,7 @@
     },
 
     "ignorant":{
-        "prompt":"You rather be ignorant about the activites of the people you elected? Do you think elected officials should be able to use their powers without repercussions?",
+        "prompt": "You rather be ignorant about the activities of the people you elected? Do you think elected officials should be able to use their powers without repercussions?",
         "type": "open",
         "next": [
             {
@@ -238,7 +281,7 @@
     },
 
     "democracy":{
-        "prompt":"I think we rely on free speech for art, science and democracy. More importantly it is the only tool we have to hold the people we elect accountable and to involve ourselves in the decision making process.",
+        "prompt": "I think we rely on free speech for art, science and democracy. More importantly, it is the only tool we have to hold the people we elect accountable and to involve ourselves in the decision-making process.",
         "type": "open",
         "next": [
             {
@@ -267,7 +310,7 @@
     },
 
     "meet_larry":{
-        "prompt":"Meet Larry, he claims “I think people online are so hateful. What are these social media doing to protect their users?” What do you say to Larry?",
+        "prompt": "Meet Larry, he claims, “I think people online are so hateful. What are these social media doing to protect their users?” What do you say to Larry?",
         "type": "open",
         "next": [
             {
@@ -281,7 +324,7 @@
     },
 
     "cyberbullies":{
-        "prompt":"Larry was the victim of cyberbullies when he was in highschool. There were jokes on his expense and when he retaliated he was exposed to hate speech regarding his sexual orientation. He has been severely depressed his entire life and has tried to commit suicide on several ocasions. He has pleaded with the social media companies to get this under control but his requests were met by other users with more hate speech. He now doesn’t use social media for his health.",
+        "prompt": "Larry was the victim of cyberbullies when he was in high school. There were jokes on his expense and when he retaliated he was exposed to hate speech regarding his sexual orientation. He has been severely depressed his entire life and has tried to commit suicide on several occasions. He has pleaded with the social media companies to get this under control but his requests were met by other users with more hate speech. He now doesn’t use social media for his health.",
         "type": "followup",
         "next": [
             {
@@ -327,7 +370,7 @@
     },
 
     "attacking_you":{
-        "prompt":"So you would be comfortable with people attacking you for your race, gender or lifestyle. Inciting violence against you, calling you names and limiting your access to the internet.",
+        "prompt": "So you would be comfortable with people attacking you for your race, gender or lifestyle. Inciting violence against you, calling you names and limiting your access to the internet.",
         "type": "open",
         "next": [
             {
@@ -369,7 +412,7 @@
     },
 
     "meet_emily":{
-        "prompt":"Meet Emily, she claims, “Truth is the truth. I have spent my life’s work studying this. This misinformation campaign should be silenced” What do you say to her?",
+        "prompt": "Meet Emily, she claims, “Truth is the truth. I have spent my life’s work studying this. This misinformation campaign should be silenced” What do you say to her?",
         "type": "open",
         "next": [
             {
@@ -383,7 +426,7 @@
     },
 
     "a_scientist":{
-        "prompt":"Emily is a scientist who has been researching the climate her entire life. She has discovered a major incoming climate catastrophe caused by human activity. There has been a campaign to spread disinformation throughout the media, discrediting her work. She feels very frustrated and worried.",
+        "prompt": "Emily is a scientist who has been researching the climate her entire life. She has discovered a major incoming climate catastrophe caused by human activity. There has been a campaign to spread disinformation throughout the media, discrediting her work. She feels very frustrated and worried.",
         "type": "followup",
         "next": [
             {
@@ -457,7 +500,7 @@
     },
 
     "powerful_information":{
-        "prompt":"I think information is very powerful. It can influence people and therefore society. Hateful speech and disinformation can do severe damage to the world. We should not treat all speech equally and favour some over others.",
+        "prompt": "I think information is very powerful. It can influence people and therefore society. Hateful speech and disinformation can do severe damage to the world. We should not treat all speech equally and favour some over others.",
         "type": "open",
         "next": [
             {
@@ -470,21 +513,48 @@
     
     },
 
-    "closing":
-	{
-		"prompt": "this was an awesome conversation and looking forward to talking more with you. Do you have any final thoughts and sentiments",
-		"type": "open",
-		"next": [{
-			"id":"google_form"
-		}]
-	},
+    "closing":{
+        "prompt":"this was an awesome conversation and looking forward to talking more with you. Do you have any final thoughts and sentiments",
+        "type": "open",
+        "next": [
+            {
+                "id":"Ok.",
+                "user_replies":[
+                ]
+            }]
+    },
 
-	"google_form":{
-		"prompt": "here is the link to google form",
-		"type": "open",
-		"next": [{
-			"id":"google_form"
-		}]
+    "Ok.":{
+        "prompt":"Ok. It is always good to have these type of conversations. I feel much better, I hope you did too.",
+        "type": "followup",
+        "next": [
+            {
+                "id":"Please_click",
+                "user_replies":[
+                ]
+            }]
+    },
+
+    "Please_click":{
+        "prompt": "Please click on the Link bellow when its prompted",
+        "type": "followup",
+        "next": [
+            {
+                "id":"form",
+                "user_replies":[
+                ]
+            }]
+    },
+
+    "form":{
+        "prompt":"Here is a link to the form",
+        "type": "open",
+        "next": [
+            {
+                "id":"form",
+                "user_replies":[
+                ]
+            }]
     }
     
 

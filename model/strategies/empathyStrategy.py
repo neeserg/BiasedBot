@@ -132,7 +132,7 @@ class EmpathyStrategy:
             reply = {"prompt_id": next_id,"prompt": next_conv["prompt"], "choice": next_conv["choice"], 
                     "type": next_conv["type"]}
             return reply
-        elif next_id == "google_form" and not self.experiment:
+        elif next_id == "form" and not self.experiment:
             #######################do some thinf skf
             url = self.userReplies.get_url(self.topic, self.bot_type, message["user_id"])
             reply = {"prompt_id": next_id,"prompt": "Please fill out the followink form:",\

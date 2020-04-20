@@ -6,6 +6,7 @@ import numpy as np
 with open("model/nlp/model_file_url") as file:
     url = file.readline()
     url = url[:-1]
+    print(url)
 
 
 

@@ -198,7 +198,7 @@
     "type": "open",
     "next": [
         {
-            "id":"race/gender",
+            "id":"race_gender",
             "user_replies":[
                 
             ]
@@ -219,7 +219,7 @@
             ]
         },
         {
-            "id":"race/gender",
+            "id":"race_gender",
             "user_replies":[
                 "no"
             ]
@@ -240,7 +240,7 @@
             ]
         },
         {
-            "id":"race/gender",
+            "id":"race_gender",
             "user_replies":[
                 "no"
             ]
@@ -254,7 +254,7 @@
     "type": "open",
     "next": [
         {
-            "id":"race/gender",
+            "id":"race_gender",
             "user_replies":[
                 
             ]
@@ -263,7 +263,7 @@
 
 },
 
-"race/gender":{
+"race_gender":{
     "prompt": "I think race/gender-based laws are a slippery slope. I think if we start basing laws on those factors then we are setting a precedence for the future. Discriminatory laws are not a fix for unequal society, in fact, the only measure of equality in society should be how laws treat everyone in society and it should treat everyone equally. What do you think?",
     "type": "open",
     "next": [

@@ -11,7 +11,7 @@ def make_url(conv):
                   "chat":[],
                   "forms":[]}
     form_data["before"] = "%s/%s?user_id=%s&nexttopic=%s&nexttype=%s"%\
-        (domain,before,user_id, conv[0][0], conv[0][1])
+        (domain,before,user_id, conv[0][1], conv[0][0])
     for i in range(len(conv)-1):
         topic, bot, next_topic, next_bot = (conv[i][1], conv[i][0], conv[i+1][1],conv[i+1][0])
         form_data[bot+topic] = "%s/%s?user_id=%s&nexttopic=%s&nexttype=%s&topic=%s&bot_type=%s"%\
@@ -23,7 +23,7 @@ def make_url(conv):
 
 def generate_experiments():
     bot_types = ["character", "lara", "logical"]
-    topic = ["affirmative_speech", "free_speech"]
+    topic = ["affirmative_action", "free_speech"]
     conv_order = []
     for bt in bot_types:
         for tp in topic:

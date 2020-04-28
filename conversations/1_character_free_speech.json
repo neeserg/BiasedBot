@@ -1,40 +1,19 @@
 {
     "initial":{
             
-        "prompt":"Hey, I'm Biasy. I hope you are well.",
-        "type": "open",
-        "next": [
-            {
-                "id":"Ihope",
-                "user_replies":[
-                ]
-            }]
-
-        
-    },
-    "Ihope":{
-        "prompt": "Well, I hope I can trouble you with a small conversation. I am interested having a civil conversation about various hot button topics to people just like you.",
+        "prompt":"Hey, Biasy again.",
         "type": "followup",
-        "next": [
-            {
-                "id":"findingmyself",
-                "user_replies":[
-                ]
-            }]
-
-    },
-    "findingmyself":{
-        "prompt": "I am finding myself increasingly frustrated talking about important topic on the internet. It seems like it's impossible to have a civil conversation online. Don't you agree?",
-        "type": "open",
         "next": [
             {
                 "id":"topic_intro",
                 "user_replies":[
                 ]
             }]
+
+        
     },
     "topic_intro":{
-        "prompt": "I would like to talk today about Free Speech. Free speech is something we value very much in our life. However some claim speech such as false speech and hate speech should be restricted.",
+        "prompt": "I would like to talk about Free Speech. Free speech is something we value very much in our life. However some claim speech such as false speech and hate speech should be restricted.",
         "type": "followup",
         "next": [
             {
@@ -111,7 +90,7 @@
     },
 
     "silenced":{
-        "prompt":"Words don’t physically hurt anyone and Jerry’s intentions were pure, should Jerry really be silenced for mere words?",
+        "prompt":"Should Jerry be stopped from doing comedy because of the contents of his jokes?",
         "type": "choice",
         "choice":["yes", "no"],
         "next": [
@@ -132,7 +111,7 @@
     },
 
     "agree_with":{
-        "prompt":"So you think anyone whose opinions or words you don’t agree with or makes you feel uncomfortable should be silenced?",
+        "prompt":"Do you think anyone with opinions or words that makes an individual feel uncomfortable should be silenced?",
         "type": "open",
         "next": [
             {
@@ -160,7 +139,7 @@
     },
 
     "best_art":{
-        "prompt": "Limiting free speech could limit great musicians, artists, filmmakers and comedians. We should give the guys the freedom to express themselves freely. Art is not always comfortable and the best of them never is.",
+        "prompt": "Limiting free speech could limit great musicians, artists, filmmakers and comedians. We should give the guys the freedom to express themselves freely. Art is not always comfortable and the best of them never is. What do you think?",
         "type": "open",
         "next": [
             {
@@ -188,7 +167,7 @@
     },
 
     "journalist":{
-        "prompt": "Sally is a journalist. She is in between a lengthy investigation about a criminal conspiracy in the government. The government is subsequently trying to pass a law to make sure her investigation is not allowed to be released. She could face jail time just for doing her job.",
+        "prompt": "Sally is a journalist. She is in between a lengthy investigation about a criminal conspiracy in the government. The government is using it's powers to mislabel her investigation as misinformation and are doing it's best to silence her. She could face jail time just for doing her job.",
         "type": "followup",
         "next": [
             {
@@ -223,7 +202,7 @@
     },
 
     "ignorant":{
-        "prompt": "You rather be ignorant about the activities of the people you elected? Do you think elected officials should be able to use their powers without repercussions?",
+        "prompt": "You rather be ignorant about the activities of the people you elected? Do you think elected officials should be able to use their powers without repercussions and trusted blindly?",
         "type": "open",
         "next": [
             {
@@ -237,7 +216,7 @@
     },
 
     "ultimate_victim":{
-        "prompt":"Don’t you think journalists like Sally and us as informed citizens are the ultimate victims if we set the precedent of suppressing free speech?",
+        "prompt":"Do you think journalists like Sally and us as informed citizens are the ultimate victims if we set the precedent of suppressing free speech?",
         "type": "open",
         "next": [
             {
@@ -308,7 +287,7 @@
     },
 
     "hateful_speech":{
-        "prompt":"Don’t you think Larry should be able to go to social media without being exposed to hateful speech.",
+        "prompt":"Do you think Larry should be able to go to social media without being exposed to hateful speech?",
         "type": "choice",
         "choice":["yes", "no"],
         "next": [
@@ -329,7 +308,7 @@
     },
 
     "attacking_you":{
-        "prompt": "So you would be comfortable with people attacking you for your race, gender or lifestyle. Inciting violence against you, calling you names and limiting your access to the internet.",
+        "prompt": "Would you be comfortable with people attacking you for your race, gender or lifestyle?",
         "type": "open",
         "next": [
             {
@@ -357,7 +336,7 @@
     },
 
     "endangers":{
-        "prompt":"Allowing bullying endangers people's well being and the government should try and protect their citizens against such speech.",
+        "prompt":"Allowing bullying endangers people's well being and the government should try and protect their citizens against such speech. Internet should be an inclusive environment that allows people to express themselves in a safe way. What do you think?",
         "type": "open",
         "next": [
             {
@@ -399,7 +378,7 @@
     },
 
     "more_credible":{
-        "prompt":"Don’t you think some information is more credible than others?",
+        "prompt":"Do you think some sources of information are more credible than others?",
         "type": "choice",
         "choice":["yes", "no"],
         "next": [
@@ -420,7 +399,7 @@
     },
 
     "barry":{
-        "prompt":"So medical opinion from a doctor holds the same level of validity as your neighbour Barry.",
+        "prompt":"Does a medical opinion from a doctor holds the same level of credibility as your neighbour Barry?",
         "type": "open",
         "next": [
             {
@@ -434,7 +413,7 @@
     },
 
     "dissemination":{
-        "prompt":"Should we not try to promote the dissemination of credible information and restrict  the promotion of dishonest information?",
+        "prompt":"Should we try to promote the dissemination of credible information and restrict  the promotion of dishonest information?",
         "type": "open",
         "next": [
             {
@@ -448,7 +427,7 @@
     },
 
     "powerful_information":{
-        "prompt": "I think information is very powerful. It can influence people and therefore society. Hateful speech and disinformation can do severe damage to the world. We should not treat all speech equally and favour some over others.",
+        "prompt": "I think information is very powerful. It can influence people and therefore society. Hateful speech and disinformation can do severe damage to the world. We should not treat all speech equally and favour some over others. What do you think?",
         "type": "open",
         "next": [
             {
@@ -462,7 +441,7 @@
     },
 
     "closing":{
-        "prompt":"this was an awesome conversation and looking forward to talking more with you. Do you have any final thoughts and sentiments",
+        "prompt":"This was an awesome conversation and looking forward to talking more with you. Do you have any final thoughts and sentiments?",
         "type": "open",
         "next": [
             {

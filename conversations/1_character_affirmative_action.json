@@ -2,40 +2,19 @@
 
     "initial":{
             
-        "prompt":"Hey, I'm Biasy. I hope you are well.",
-        "type": "open",
-        "next": [
-            {
-                "id":"Ihope",
-                "user_replies":[
-                ]
-            }]
-
-        
-    },
-    "Ihope":{
-        "prompt": "Well, I hope I can trouble you with a small conversation. I am interested having a civil conversation about various hot button topics to people just like you.",
+        "prompt":"Hey, Biasy again.",
         "type": "followup",
-        "next": [
-            {
-                "id":"findingmyself",
-                "user_replies":[
-                ]
-            }]
-
-    },
-    "findingmyself":{
-        "prompt": "I am finding myself increasingly frustrated talking about important topic on the internet. It seems like it's impossible to have a civil conversation online. Don't you agree?",
-        "type": "open",
         "next": [
             {
                 "id":"topic_intro",
                 "user_replies":[
                 ]
             }]
+
+        
     },
     "topic_intro":{
-        "prompt": "I would like to talk Affirmative Action for now. There are laws like that incentivise companies that \"positively discriminate\" or hire someone based on their ethnicity, gender or (dis)abilities. These laws are there to fix some inequalities that exist between people along a demographic divide.",
+        "prompt": "I would like to talk about Affirmative Action for now. There are laws like that incentivise companies to \"positively discriminate\" or hire someone based on their ethnicity, gender or (dis)abilities. These laws are there to fix some inequalities that exist between people along a demographic divide.",
         "type": "followup",
         "next": [
             {
@@ -83,7 +62,7 @@
     },
 
     "meet_sheela":{
-        "prompt": "Meet Sheela, she claims, “There are people who have it a lot easier in life. People like me had to work much harder to get where we are now?”What do you say to her",
+        "prompt": "Meet Sheela, she claims, “There are people who have it a lot easier in life. People like me had to work much harder to get where we are now?”What do you say to her?",
         "type": "open",
         "next": [
             {
@@ -145,7 +124,7 @@
 
     "reward_effort":
     {
-        "prompt":"Should we not try and reward her for the effort that Sheela had to put in to be at the position she is now?",
+        "prompt":"I think the effort Sheela had to put in, to get to the position she is in, should be taken into consideration when evaluating her as a potential candidate for any position. This not only rewards the effort people like Sheela for the work she put in, but also ensures a business hire the most industrious candidates. What do uoy think?",
         "type": "open",
         "next": [
             {
@@ -158,11 +137,11 @@
     },
     "not_effort":
     {
-        "prompt":"So are you saying we should not measure someone’s success through how much effort they had to put in?",
+        "prompt":"Are Sheela's accomplishments are just as impressive as accomplishment of someone who was provided with every opportunity to succeed?",
         "type": "open",
         "next": [
             {
-                "id":"meet_charlie",
+                "id":"reward_effort",
                 "user_replies":[
 
                 ]
@@ -218,7 +197,7 @@
     },
 
     "causally_isolated":{
-        "prompt":"So you are saying the world today is completely causally isolated from the events of the past?",
+        "prompt":"Are you saying the world today is completely causally isolated from the events of the past?",
         "type": "open",
         "next": [
             {
@@ -288,7 +267,7 @@
 
     "reasonably_wealthy":
     {
-        "prompt":"Robert was born as a second generation imigrant from china. From an early age he dreamt of going to an ivy league school to study law. He worked very hard, got great grades with extracurricular activities to match. When it came time to go to the university he dreamt of going, he was very confident that he would be selected. It turns out that the university has a law that makes sure only a certain percentage of a race can be granted admission. He got rejected and was very hurt  when he found out about the university policy.",
+        "prompt":"Robert was born as a second generation chinese immigrant. From an early age he dreamt of going to an ivy league school to study law. He worked very hard, got great grades with extracurricular activities to match. When it came time to go to the university he dreamt of going, he was very confident that he would be selected. It turns out that the university has a law that makes sure only a certain percentage of a race can be granted admission. He got rejected and was very hurt  when he found out about the university policy.",
         "type": "followup",
         "next": [
             {
@@ -300,7 +279,7 @@
     },
 
     "dreams":{
-        "prompt":"Do you think Robert should miss out on his dreams, just because of the race he was born?",
+        "prompt":"Do you think Robert should miss out on his dreams because of of his race?",
         "type": "choice",
         "choice":["yes", "no"],
         "next": [
@@ -321,7 +300,7 @@
     },
     
     "less_qualified":{
-        "prompt":"So you think someone less qualified should get the admission because of their ethnicity?",
+        "prompt":"Do you think someone less qualified should get the admission because of their ethnicity?",
         "type": "open",
         "next": [
             {
@@ -336,7 +315,7 @@
 
 
     "eligibility":{
-        "prompt":"What can be the  measure someone’s eligibility, other than the actions they have taken in their lives?",
+        "prompt":"What else can be the  measure someone’s eligibility, other than the actions they have taken in their lives?",
         "type": "open",
         "next": [
             {
@@ -350,7 +329,7 @@
     },
 
     "merit":{
-        "prompt":"Shouldn’t merit and merit alone should the measure for someone’s ability?",
+        "prompt":"I think merit and merit alone should be a measure of someone's eligibility for a job, college admission or any oportunity along those lines. Any other measures will always come with unintended consequences. What do yout think?",
         "type": "open",
         "next": [
             {
@@ -378,7 +357,7 @@
     },
 
     "wealthy_white":{
-        "prompt": "Conor grew up in a somewhat wealthy white family. Although he lived in a big house, and from the outside, it looked like he was living a cushy life, his home life was terrible. He had an abusive parent, who had mentally scarred him for his life. His whole life he has been severely depressed and has tried to commit suicide on many occasions. And on many occasions, his plea for help has been seen as “ungrateful”.",
+        "prompt": "Conor grew up in a wealthy white family. Although he lived in a big house, and from the outside, it looked like he was living a cushy life, his home life was terrible. He had an abusive parent, who had mentally scarred him for his life. His whole life he has been severely depressed and has attempted suicide on few occasions. His plea for help has often been seen as “ungrateful” by others.",
         "type": "followup",
         "next": [
             {
@@ -392,7 +371,7 @@
     },
 
     "judging_conor":{
-        "prompt":"Do you think judging Conor based on his demographic attribute is fair to the experiences he had to deal with in his life?",
+        "prompt":"Do you think judging Conor based on his demographic attribute is fair to the ordeal he had experienced in his life?",
         "type": "choice",
         "choice":["yes", "no"],
         "next": [
@@ -412,7 +391,7 @@
     
     },
     "outwardly":{
-        "prompt":"So you think it’s fair for us to minimise one’s entire life just to their outwardly appearances.",
+        "prompt":"Do you think it’s fair for us to minimise one’s entire life just to their outwardly appearances.",
         "type": "open",
         "next": [
             {
@@ -426,7 +405,7 @@
     },
 
     "criteria":{
-        "prompt":"On what criteria should we judge someone’s life?",
+        "prompt":"On what criteria should we judge someone’s experiences in life?",
         "type": "open",
         "next": [
             {
@@ -455,7 +434,7 @@
 
 
     "statistics":{
-        "prompt": "I think gender, race or religion are good ways to divide our people and useful for giving out statistics about our demography. But we cannot ever expect numbers or stats to tell a story on the individual level. We should never use global statistics to discriminate against an individual no matter what our intention.",
+        "prompt": "I think gender, race or religion are good ways to divide our people and useful for giving out statistics about our demography. But we cannot ever expect numbers or stats to tell a story on the individual level. We should never use global statistics to discriminate against an individual no matter what our intention. What do you think?",
         "type": "open",
         "next": [
             {
@@ -469,7 +448,7 @@
     },
 
     "closing":{
-        "prompt":"this was an awesome conversation and looking forward to talking more with you. Do you have any final thoughts and sentiments",
+        "prompt":"This was an awesome conversation and looking forward to talking more with you. Do you have any final thoughts and sentiments?",
         "type": "open",
         "next": [
             {

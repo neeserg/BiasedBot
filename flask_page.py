@@ -2,6 +2,7 @@ from flask import Flask,request, jsonify,render_template, redirect
 from flask_restful import Resource, Api
 from model.strategies.empathyStrategy import EmpathyStrategy
 from model.database.Experiment import Experiment
+from extra_functions import generate_experiments
 import uuid
 import random
 
@@ -53,35 +54,30 @@ def chat(bot_type, topic):
 
 
 #########################EXPERIMENT API####################################################################################################################################################
-
+''' creates a random experiment'''
 @app.route("form/generate")
 def generateform():
-    topics = random.sample(["affirmative_action", "free_speech"], k=2)
-    ml = random.choices(["ml_", ""], k=2)
-    bot_types = random.choices(["character","lara", "logical"],k=2)
-    bot_type1, bot_type2 = (bot_types[0], bot_types[1])
-    topic1, topic2 = (ml[0]+topics[0], ml[1]+topics[1])
-    user_id = str( uuid.uuid1())
-    domain = "https://neesergp.typeform.com/to"
-    before = "RInkXP"
-    after = "yLqwfQ"
-    url = "%s/%s?user_id=%s&nexttopic=%s&nexttype=%s"%\
-        (domain,before,user_id, topic1, bot_type1)
-    url1 = "%s/%s?user_id=%s&nexttopic=%s&nexttype=%s&topic=%s&bot_type=%s"%\
-        (domain, after,user_id, topic2, bot_type2, topic1, bot_type1)
+    # topics = random.sample(["affirmative_action", "free_speech"], k=2)
+    # ml = random.choices(["ml_", ""], k=2)
+    # bot_types = random.choices(["character","lara", "logical"],k=2)
+    # bot_type1, bot_type2 = (bot_types[0], bot_types[1])
+    # topic1, topic2 = (ml[0]+topics[0], ml[1]+topics[1])
+    # user_id = str( uuid.uuid1())
+    # domain = "https://neesergp.typeform.com/to"
+    # before = "RInkXP"
+    # after = "yLqwfQ"
+    # url = "%s/%s?user_id=%s&nexttopic=%s&nexttype=%s"%\
+    #     (domain,before,user_id, topic1, bot_type1)
+    # url1 = "%s/%s?user_id=%s&nexttopic=%s&nexttype=%s&topic=%s&bot_type=%s"%\
+    #     (domain, after,user_id, topic2, bot_type2, topic1, bot_type1)
     
-    url2 = "%s/%s?user_id=%s&nexttopic=%s&nexttype=%s&topic=%s&bot_type=%s"%\
-        (domain, after, user_id, "done", "done", topic2, bot_type2)
+    # url2 = "%s/%s?user_id=%s&nexttopic=%s&nexttype=%s&topic=%s&bot_type=%s"%\
+    #     (domain, after, user_id, "done", "done", topic2, bot_type2)
 
-    from_data = {"user_id":user_id,
-                  "chat":[],
-                  "forms":[],
-                  "before": url,
-                  bot_type1+topic1: url1,
-                  bot_type2+topic2: url2,}
+    from_data = generate_experiments()
     experiment = Experiment()
     experiment.create_experiment(from_data)
-    return redirect(url)
+    return redirect(from_data["before"])
 
 
 

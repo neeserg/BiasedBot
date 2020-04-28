@@ -35,7 +35,7 @@
     },
     
     "topic_intro":{
-        "prompt": "I would like to talk Affirmative Action for now. There are laws like that incentivise companies that \"positively discriminate\" or hire someone based on their ethnicity, gender or (dis)abilities. These laws are there to fix some inequalities that exist between people along a demographic divide.",
+        "prompt": "I would like to talk about Affirmative Action for now. There are laws like that incentivise companies that \"positively discriminate\" or hire someone based on their ethnicity, gender or (dis)abilities. These laws are there to fix some inequalities that exist between people along a demographic divide.",
         "type": "followup",
         "next": [
             {
@@ -111,7 +111,7 @@
     },
 
     "not_target":{
-        "prompt":"However, I also think that policies should not target any groups based on their race or gender directly.",
+        "prompt":"However, I also think that policies should not target any groups based on their race or gender directly. What do you think?",
         "type": "open",
         "next": [
             {
@@ -283,7 +283,7 @@
 
 
     "very_hard":{
-        "prompt": "This, in the end, is a very hard topic to discuss, since the past clearly affects the future and actions that have been taken in the past have left certain minority groups disadvantaged. But by basing policies on demographic attributes, the government is sanctioning discriminatory laws. Laws should be in place to lift the disadvantaged without penalising the advantaged.",
+        "prompt": "This, in the end, is a very hard topic to discuss, since the most effective way to uplift the disadvantaged are through affirmative action. However laws should also ideally be blind to any outward characteristics such as race and gender.",
         "type": "followup",
         "next": [
             {
@@ -297,7 +297,7 @@
     },
 
     "you_think":{
-        "prompt":"What do you think?",
+        "prompt":"Can a practical success of laws such as affirmative action in the real world be a good reason to deiviate from our principles rooted in the essence of equality?",
         "type": "open",
         "next": [
             {
@@ -311,7 +311,7 @@
     },
 
     "solution":{
-        "prompt":"Do you think we can lift up the less privileged demographic without race/gender based laws?",
+        "prompt":"Do you think we can lift up the disadvantaged demographic without race/gender based laws? If so then how?",
         "type": "open",
         "next": [
             {
@@ -328,7 +328,7 @@
 
 
     "closing":{
-        "prompt":"this was an awesome conversation and looking forward to talking more with you. Do you have any final thoughts and sentiments",
+        "prompt":"This was an awesome conversation and looking forward to talking more with you. Do you have any final thoughts and sentiments?",
         "type": "open",
         "next": [
             {

@@ -34,7 +34,7 @@
             }]
     },
     "topic_intro":{
-        "prompt": "I would like to talk Affirmative Action for now. There are laws like that incentivise companies that \"positively discriminate\" or hire someone based on their ethnicity, gender or (dis)abilities. These laws are there to fix some inequalities that exist between people along a demographic divide.",
+        "prompt": "I would like to talk about Affirmative Action for now. There are laws like that incentivise companies that \"positively discriminate\" or hire someone based on their ethnicity, gender or (dis)abilities. These laws are there to fix some inequalities that exist between people along a demographic divide.",
         "type": "followup",
         "next": [
             {
@@ -105,7 +105,7 @@
     },
 
     "NBA":{
-        "prompt": "So you think if an average man decides to play in the NBA, he has the same chance to succeed as a 7-foot athletic guy.",
+        "prompt": "Do you think if an average man decides to play in the NBA, he has the same chance to succeed as a 7-foot athletic guy?",
         "type": "open",
         "next": [
             {
@@ -120,18 +120,18 @@
     
 
     "such_world":{
-    "prompt":"Would you even want to live in such a world?",
+    "prompt":"If this is impossible then should this be a goal our society strives towards?",
     "type": "choice",
     "choice":["yes", "no"],
     "next": [
         {
-            "id":"individuality",
+            "id":"balance",
             "user_replies":[
                 "yes"
             ]
         },
         {
-            "id":"balance",
+            "id":"individuality",
             "user_replies":[
                 "no"
             ]
@@ -141,7 +141,7 @@
 },
 
 "individuality":{
-    "prompt":"You would give up on your individuality, personality and identity for equality?",
+    "prompt":"How do you justify spending resources to achieve something that can never be achieved?",
     "type": "open",
     "next": [
         {
@@ -155,7 +155,7 @@
 },
 
 "balance":{
-    "prompt": "I think our attempts to tip the scale in either direction to create a “balance” is an impossible task. And it is a malformed goal, we should own our differences, our history and all the things that make us.",
+    "prompt": "I think our attempts to tip the scale in one direction to create an equal society is the wrong goal. I think the goal should be to create a fair society and in a fair society race/genders are ignored by the law. What do you think?",
     "type": "open",
     "next": [
         {
@@ -214,7 +214,7 @@
 
 
 "why?":{
-    "prompt":"why do you think this person would be smarter?",
+    "prompt":"why do you think this person would be smarter than the others?",
     "type": "open",
     "next": [
         {
@@ -249,7 +249,7 @@
 },
 
 "target":{
-    "prompt":"So we can use crime statistics to target certain demography?",
+    "prompt":"Should we base laws that are based on statistics about race/gender?",
     "type": "choice",
     "choice":["yes", "no"],
     "next": [
@@ -270,7 +270,7 @@
 },
 
 "who_decides":{
-    "prompt":"Who decides how we use the stats to?",
+    "prompt":"Who decides how we use the stats to achive what purpose? What if they use crime statistics to racially profile individual or use wealth statistics to retrospectively judge and punish certain race or gender?",
     "type": "open",
     "next": [
         {
@@ -284,7 +284,7 @@
 },
 
 "race/gender":{
-    "prompt": "I think race/gender-based laws are a slippery slope. I think if we start basing laws on those factors then we are setting a precedence for the future. Discriminatory laws are not a fix for unequal society, in fact, the only measure of equality in society should be how laws treat everyone in society and it should treat everyone equally.",
+    "prompt": "I think race/gender-based laws are a slippery slope. I think if we start basing laws on those factors then we are setting a precedence for the future. Discriminatory laws are not a fix for unequal society, in fact, the only measure of equality in society should be how laws treat everyone in society and it should treat everyone equally. What do you think?",
     "type": "open",
     "next": [
         {
@@ -375,7 +375,7 @@
 
 
 "card_game":{
-    "prompt": "Suppose you were handing out cards to a group of people, you accidentally missed a guy and he doesn’t have a full set. Would you not give him an extra card to compensate. Or would you just let him play an unfair game.",
+    "prompt": "Suppose you were handing out cards to a group of people, you accidentally missed a guy and he doesn’t have a full set. Would you not give him an extra card to compensate. Or would you just let him play the unfair game?",
     "type": "open",
     "next": [
         {
@@ -389,7 +389,7 @@
 },
 
 "only_fair":{
-    "prompt":"I think it’s only fair to compensate for mistakes that happened in the past. Our society can be fair for everyone.",
+    "prompt":"I think it’s only fair to compensate for mistakes that happened in the past. We can't move forward as society without fixing the damge that was inflicted by our past. What do you think?",
     "type": "open",
     "next": [
         {
@@ -404,7 +404,7 @@
 
 
 "hardship_counts":{
-    "prompt":"Do you think someone’s hardships count towards something when considering an individual for a role?",
+    "prompt":"Do you think someone’s hardships should be a factor when taking someone under consideration for a oportunity?",
     "type": "choice",
     "choice":["yes", "no"],
     "next": [
@@ -425,11 +425,11 @@
 },
 
 "tennis_comp":{
-    "prompt": "If you were asked to select the best tennis player out of two people. One, Steve, who was the last place in the Australian Open and the other, Bob, who was first in your local community competition. You would pick Bob over Steve? Regardless of the adversity, they experienced",
+    "prompt": "If you were asked to select the best tennis player out of two people. One, Steve, who was the last place in the Australian Open and the other, Bob, who was first in your local community competition. Would you pick still pick Bob?",
     "type": "open",
     "next": [
         {
-            "id":"provide_opportunities",
+            "id":"work_harder",
             "user_replies":[
                 
             ]
@@ -439,7 +439,7 @@
 },
 
 "work_harder":{
-    "prompt":"So would you not want someone who had to work much harder to get to where they are because of factors they couldn’t control.",
+    "prompt":"Would you want someone who had to work harder to get to where they are?",
     "type": "choice",
     "choice":["yes", "no"],
     "next": [
@@ -474,7 +474,7 @@
 },
 
 "provide_opportunities":{
-    "prompt": "I think having policies that provide opportunities to those who are most disadvantaged in society provides reparation to the damage that was done in the past. It also ensures that we are getting the most talented individual who might otherwise go unnoticed because of their background.",
+    "prompt": "I think having policies that provide opportunities to those who are most disadvantaged in society ensures that we are getting the most talented individual who might otherwise go unnoticed because of the lack of opportunities. What do you think?",
     "type": "open",
     "next": [
         {
@@ -488,7 +488,7 @@
 },
 
 "closing":{
-    "prompt":"this was an awesome conversation and looking forward to talking more with you. Do you have any final thoughts and sentiments",
+    "prompt":"This was an awesome conversation and looking forward to talking more with you. Do you have any final thoughts and sentiments?",
     "type": "open",
     "next": [
         {

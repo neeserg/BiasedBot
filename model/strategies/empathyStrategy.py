@@ -3,37 +3,49 @@ from model.database.UserReplies import UserReplies
 from model.database.Experiment import Experiment
 from model.nlp.universal_classifier import classify
 file_stuff = {
-    "empathybot":{
-        "climatechange": "conversations/empathy_climate.json"
+    "empathy":{
+        "climatechange": "conversations/old_stuff/empathy_climatechange.json"
     },
-    "parallelbot": {
-        "climatechange": "conversations/parallel_climate.json"
+    "parallel": {
+        "climatechange": "conversations/old_stuff/parallel_climatechange.json"
     },
     "logical":{
-        "affirmative_action": "conversations/logical_affirmative.json",
-        "free_speech": "conversations/logical_free.json",
-        "ml_affirmative_action": "conversations/ml_logical_affirmative.json",
-        "ml_free_speech": "conversations/ml_logical_free.json"
+        "affirmative_action": "conversations/logical_affirmative_action.json",
+        "free_speech": "conversations/logical_free_speech.json",
+        "ml_affirmative_action": "conversations/old_stuff/ml_logical_affirmative_action.json",
+        "ml_free_speech": "conversations/old_stuff/ml_logical_free_speech.json",
+        "2_free_speech": "conversations/2_logical_free_speech.json",
+        "2_affirmative_action":"conversations/2_logical_affirmative_action.json",
+        "1_free_speech": "conversations/1_logical_free_speech.json",
+        "1_affirmative_action":"conversations/1_logical_affirmative_action.json"
     },
 
     "character":{
-        "affirmative_action": "conversations/character_affirmative.json",
-        "free_speech": "conversations/character_free.json",
-        "ml_affirmative_action": "conversations/ml_character_affirmative.json",
-        "ml_free_speech": "conversations/ml_character_free.json"
+        "affirmative_action": "conversations/character_affirmative_action.json",
+        "free_speech": "conversations/character_free_speech.json",
+        "ml_affirmative_action": "conversations/old_stuff/ml_character_affirmative_action.json",
+        "ml_free_speech": "conversations/old_stuff/ml_character_free_speech.json",
+        "2_free_speech": "conversations/2_character_free_speech.json",
+        "2_affirmative_action":"conversations/2_character_affirmative_action.json",
+        "1_free_speech": "conversations/1_character_free_speech.json",
+        "1_affirmative_action":"conversations/1_character_affirmative_action.json"
     },
 
     "lara":{
-        "affirmative_action": "conversations/lara_affirmative.json",
-        "free_speech": "conversations/lara_free.json",
-        "ml_affirmative_action": "conversations/ml_lara_affirmative.json",
-        "ml_free_speech": "conversations/ml_lara_free.json"
+        "affirmative_action": "conversations/lara_affirmative_action.json",
+        "free_speech": "conversations/lara_free_speech.json",
+        "ml_affirmative_action": "conversations/old_stuff/ml_lara_affirmative_action.json",
+        "ml_free_speech": "conversations/old_stuff/ml_lara_free_speech.json",
+        "2_free_speech": "conversations/2_lara_free_speech.json",
+        "2_affirmative_action":"conversations/2_lara_affirmative_action.json",
+        "1_free_speech": "conversations/1_lara_free_speech.json",
+        "1_affirmative_action":"conversations/1_lara_affirmative_action.json"
     }
 }
 
 class EmpathyStrategy:
 
-    def __init__(self, topic="climatechange", bot_type="parallelbot", exper = "practice"):
+    def __init__(self, topic="free_speech", bot_type="lara", exper = "practice"):
         self.conversation = {}
         self.topic = topic
         self.bot_type = bot_type

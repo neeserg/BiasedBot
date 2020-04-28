@@ -1,40 +1,20 @@
 {
     "initial":{
             
-        "prompt":"Hey, I'm Biasy. I hope you are well.",
-        "type": "open",
-        "next": [
-            {
-                "id":"Ihope",
-                "user_replies":[
-                ]
-            }]
-
-        
-    },
-    "Ihope":{
-        "prompt": "Well, I hope I can trouble you with a small conversation. I am interested having a civil conversation about various hot button topics to people just like you.",
+        "prompt":"Hey, Biasy again.",
         "type": "followup",
-        "next": [
-            {
-                "id":"findingmyself",
-                "user_replies":[
-                ]
-            }]
-
-    },
-    "findingmyself":{
-        "prompt": "I am finding myself increasingly frustrated talking about important topic on the internet. It seems like it's impossible to have a civil conversation online. Don't you agree?",
-        "type": "open",
         "next": [
             {
                 "id":"topic_intro",
                 "user_replies":[
                 ]
             }]
+
+        
     },
+    
     "topic_intro":{
-        "prompt": "I would like to talk today about Free Speech. Free speech is something we value very much in our life. However some claim speech such as false speech and hate speech should be restricted.",
+        "prompt": "I would like to talk about Affirmative Action for now. There are laws like that incentivise companies that \"positively discriminate\" or hire someone based on their ethnicity, gender or (dis)abilities. These laws are there to fix some inequalities that exist between people along a demographic divide.",
         "type": "followup",
         "next": [
             {
@@ -42,9 +22,10 @@
                 "user_replies":[
                 ]
             }]
+
     },
     "topic_prompt": {
-        "prompt":"Do you believe in unrestricted free speech?",
+        "prompt":"Should policies such as affirmative action be in place to help certain groups based on their gender, ethnicity or religion?",
         "type": "choice",
         "choice": [ "strongly agree", "agree","disagree", "strongly disagree"],
         "next":[
@@ -73,20 +54,33 @@
         "type": "open",
         "next": [
             {
-                "id":"cornerstone",
+                "id":"more_privileged",
                 "user_replies":[
                 ]
             }
         ]
     },
 
-
-    "cornerstone":{
-        "prompt":"I think that people should be allowed to express themselves freely and free speech is the cornerstone of progress. Agree?",
+    "more_privileged":{
+        "prompt": "There are groups in society that are clearly more privileged than others, I believe they profit from the discriminatory policies from the past. Agree?",
         "type": "open",
         "next": [
             {
-                "id":"journalists",
+                "id":"our_government",
+                "user_replies":[
+                    
+                ]
+            }
+        ]
+    
+    },
+    
+    "our_government":{
+        "prompt":"I also think that there are disadvantaged groups in society that need help from our government. Any thoughts?",
+        "type": "open",
+        "next": [
+            {
+                "id":"not_target",
                 "user_replies":[
                     
                 ]
@@ -95,12 +89,12 @@
     
     },
 
-    "journalists":{
-        "prompt":"I also think that journalists should be able to hold the powerful accountable through free media. Any thoughts?",
+    "not_target":{
+        "prompt":"However, I also think that policies should not target any groups based on their race or gender directly. What do you think?",
         "type": "open",
         "next": [
             {
-                "id":"spread_freely",
+                "id":"held_back",
                 "user_replies":[
                     
                 ]
@@ -109,23 +103,8 @@
     
     },
 
-
-    "spread_freely":{
-        "prompt": "However, I do think that some speech should be controlled, speech that spreads hate and misinformation should not be allowed to spread freely.",
-        "type": "open",
-        "next": [
-            {
-                "id":"hate_personally",
-                "user_replies":[
-                    
-                ]
-            }
-        ]
-    
-    },
-
-    "hate_personally":{
-        "prompt":"Have you been affected by hate speech personally?",
+    "held_back":{
+        "prompt":"Have you ever been held back in society based on your demographic attributes?",
         "type": "choice",
         "choice":["yes", "no"],
         "next": [
@@ -145,12 +124,13 @@
     
     },
 
+
     "pos_make_feel":{
-        "prompt":"How did it make you feel?",
+        "prompt":"How did that make you feel?",
         "type": "open",
         "next": [
             {
-                "id":"power_speech",
+                "id":"very_hard",
                 "user_replies":[
                     
                 ]
@@ -160,11 +140,11 @@
     },
 
     "pos_would_feel":{
-        "prompt":"How would you feel if a vicious rumour was freely spread throughout the internet attacking your character?",
+        "prompt":"How would you feel if the government was able to stop you from achieving your goals because you were born a certain way?",
         "type": "open",
         "next": [
             {
-                "id":"power_speech",
+                "id":"very_hard",
                 "user_replies":[
                     
                 ]
@@ -174,27 +154,25 @@
     },
 
 
-    
 
     "neg_why":{
         "prompt":"Why do you believe this?",
         "type": "open",
         "next": [
             {
-                "id":"destabilize",
+                "id":"worthy_skepticism",
                 "user_replies":[
                 ]
             }
         ]
     },
-
-
-    "destabilize":{
-        "prompt":"I agree that speech is powerful, misinformation spreads fast and has the power to destabilize society and ruin lives. Agree?",
+    
+    "worthy_skepticism":{
+        "prompt":"I think any law that discriminates against a group of people based on race/gender should be met with worthy skepticism.",
         "type": "open",
         "next": [
             {
-                "id":"serious_ways",
+                "id":"meritocracy",
                 "user_replies":[
                     
                 ]
@@ -204,12 +182,12 @@
     },
 
 
-    "serious_ways":{
-        "prompt": "I also think that hateful speech can impact an individual in very serious ways, causing severe harm to their mental well being. Any thoughts?",
+    "meritocracy":{
+        "prompt": "I also think that society should aim to be a meritocracy where the skilful are rewarded plentifully based on their abilities alone. Any thoughts?",
         "type": "open",
         "next": [
             {
-                "id":"too_big",
+                "id":"same_skill",
                 "user_replies":[
                     
                 ]
@@ -218,12 +196,12 @@
     
     },
 
-    "too_big":{
-        "prompt":"However, I do think restricting free speech might be too big of a price to pay.",
+    "same_skill":{
+        "prompt": "However I also think there are people, who due to their demographic background, are not able to reach the same skill level as their privileged peers to compete with them fairly.",
         "type": "open",
         "next": [
             {
-                "id":"judgement_ridicule",
+                "id":"different_family",
                 "user_replies":[
                     
                 ]
@@ -232,8 +210,8 @@
     
     },
 
-    "judgement_ridicule":{
-        "prompt":"Have you ever felt that you had to suppress your expression for fear of judgement, hate or ridicule?",
+    "different_family":{
+        "prompt":"Have you ever missed out on opportunities that you would have gotten if you were born in a different family?",
         "type": "choice",
         "choice":["yes", "no"],
         "next": [
@@ -258,7 +236,7 @@
         "type": "open",
         "next": [
             {
-                "id":"power_speech",
+                "id":"very_hard",
                 "user_replies":[
                     
                 ]
@@ -268,11 +246,11 @@
     },
 
     "neg_would_feel":{
-        "prompt":"How would you feel if you were bound by law to hold back your free expression?",
+        "prompt": "How would you feel if you were born in a different family who were unable to give you the same opportunities that you had available to you.",
         "type": "open",
         "next": [
             {
-                "id":"power_speech",
+                "id":"very_hard",
                 "user_replies":[
                     
                 ]
@@ -280,11 +258,11 @@
         ]
     
     },
-    
-    
 
-    "power_speech":{
-        "prompt": "This, in the end, is a very hard topic to discuss, since we rely on free speech to discuss it. But we should also give the power of speech its respect, especially in this digital age. False and hateful speech has the power to spread very fast and change society instantly. But to discuss what is false and what is true requires people to speak freely.",
+
+
+    "very_hard":{
+        "prompt": "This, in the end, is a very hard topic to discuss, since the most effective way to uplift the disadvantaged are through affirmative action. However laws should also ideally be blind to any outward characteristics such as race and gender.",
         "type": "followup",
         "next": [
             {
@@ -297,9 +275,8 @@
     
     },
 
-
     "you_think":{
-        "prompt":"What do you think?",
+        "prompt":"Can a practical success of laws such as affirmative action in the real world be a good reason to deiviate from our principles rooted in the essence of equality?",
         "type": "open",
         "next": [
             {
@@ -311,8 +288,9 @@
         ]
     
     },
+
     "solution":{
-        "prompt":"How do we limit misinformation and hate speech without also limiting free expression?",
+        "prompt":"Do you think we can lift up the disadvantaged demographic without race/gender based laws? If so then how?",
         "type": "open",
         "next": [
             {
@@ -325,8 +303,11 @@
     
     },
 
+
+
+
     "closing":{
-        "prompt":"this was an awesome conversation and looking forward to talking more with you. Do you have any final thoughts and sentiments",
+        "prompt":"This was an awesome conversation and looking forward to talking more with you. Do you have any final thoughts and sentiments?",
         "type": "open",
         "next": [
             {

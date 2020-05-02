@@ -1,0 +1,370 @@
+initial:
+  next:
+  - id: Ihope
+    user_replies: []
+  prompt: Hey, I'm Biasy. I hope you are well.
+  type: open
+
+
+Ihope:
+  next:
+  - id: findingmyself
+    user_replies: []
+  prompt: Well, I hope I can trouble you with a small conversation. I am interested
+    having a civil conversation about various hot button topics to people just like
+    you.
+  type: followup
+
+
+findingmyself:
+  next:
+  - id: topic_intro
+    user_replies: []
+  prompt: I am finding myself increasingly frustrated talking about important topic
+    on the internet. It seems like it's impossible to have a civil conversation online.
+    Don't you agree?
+  type: open
+
+
+topic_intro:
+  next:
+  - id: topic_prompt
+    user_replies: []
+  prompt: I would like to talk about Free Speech. Free speech is something we value
+    very much in our life. However some claim speech such as false speech and hate
+    speech should be restricted.
+  type: followup
+
+
+topic_prompt:
+  choice:
+  - strongly agree
+  - agree
+  - disagree
+  - strongly disagree
+  next:
+  - id: pos_why
+    user_replies:
+    - strongly agree
+    - agree
+  - id: neg_why
+    user_replies:
+    - strongly disagree
+    - disagree
+  prompt: Do you believe in unrestricted free speech?
+  type: choice
+
+
+neg_why:
+  next:
+  - id: meet_jerry
+    user_replies: []
+  prompt: Why do you believe this?
+  type: open
+
+
+meet_jerry:
+  next:
+  - id: struggling
+    user_replies: []
+  prompt: Meet Jerry, he claims, “It’s comedy it should not be stopped, jokes are
+    a reminder to detach our ideas from our identity.” What do you say to him?
+  type: open
+
+
+struggling:
+  next:
+  - id: silenced
+    user_replies: []
+  prompt: Jerry is a struggling comedian. He loves to make people laugh and unite
+    them. He likes to make risky jokes, jokes about himself and treats comedy as a
+    cathartic experience. He likes to joke about serious topics so he can make people
+    laugh. This line that he likes to walk on is very thin and sometimes he makes
+    mistakes in his delivery. One such time he got in trouble for joking about a serious
+    topic and now he cannot find a venue to do the thing he loves.
+  type: followup
+
+
+silenced:
+  choice:
+  - 'yes'
+  - 'no'
+  next:
+  - id: agree_with
+    user_replies:
+    - 'yes'
+  - id: censor_artists
+    user_replies:
+    - 'no'
+  prompt: Should Jerry be stopped from doing comedy because of the contents of his
+    jokes?
+  type: choice
+
+
+agree_with:
+  next:
+  - id: best_art
+    user_replies: []
+  prompt: Do you think anyone with opinions or words that makes an individual feel
+    uncomfortable should be silenced?
+  type: open
+
+
+censor_artists:
+  next:
+  - id: best_art
+    user_replies: []
+  prompt: Don’t you really think censoring artists for irreverence is going to limit
+    their creative spirit?
+  type: open
+
+
+best_art:
+  next:
+  - id: meet_sally
+    user_replies: []
+  prompt: Limiting free speech could limit great musicians, artists, filmmakers and
+    comedians. We should give the guys the freedom to express themselves freely. Art
+    is not always comfortable and the best of them never is. What do you think?
+  type: open
+
+
+meet_sally:
+  next:
+  - id: journalist
+    user_replies: []
+  prompt: Meet Sally, she claims, “I am not a traitor, people deserve to hear the
+    truth.”
+  type: open
+
+
+journalist:
+  next:
+  - id: expose_corruption
+    user_replies: []
+  prompt: Sally is a journalist. She is in between a lengthy investigation about a
+    criminal conspiracy in the government. The government is using it's powers to
+    mislabel her investigation as misinformation and are doing it's best to silence
+    her. She could face jail time just for doing her job.
+  type: followup
+
+
+expose_corruption:
+  choice:
+  - 'yes'
+  - 'no'
+  next:
+  - id: ignorant
+    user_replies:
+    - 'yes'
+  - id: ultimate_victim
+    user_replies:
+    - 'no'
+  prompt: People like Sally expose corruption, and allow the citizens to be informed
+    about the people they elected. Should we really limit her?
+  type: choice
+
+
+ignorant:
+  next:
+  - id: democracy
+    user_replies: []
+  prompt: You rather be ignorant about the activities of the people you elected? Do
+    you think elected officials should be able to use their powers without repercussions
+    and trusted blindly?
+  type: open
+
+
+ultimate_victim:
+  next:
+  - id: democracy
+    user_replies: []
+  prompt: Do you think journalists like Sally and us as informed citizens are the
+    ultimate victims if we set the precedent of suppressing free speech?
+  type: open
+
+
+democracy:
+  next:
+  - id: closing
+    user_replies: []
+  prompt: I think we rely on free speech for art, science and democracy. More importantly,
+    it is the only tool we have to hold the people we elect accountable and to involve
+    ourselves in the decision-making process.
+  type: open
+
+
+pos_why:
+  next:
+  - id: meet_larry
+    user_replies: []
+  prompt: Why do you believe this?
+  type: open
+
+
+meet_larry:
+  next:
+  - id: cyberbullies
+    user_replies: []
+  prompt: Meet Larry, he claims, “I think people online are so hateful. What are these
+    social media doing to protect their users?” What do you say to Larry?
+  type: open
+
+
+cyberbullies:
+  next:
+  - id: hateful_speech
+    user_replies: []
+  prompt: Larry was the victim of cyberbullies when he was in high school. There were
+    jokes on his expense and when he retaliated he was exposed to hate speech regarding
+    his sexual orientation. He has been severely depressed his entire life and has
+    tried to commit suicide on several occasions. He has pleaded with the social media
+    companies to get this under control but his requests were met by other users with
+    more hate speech. He now doesn’t use social media for his health.
+  type: followup
+
+
+hateful_speech:
+  choice:
+  - 'yes'
+  - 'no'
+  next:
+  - id: abuse_hate
+    user_replies:
+    - 'yes'
+  - id: attacking_you
+    user_replies:
+    - 'no'
+  prompt: Do you think Larry should be able to go to social media without being exposed
+    to hateful speech?
+  type: choice
+
+
+attacking_you:
+  next:
+  - id: endangers
+    user_replies: []
+  prompt: Would you be comfortable with people attacking you for your race, gender
+    or lifestyle?
+  type: open
+
+
+abuse_hate:
+  next:
+  - id: endangers
+    user_replies: []
+  prompt: Should we protect people like Larry so he can live a life free from abuse
+    and hate?
+  type: open
+
+
+endangers:
+  next:
+  - id: meet_emily
+    user_replies: []
+  prompt: Allowing bullying endangers people's well being and the government should
+    try and protect their citizens against such speech. Internet should be an inclusive
+    environment that allows people to express themselves in a safe way. What do you
+    think?
+  type: open
+
+
+meet_emily:
+  next:
+  - id: a_scientist
+    user_replies: []
+  prompt: Meet Emily, she claims, “Truth is the truth. I have spent my life’s work
+    studying this. This misinformation campaign should be silenced” What do you say
+    to her?
+  type: open
+
+
+a_scientist:
+  next:
+  - id: more_credible
+    user_replies: []
+  prompt: Emily is a scientist who has been researching the climate her entire life.
+    She has discovered a major incoming climate catastrophe caused by human activity.
+    There has been a campaign to spread disinformation throughout the media, discrediting
+    her work. She feels very frustrated and worried.
+  type: followup
+
+
+more_credible:
+  choice:
+  - 'yes'
+  - 'no'
+  next:
+  - id: dissemination
+    user_replies:
+    - 'yes'
+  - id: barry
+    user_replies:
+    - 'no'
+  prompt: Do you think some sources of information are more credible than others?
+  type: choice
+
+
+barry:
+  next:
+  - id: powerful_information
+    user_replies: []
+  prompt: Does a medical opinion from a doctor holds the same level of credibility
+    as your neighbour Barry?
+  type: open
+
+
+dissemination:
+  next:
+  - id: powerful_information
+    user_replies: []
+  prompt: Should we try to promote the dissemination of credible information and restrict  the
+    promotion of dishonest information?
+  type: open
+
+
+powerful_information:
+  next:
+  - id: closing
+    user_replies: []
+  prompt: I think information is very powerful. It can influence people and therefore
+    society. Hateful speech and disinformation can do severe damage to the world.
+    We should not treat all speech equally and favour some over others. What do you
+    think?
+  type: open
+
+
+closing:
+  next:
+  - id: Ok.
+    user_replies: []
+  prompt: This was an awesome conversation and looking forward to talking more with
+    you. Do you have any final thoughts and sentiments?
+  type: open
+
+
+Ok.:
+  next:
+  - id: Please_click
+    user_replies: []
+  prompt: Ok. It is always good to have these type of conversations. I feel much better,
+    I hope you did too.
+  type: followup
+
+
+Please_click:
+  next:
+  - id: form
+    user_replies: []
+  prompt: Please click on the Link bellow when its prompted
+  type: followup
+
+
+form:
+  next:
+  - id: form
+    user_replies: []
+  prompt: Here is a link to the form
+  type: open
+
+

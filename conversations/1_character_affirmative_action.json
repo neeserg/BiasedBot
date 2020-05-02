@@ -62,7 +62,7 @@
     },
 
     "meet_sheela":{
-        "prompt": "Meet Sheela, she claims, “There are people who have it a lot easier in life. People like me had to work much harder to get where we are now?”What do you say to her?",
+        "prompt": "Meet Sheela, she claims, “There are people who have it a lot easier in life. People like me had to work much harder to get where we are now?”. What do you say to her?",
         "type": "open",
         "next": [
             {
@@ -110,7 +110,7 @@
 
     "hardship":
     {
-        "prompt":"How can we account this hardship?",
+        "prompt":"How do you think we can account this hardship?",
         "type": "open",
         "next": [
             {
@@ -124,7 +124,7 @@
 
     "reward_effort":
     {
-        "prompt":"I think the effort Sheela had to put in, to get to the position she is in, should be taken into consideration when evaluating her as a potential candidate for any position. This not only rewards the effort people like Sheela for the work she put in, but also ensures a business hire the most industrious candidates. What do uoy think?",
+        "prompt":"I think the effort Sheela had to put in, to get to the position she is in, should be taken into consideration when evaluating her as a potential candidate for any position. This not only rewards the effort people like Sheela for the work she put in, but also ensures a business hire the most industrious candidates. What do you think?",
         "type": "open",
         "next": [
             {
@@ -150,7 +150,7 @@
     },
 
     "meet_charlie":{
-        "prompt":"Meet Charlie, he claims “The rulers don’t care about us. The world is rigged against us man” What do you say to him?",
+        "prompt":"Meet Charlie, he claims “The government don’t care about us. The world is rigged against us man” What would you say to him?", 
         "type": "open",
         "next": [
             {
@@ -165,7 +165,7 @@
 
     "black_man":{
         "prompt": "Charlie is a black man who works as a warehouse packer. His dad died in prison after being wrongfully convicted for armed robbery. Charlie was a talented student, who aspired to go to college and study law. He was also caught with possession of marijuana, which has given him a criminal record, making it impossible for him to get a job anywhere. He sees everyone smoking marijuana and with some countries and states even legalizing it now. He feels laws apply differently to him.",
-        "type": "open",
+        "type": "followup", 
         "next": [
             {
                 "id":"discriminatory_laws",
@@ -177,7 +177,7 @@
     },
 
     "discriminatory_laws":{
-        "prompt":"Do you think that our discriminatory laws in the past had some effect on how society is structured today?",
+        "prompt":"Do you think that our discriminatory laws in the past had some effect on how Charlie's life now?",
         "type": "choice",
         "choice":["yes", "no"],
         "next": [
@@ -448,7 +448,7 @@
     },
 
     "closing":{
-        "prompt":"This was an awesome conversation and looking forward to talking more with you. Do you have any final thoughts and sentiments?",
+        "prompt":"This was an awesome conversation and am looking forward to talking more with you. Do you have any final thoughts and sentiments?", 
         "type": "open",
         "next": [
             {
@@ -460,17 +460,6 @@
 
     "Ok.":{
         "prompt":"Ok. It is always good to have these type of conversations. I feel much better, I hope you did too.",
-        "type": "followup",
-        "next": [
-            {
-                "id":"Please_click",
-                "user_replies":[
-                ]
-            }]
-    },
-
-    "Please_click":{
-        "prompt": "Please click on the Link bellow when its prompted",
         "type": "followup",
         "next": [
             {

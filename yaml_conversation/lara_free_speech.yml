@@ -1,0 +1,254 @@
+initial:
+  next:
+  - id: Ihope
+    user_replies: []
+  prompt: Hey, I'm Biasy. I hope you are well.
+  type: open
+
+
+Ihope:
+  next:
+  - id: findingmyself
+    user_replies: []
+  prompt: Well, I hope I can trouble you with a small conversation. I am interested
+    having a civil conversation about various hot button topics to people just like
+    you.
+  type: followup
+
+
+findingmyself:
+  next:
+  - id: topic_intro
+    user_replies: []
+  prompt: I am finding myself increasingly frustrated talking about important topic
+    on the internet. It seems like it's impossible to have a civil conversation online.
+    Don't you agree?
+  type: open
+
+
+topic_intro:
+  next:
+  - id: topic_prompt
+    user_replies: []
+  prompt: I would like to talk about Free Speech. Free speech is something we value
+    very much in our life. However some claim speech such as false speech and hate
+    speech should be restricted.
+  type: followup
+
+
+topic_prompt:
+  choice:
+  - strongly agree
+  - agree
+  - disagree
+  - strongly disagree
+  next:
+  - id: pos_why
+    user_replies:
+    - strongly agree
+    - agree
+  - id: neg_why
+    user_replies:
+    - strongly disagree
+    - disagree
+  prompt: Do you believe in unrestricted free speech?
+  type: choice
+
+
+pos_why:
+  next:
+  - id: cornerstone
+    user_replies: []
+  prompt: Why do you believe this?
+  type: open
+
+
+cornerstone:
+  next:
+  - id: journalists
+    user_replies: []
+  prompt: I think that people should be allowed to express themselves freely and free
+    speech is the cornerstone of progress. Agree?
+  type: open
+
+
+journalists:
+  next:
+  - id: spread_freely
+    user_replies: []
+  prompt: I also think that journalists should be able to hold the powerful accountable
+    through free media. Any thoughts?
+  type: open
+
+
+spread_freely:
+  next:
+  - id: hate_personally
+    user_replies: []
+  prompt: However, I do think that some speech should be controlled, speech that spreads
+    hate and misinformation should not be allowed to spread freely.
+  type: open
+
+
+hate_personally:
+  choice:
+  - 'yes'
+  - 'no'
+  next:
+  - id: pos_make_feel
+    user_replies:
+    - 'yes'
+  - id: pos_would_feel
+    user_replies:
+    - 'no'
+  prompt: Have you been affected by hate speech or defamatory personally?
+  type: choice
+
+
+pos_make_feel:
+  next:
+  - id: power_speech
+    user_replies: []
+  prompt: How did it make you feel?
+  type: open
+
+
+pos_would_feel:
+  next:
+  - id: power_speech
+    user_replies: []
+  prompt: How would you feel if a vicious rumour was freely spread throughout the
+    internet attacking your character?
+  type: open
+
+
+neg_why:
+  next:
+  - id: destabilize
+    user_replies: []
+  prompt: Why do you believe this?
+  type: open
+
+
+destabilize:
+  next:
+  - id: serious_ways
+    user_replies: []
+  prompt: I agree that speech is powerful, misinformation spreads fast and has the
+    power to destabilize society and ruin lives. Agree?
+  type: open
+
+
+serious_ways:
+  next:
+  - id: too_big
+    user_replies: []
+  prompt: I also think that hateful speech can impact an individual in very serious
+    ways, causing severe harm to their mental well being. Any thoughts?
+  type: open
+
+
+too_big:
+  next:
+  - id: judgement_ridicule
+    user_replies: []
+  prompt: However, I do think restricting free speech might be too big of a price
+    to pay.
+  type: open
+
+
+judgement_ridicule:
+  choice:
+  - 'yes'
+  - 'no'
+  next:
+  - id: neg_make_feel
+    user_replies:
+    - 'yes'
+  - id: neg_would_feel
+    user_replies:
+    - 'no'
+  prompt: Have you ever felt that you had to suppress your expression for fear of
+    judgement, hate or ridicule?
+  type: choice
+
+
+neg_make_feel:
+  next:
+  - id: power_speech
+    user_replies: []
+  prompt: How did it make you feel?
+  type: open
+
+
+neg_would_feel:
+  next:
+  - id: power_speech
+    user_replies: []
+  prompt: How would you feel if you were bound by law to hold back your free expression?
+  type: open
+
+
+power_speech:
+  next:
+  - id: you_think
+    user_replies: []
+  prompt: This, in the end, is a very hard topic to discuss, since we rely on free
+    speech to discuss it. But we should also give the power of speech its respect,
+    especially in this digital age. False and hateful speech has the power to spread
+    very fast and change society instantly. But to discuss what is false and what
+    is true requires people to speak freely.
+  type: followup
+
+
+you_think:
+  next:
+  - id: solution
+    user_replies: []
+  prompt: What do you think?
+  type: open
+
+
+solution:
+  next:
+  - id: closing
+    user_replies: []
+  prompt: How do we limit misinformation and hate speech without also limiting free
+    expression?
+  type: open
+
+
+closing:
+  next:
+  - id: Ok.
+    user_replies: []
+  prompt: This was an awesome conversation and looking forward to talking more with
+    you. Do you have any final thoughts and sentiments?
+  type: open
+
+
+Ok.:
+  next:
+  - id: Please_click
+    user_replies: []
+  prompt: Ok. It is always good to have these type of conversations. I feel much better,
+    I hope you did too.
+  type: followup
+
+
+Please_click:
+  next:
+  - id: form
+    user_replies: []
+  prompt: Please click on the Link bellow when its prompted
+  type: followup
+
+
+form:
+  next:
+  - id: form
+    user_replies: []
+  prompt: Here is a link to the form
+  type: open
+
+

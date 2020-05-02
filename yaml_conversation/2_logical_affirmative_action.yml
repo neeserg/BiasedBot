@@ -1,0 +1,372 @@
+initial:
+  next:
+  - id: topic_intro
+    user_replies: []
+  prompt: Hey, Biasy again. Lets talk about affirmative action once more and continue
+    our discussion from before.
+  type: followup
+
+
+topic_intro:
+  next:
+  - id: topic_prompt
+    user_replies: []
+  prompt: But before we get started I want to see if you feel the same way about the
+    issue. So..
+  type: followup
+
+
+topic_prompt:
+  choice:
+  - strongly agree
+  - agree
+  - disagree
+  - strongly disagree
+  next:
+  - id: pos_why
+    user_replies:
+    - strongly agree
+    - agree
+  - id: neg_why
+    user_replies:
+    - strongly disagree
+    - disagree
+  prompt: Should policies such as affirmative action be in place to help certain groups
+    based on their gender, ethnicity or religion?
+  type: choice
+
+
+pos_why:
+  next:
+  - id: born_equal
+    user_replies: []
+  prompt: Why do you believe this?
+  type: open
+
+
+born_equal:
+  choice:
+  - 'yes'
+  - 'no'
+  next:
+  - id: NBA
+    user_replies:
+    - 'yes'
+  - id: such_world
+    user_replies:
+    - 'no'
+  prompt: Can we ever live in a world where everyone is equal?
+  type: choice
+
+
+NBA:
+  next:
+  - id: balance
+    user_replies: []
+  prompt: Do you think if an average man decides to play in the NBA, he has the same
+    chance to succeed as a 7-foot athletic guy?
+  type: open
+
+
+such_world:
+  choice:
+  - 'yes'
+  - 'no'
+  next:
+  - id: balance
+    user_replies:
+    - 'yes'
+  - id: individuality
+    user_replies:
+    - 'no'
+  prompt: If this is impossible then should this be a goal our society strives towards?
+  type: choice
+
+
+individuality:
+  next:
+  - id: balance
+    user_replies: []
+  prompt: How do you justify spending resources to achieve something that can never
+    be achieved?
+  type: open
+
+
+balance:
+  next:
+  - id: judge_someone
+    user_replies: []
+  prompt: I think our attempts to tip the scale in one direction to create an equal
+    society is the wrong goal. I think the goal should be to create a fair society
+    and in a fair society race/genders are ignored by the law. What do you think?
+  type: open
+
+
+judge_someone:
+  choice:
+  - 'yes'
+  - 'no'
+  next:
+  - id: those_people
+    user_replies:
+    - 'yes'
+  - id: statistically
+    user_replies:
+    - 'no'
+  prompt: Do you think race, ethnicity, religion, class or gender is enough to judge
+    someone?
+  type: choice
+
+
+those_people:
+  choice:
+  - tans indian individual
+  - white straight woman
+  - indegenous gay man
+  - got to know them
+  next:
+  - id: why?
+    user_replies:
+    - tans indian individual
+    - white straight woman
+    - indegenous gay man
+  - id: statistically
+    user_replies:
+    - got to know them
+  prompt: So what do you think of when you see a indegenous gay man, a white straight
+    woman or a tans indian individual. Would you think one of those people are more
+    likely to be a smarter person? who?
+  type: choice
+
+
+why?:
+  next:
+  - id: race_gender
+    user_replies: []
+  prompt: why do you think this person would be smarter than the others?
+  type: open
+
+
+statistically:
+  choice:
+  - 'yes'
+  - 'no'
+  next:
+  - id: target
+    user_replies:
+    - 'yes'
+  - id: race_gender
+    user_replies:
+    - 'no'
+  prompt: What about to determine statistically who is likely to succeed?
+  type: choice
+
+
+target:
+  choice:
+  - 'yes'
+  - 'no'
+  next:
+  - id: who_decides
+    user_replies:
+    - 'yes'
+  - id: race_gender
+    user_replies:
+    - 'no'
+  prompt: Should we base laws that are based on statistics about race/gender?
+  type: choice
+
+
+who_decides:
+  next:
+  - id: race_gender
+    user_replies: []
+  prompt: Who decides how we use the stats to achive what purpose? What if they use
+    crime statistics to racially profile individual or use wealth statistics to retrospectively
+    judge and punish certain race or gender?
+  type: open
+
+
+race_gender:
+  next:
+  - id: closing
+    user_replies: []
+  prompt: I think race/gender-based laws are a slippery slope. I think if we start
+    basing laws on those factors then we are setting a precedence for the future.
+    Discriminatory laws are not a fix for unequal society, in fact, the only measure
+    of equality in society should be how laws treat everyone in society and it should
+    treat everyone equally. What do you think?
+  type: open
+
+
+neg_why:
+  next:
+  - id: event_n_cause
+    user_replies: []
+  prompt: Why do you believe this?
+  type: open
+
+
+event_n_cause:
+  choice:
+  - 'yes'
+  - 'no'
+  next:
+  - id: lasting_effect
+    user_replies:
+    - 'yes'
+  - id: common
+    user_replies:
+    - 'no'
+  prompt: Do you believe every event has a cause and the society is the way it is
+    today because of the actions of the past?
+  type: choice
+
+
+common:
+  choice:
+  - 'yes'
+  - 'no'
+  next:
+  - id: lasting_effect
+    user_replies:
+    - 'yes'
+  - id: card_game
+    user_replies:
+    - 'no'
+  prompt: So you don’t believe in cause and effect?
+  type: choice
+
+
+lasting_effect:
+  choice:
+  - 'yes'
+  - 'no'
+  next:
+  - id: card_game
+    user_replies:
+    - 'yes'
+  - id: only_fair
+    user_replies:
+    - 'no'
+  prompt: Do you believe discriminatory laws in the past could have had a lasting
+    effect on how the society is structured today?
+  type: choice
+
+
+card_game:
+  next:
+  - id: only_fair
+    user_replies: []
+  prompt: Suppose you were handing out cards to a group of people, you accidentally
+    missed a guy and he doesn’t have a full set. Would you not give him an extra card
+    to compensate. Or would you just let him play the unfair game?
+  type: open
+
+
+only_fair:
+  next:
+  - id: hardship_counts
+    user_replies: []
+  prompt: I think it’s only fair to compensate for mistakes that happened in the past.
+    We can't move forward as society without fixing the damge that was inflicted by
+    our past. What do you think?
+  type: open
+
+
+hardship_counts:
+  choice:
+  - 'yes'
+  - 'no'
+  next:
+  - id: work_harder
+    user_replies:
+    - 'yes'
+  - id: tennis_comp
+    user_replies:
+    - 'no'
+  prompt: Do you think someone’s hardships should be a factor when taking someone
+    under consideration for a oportunity?
+  type: choice
+
+
+tennis_comp:
+  next:
+  - id: work_harder
+    user_replies: []
+  prompt: If you were asked to select the best tennis player out of two people. One,
+    Steve, who was the last place in the Australian Open and the other, Bob, who was
+    first in your local community competition. Would you pick still pick Bob?
+  type: open
+
+
+work_harder:
+  choice:
+  - 'yes'
+  - 'no'
+  next:
+  - id: most_people
+    user_replies:
+    - 'yes'
+  - id: provide_opportunities
+    user_replies:
+    - 'no'
+  prompt: Would you want someone who had to work harder to get to where they are?
+  type: choice
+
+
+most_people:
+  next:
+  - id: provide_opportunities
+    user_replies: []
+  prompt: Most people who belong to a certain race/gender/socioeconomic background
+    had to work much harder to get to where they are. So having a quota, ensures that
+    an institution gets the best of every talent pool. Isn’t this logical
+  type: open
+
+
+provide_opportunities:
+  next:
+  - id: closing
+    user_replies: []
+  prompt: I think having policies that provide opportunities to those who are most
+    disadvantaged in society ensures that we are getting the most talented individual
+    who might otherwise go unnoticed because of the lack of opportunities. What do
+    you think?
+  type: open
+
+
+closing:
+  next:
+  - id: Ok.
+    user_replies: []
+  prompt: This was an awesome conversation and looking forward to talking more with
+    you. Do you have any final thoughts and sentiments?
+  type: open
+
+
+Ok.:
+  next:
+  - id: Please_click
+    user_replies: []
+  prompt: Ok. It is always good to have these type of conversations. I feel much better,
+    I hope you did too.
+  type: followup
+
+
+Please_click:
+  next:
+  - id: form
+    user_replies: []
+  prompt: Please click on the Link bellow when its prompted
+  type: followup
+
+
+form:
+  next:
+  - id: form
+    user_replies: []
+  prompt: Here is a link to the form
+  type: open
+
+

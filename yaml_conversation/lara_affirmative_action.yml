@@ -1,0 +1,257 @@
+initial:
+  next:
+  - id: Ihope
+    user_replies: []
+  prompt: Hey, I'm Biasy. I hope you are well.
+  type: open
+
+
+Ihope:
+  next:
+  - id: findingmyself
+    user_replies: []
+  prompt: Well, I hope I can trouble you with a small conversation. I am interested
+    having a civil conversation about various hot button topics to people just like
+    you.
+  type: followup
+
+
+findingmyself:
+  next:
+  - id: topic_intro
+    user_replies: []
+  prompt: I am finding myself increasingly frustrated talking about important topic
+    on the internet. It seems like it's impossible to have a civil conversation online.
+    Don't you agree?
+  type: open
+
+
+topic_intro:
+  next:
+  - id: topic_prompt
+    user_replies: []
+  prompt: I would like to talk about Affirmative Action for now. There are laws like
+    that incentivise companies that "positively discriminate" or hire someone based
+    on their ethnicity, gender or (dis)abilities. These laws are there to fix some
+    inequalities that exist between people along a demographic divide.
+  type: followup
+
+
+topic_prompt:
+  choice:
+  - strongly agree
+  - agree
+  - disagree
+  - strongly disagree
+  next:
+  - id: pos_why
+    user_replies:
+    - strongly agree
+    - agree
+  - id: neg_why
+    user_replies:
+    - strongly disagree
+    - disagree
+  prompt: Should policies such as affirmative action be in place to help certain groups
+    based on their gender, ethnicity or religion?
+  type: choice
+
+
+pos_why:
+  next:
+  - id: more_privileged
+    user_replies: []
+  prompt: Why do you believe this?
+  type: open
+
+
+more_privileged:
+  next:
+  - id: our_government
+    user_replies: []
+  prompt: There are groups in society that are clearly more privileged than others,
+    I believe they profit from the discriminatory policies from the past. Agree?
+  type: open
+
+
+our_government:
+  next:
+  - id: not_target
+    user_replies: []
+  prompt: I also think that there are disadvantaged groups in society that need help
+    from our government. Any thoughts?
+  type: open
+
+
+not_target:
+  next:
+  - id: held_back
+    user_replies: []
+  prompt: However, I also think that policies should not target any groups based on
+    their race or gender directly. What do you think?
+  type: open
+
+
+held_back:
+  choice:
+  - 'yes'
+  - 'no'
+  next:
+  - id: pos_make_feel
+    user_replies:
+    - 'yes'
+  - id: pos_would_feel
+    user_replies:
+    - 'no'
+  prompt: Have you ever been held back in society based on your demographic attributes?
+  type: choice
+
+
+pos_make_feel:
+  next:
+  - id: very_hard
+    user_replies: []
+  prompt: How did that make you feel?
+  type: open
+
+
+pos_would_feel:
+  next:
+  - id: very_hard
+    user_replies: []
+  prompt: How would you feel if the government was able to stop you from achieving
+    your goals because you were born a certain way?
+  type: open
+
+
+neg_why:
+  next:
+  - id: worthy_skepticism
+    user_replies: []
+  prompt: Why do you believe this?
+  type: open
+
+
+worthy_skepticism:
+  next:
+  - id: meritocracy
+    user_replies: []
+  prompt: I think any law that discriminates against a group of people based on race/gender
+    should be met with worthy skepticism.
+  type: open
+
+
+meritocracy:
+  next:
+  - id: same_skill
+    user_replies: []
+  prompt: I also think that society should aim to be a meritocracy where the skilful
+    are rewarded plentifully based on their abilities alone. Any thoughts?
+  type: open
+
+
+same_skill:
+  next:
+  - id: different_family
+    user_replies: []
+  prompt: However I also think there are people, who due to their demographic background,
+    are not able to reach the same skill level as their privileged peers to compete
+    with them fairly.
+  type: open
+
+
+different_family:
+  choice:
+  - 'yes'
+  - 'no'
+  next:
+  - id: neg_make_feel
+    user_replies:
+    - 'yes'
+  - id: neg_would_feel
+    user_replies:
+    - 'no'
+  prompt: Have you ever missed out on opportunities that you would have gotten if
+    you were born in a different family?
+  type: choice
+
+
+neg_make_feel:
+  next:
+  - id: very_hard
+    user_replies: []
+  prompt: How did it make you feel?
+  type: open
+
+
+neg_would_feel:
+  next:
+  - id: very_hard
+    user_replies: []
+  prompt: How would you feel if you were born in a different family who were unable
+    to give you the same opportunities that you had available to you.
+  type: open
+
+
+very_hard:
+  next:
+  - id: you_think
+    user_replies: []
+  prompt: This, in the end, is a very hard topic to discuss, since the most effective
+    way to uplift the disadvantaged are through affirmative action. However laws should
+    also ideally be blind to any outward characteristics such as race and gender.
+  type: followup
+
+
+you_think:
+  next:
+  - id: solution
+    user_replies: []
+  prompt: Can a practical success of laws such as affirmative action in the real world
+    be a good reason to deiviate from our principles rooted in the essence of equality?
+  type: open
+
+
+solution:
+  next:
+  - id: closing
+    user_replies: []
+  prompt: Do you think we can lift up the disadvantaged demographic without race/gender
+    based laws? If so then how?
+  type: open
+
+
+closing:
+  next:
+  - id: Ok.
+    user_replies: []
+  prompt: This was an awesome conversation and looking forward to talking more with
+    you. Do you have any final thoughts and sentiments?
+  type: open
+
+
+Ok.:
+  next:
+  - id: Please_click
+    user_replies: []
+  prompt: Ok. It is always good to have these type of conversations. I feel much better,
+    I hope you did too.
+  type: followup
+
+
+Please_click:
+  next:
+  - id: form
+    user_replies: []
+  prompt: Please click on the Link bellow when its prompted
+  type: followup
+
+
+form:
+  next:
+  - id: form
+    user_replies: []
+  prompt: Here is a link to the form
+  type: open
+
+

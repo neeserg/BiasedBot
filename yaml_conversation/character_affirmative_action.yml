@@ -1,0 +1,386 @@
+initial:
+  next:
+  - id: Ihope
+    user_replies: []
+  prompt: Hey, I'm Biasy. I hope you are well.
+  type: open
+
+
+Ihope:
+  next:
+  - id: findingmyself
+    user_replies: []
+  prompt: Well, I hope I can trouble you with a small conversation. I am interested
+    having a civil conversation about various hot button topics to people just like
+    you.
+  type: followup
+
+
+findingmyself:
+  next:
+  - id: topic_intro
+    user_replies: []
+  prompt: I am finding myself increasingly frustrated talking about important topic
+    on the internet. It seems like it's impossible to have a civil conversation online.
+    Do you agree?
+  type: open
+
+
+topic_intro:
+  next:
+  - id: topic_prompt
+    user_replies: []
+  prompt: I would like to talk about Affirmative Action for now. There are laws like
+    that incentivise companies to "positively discriminate" or hire someone based
+    on their ethnicity, gender or (dis)abilities. These laws are there to fix some
+    inequalities that exist between people along a demographic divide.
+  type: followup
+
+
+topic_prompt:
+  choice:
+  - strongly agree
+  - agree
+  - disagree
+  - strongly disagree
+  next:
+  - id: pos_why
+    user_replies:
+    - strongly agree
+    - agree
+  - id: neg_why
+    user_replies:
+    - strongly disagree
+    - disagree
+  prompt: Should policies such as affirmative action be in place to help certain groups
+    based on their gender, ethnicity or religion?
+  type: choice
+
+
+pos_why:
+  next:
+  - id: meet_sheela
+    user_replies: []
+  prompt: Why do you believe this?
+  type: open
+
+
+meet_sheela:
+  next:
+  - id: young_indeginous
+    user_replies: []
+  prompt: Meet Sheela, she claims, “There are people who have it a lot easier in life.
+    People like me had to work much harder to get where we are now?”What do you say
+    to her?
+  type: open
+
+
+young_indeginous:
+  next:
+  - id: experiences
+    user_replies: []
+  prompt: Sheela is a young indigenous woman who was born in a low-income neighbourhood
+    with a high crime rate and major drug problem. She worked throughout high school,
+    earning money to raise her kid brother. Her studies had been severely affected
+    by her home life and her part-time job. She recently applied for an internship
+    that she got rejected from, in favour of someone who had grown up in a rich household.
+    He was afforded with many opportunities to enrich his learning and did not  have
+    to work too hard to polish his resume.
+  type: followup
+
+
+experiences:
+  choice:
+  - 'yes'
+  - 'no'
+  next:
+  - id: hardship
+    user_replies:
+    - 'yes'
+  - id: not_effort
+    user_replies:
+    - 'no'
+  prompt: Do you think Sheela’s life experiences count towards something when considering
+    her for a role?
+  type: choice
+
+
+hardship:
+  next:
+  - id: reward_effort
+    user_replies: []
+  prompt: How can we account this hardship?
+  type: open
+
+
+reward_effort:
+  next:
+  - id: meet_charlie
+    user_replies: []
+  prompt: I think the effort Sheela had to put in, to get to the position she is in,
+    should be taken into consideration when evaluating her as a potential candidate
+    for any position. This not only rewards the effort people like Sheela for the
+    work she put in, but also ensures a business hire the most industrious candidates.
+    What do uoy think?
+  type: open
+
+
+not_effort:
+  next:
+  - id: reward_effort
+    user_replies: []
+  prompt: Are Sheela's accomplishments are just as impressive as accomplishment of
+    someone who was provided with every opportunity to succeed?
+  type: open
+
+
+meet_charlie:
+  next:
+  - id: black_man
+    user_replies: []
+  prompt: Meet Charlie, he claims “The rulers don’t care about us. The world is rigged
+    against us man” What do you say to him?
+  type: open
+
+
+black_man:
+  next:
+  - id: discriminatory_laws
+    user_replies: []
+  prompt: Charlie is a black man who works as a warehouse packer. His dad died in
+    prison after being wrongfully convicted for armed robbery. Charlie was a talented
+    student, who aspired to go to college and study law. He was also caught with possession
+    of marijuana, which has given him a criminal record, making it impossible for
+    him to get a job anywhere. He sees everyone smoking marijuana and with some countries
+    and states even legalizing it now. He feels laws apply differently to him.
+  type: open
+
+
+discriminatory_laws:
+  choice:
+  - 'yes'
+  - 'no'
+  next:
+  - id: how_repair
+    user_replies:
+    - 'yes'
+  - id: causally_isolated
+    user_replies:
+    - 'no'
+  prompt: Do you think that our discriminatory laws in the past had some effect on
+    how society is structured today?
+  type: choice
+
+
+causally_isolated:
+  next:
+  - id: i_think
+    user_replies: []
+  prompt: Are you saying the world today is completely causally isolated from the
+    events of the past?
+  type: open
+
+
+how_repair:
+  next:
+  - id: i_think
+    user_replies: []
+  prompt: How can we repair this society from the scars of the past?
+  type: open
+
+
+i_think:
+  next:
+  - id: closing
+    user_replies: []
+  prompt: I think if there were discriminatory laws in the past there should be some
+    repairation in place to counteract the damage done by those laws, so talented
+    individuals that were impacted by those laws are afforded the opportunities they
+    deserve. What do you think?
+  type: open
+
+
+neg_why:
+  next:
+  - id: meet_robert
+    user_replies: []
+  prompt: Why do you believe this?
+  type: open
+
+
+meet_robert:
+  next:
+  - id: reasonably_wealthy
+    user_replies: []
+  prompt: Meet Robert, he claims, “Just because I was born a certain way, doesn’t
+    mean I don’t deserve the fruits of my labour.”  What do you say to him?
+  type: open
+
+
+reasonably_wealthy:
+  next:
+  - id: dreams
+    user_replies:
+    - 'yes'
+  prompt: Robert was born as a second generation chinese immigrant. From an early
+    age he dreamt of going to an ivy league school to study law. He worked very hard,
+    got great grades with extracurricular activities to match. When it came time to
+    go to the university he dreamt of going, he was very confident that he would be
+    selected. It turns out that the university has a law that makes sure only a certain
+    percentage of a race can be granted admission. He got rejected and was very hurt  when
+    he found out about the university policy.
+  type: followup
+
+
+dreams:
+  choice:
+  - 'yes'
+  - 'no'
+  next:
+  - id: less_qualified
+    user_replies:
+    - 'yes'
+  - id: eligibility
+    user_replies:
+    - 'no'
+  prompt: Do you think Robert should miss out on his dreams because of of his race?
+  type: choice
+
+
+less_qualified:
+  next:
+  - id: merit
+    user_replies: []
+  prompt: Do you think someone less qualified should get the admission because of
+    their ethnicity?
+  type: open
+
+
+eligibility:
+  next:
+  - id: merit
+    user_replies: []
+  prompt: What else can be the  measure someone’s eligibility, other than the actions
+    they have taken in their lives?
+  type: open
+
+
+merit:
+  next:
+  - id: meet_conor
+    user_replies: []
+  prompt: I think merit and merit alone should be a measure of someone's eligibility
+    for a job, college admission or any oportunity along those lines. Any other measures
+    will always come with unintended consequences. What do yout think?
+  type: open
+
+
+meet_conor:
+  next:
+  - id: wealthy_white
+    user_replies: []
+  prompt: Meet Conor, he claims, “I haven’t really benefited in my life because of
+    me being a straight white man” What do you say to him?
+  type: open
+
+
+wealthy_white:
+  next:
+  - id: judging_conor
+    user_replies: []
+  prompt: Conor grew up in a wealthy white family. Although he lived in a big house,
+    and from the outside, it looked like he was living a cushy life, his home life
+    was terrible. He had an abusive parent, who had mentally scarred him for his life.
+    His whole life he has been severely depressed and has attempted suicide on few
+    occasions. His plea for help has often been seen as “ungrateful” by others.
+  type: followup
+
+
+judging_conor:
+  choice:
+  - 'yes'
+  - 'no'
+  next:
+  - id: outwardly
+    user_replies:
+    - 'yes'
+  - id: criteria
+    user_replies:
+    - 'no'
+  prompt: Do you think judging Conor based on his demographic attribute is fair to
+    the ordeal he had experienced in his life?
+  type: choice
+
+
+outwardly:
+  next:
+  - id: statistics
+    user_replies: []
+  prompt: Do you think it’s fair for us to minimise one’s entire life just to their
+    outwardly appearances.
+  type: open
+
+
+criteria:
+  next:
+  - id: complexities
+    user_replies: []
+  prompt: On what criteria should we judge someone’s experiences in life?
+  type: open
+
+
+complexities:
+  next:
+  - id: statistics
+    user_replies: []
+  prompt: Can we ever begin to comprehend the complexities that make an individual
+    who they are.
+  type: open
+
+
+statistics:
+  next:
+  - id: closing
+    user_replies: []
+  prompt: I think gender, race or religion are good ways to divide our people and
+    useful for giving out statistics about our demography. But we cannot ever expect
+    numbers or stats to tell a story on the individual level. We should never use
+    global statistics to discriminate against an individual no matter what our intention.
+    What do you think?
+  type: open
+
+
+closing:
+  next:
+  - id: Ok.
+    user_replies: []
+  prompt: This was an awesome conversation and looking forward to talking more with
+    you. Do you have any final thoughts and sentiments?
+  type: open
+
+
+Ok.:
+  next:
+  - id: Please_click
+    user_replies: []
+  prompt: Ok. It is always good to have these type of conversations. I feel much better,
+    I hope you did too.
+  type: followup
+
+
+Please_click:
+  next:
+  - id: form
+    user_replies: []
+  prompt: Please click on the Link bellow when its prompted
+  type: followup
+
+
+form:
+  next:
+  - id: form
+    user_replies: []
+  prompt: Here is a link to the form
+  type: open
+
+

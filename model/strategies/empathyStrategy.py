@@ -147,7 +147,7 @@ class EmpathyStrategy:
         elif next_id == "form" and not self.experiment:
             #######################do some thinf skf
             url = self.userReplies.get_url(self.topic, self.bot_type, message["user_id"])
-            reply = {"prompt_id": next_id,"prompt": "Please fill out the followink form:",\
+            reply = {"prompt_id": next_id,"prompt": "Please fill out the following form:",\
                  "type": next_conv["type"], "url": url, "url_text": "Link to Form"}
             return reply
         else:

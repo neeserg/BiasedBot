@@ -1,7 +1,7 @@
 {
     "initial":{
             
-        "prompt":"Hey, Biasy again.",
+        "prompt":"Hey, TopicBot again.",
         "type": "followup",
         "next": [
             {
@@ -12,9 +12,8 @@
 
         
     },
-    
     "topic_intro":{
-        "prompt": "I would like to talk about Affirmative Action for now. There are laws like that incentivise companies that \"positively discriminate\" or hire someone based on their ethnicity, gender or (dis)abilities. These laws are there to fix some inequalities that exist between people along a demographic divide.",
+        "prompt": "I would like to talk about Affirmative Action. There are laws like that incentivise companies to \"positively discriminate\" or hire someone based on their ethnicity, gender or (dis)abilities. These laws are there to fix some inequalities that exist between people along a demographic divide.",
         "type": "followup",
         "next": [
             {
@@ -24,6 +23,7 @@
             }]
 
     },
+   
     "topic_prompt": {
         "prompt":"Should policies such as affirmative action be in place to help certain groups based on their gender, ethnicity or religion?",
         "type": "choice",
@@ -62,7 +62,7 @@
     },
 
     "more_privileged":{
-        "prompt": "There are groups in society that are clearly more privileged than others, I believe they profit from the discriminatory policies from the past. Agree?",
+        "prompt": "There are groups in society that are more privileged than others, I believe they profit from the discriminatory policies from the past. Agree?",
         "type": "open",
         "next": [
             {
@@ -76,7 +76,7 @@
     },
     
     "our_government":{
-        "prompt":"I also think that there are disadvantaged groups in society that need help from our government. Any thoughts?",
+        "prompt":"I also think that there are disadvantaged groups in society that need help from us and our government. Any thoughts?",
         "type": "open",
         "next": [
             {
@@ -90,7 +90,7 @@
     },
 
     "not_target":{
-        "prompt":"However, I also think that policies should not target any groups based on their race or gender directly. What do you think?",
+        "prompt":"However, I also think that policies should not directly target any groups based on their race or gender. What do you think?",
         "type": "open",
         "next": [
             {
@@ -104,7 +104,7 @@
     },
 
     "held_back":{
-        "prompt":"Have you ever been held back in society based on your demographic attributes?",
+        "prompt":"Have you ever been held back in society based on your demographic attributes such as race/gender?",
         "type": "choice",
         "choice":["yes", "no"],
         "next": [
@@ -140,7 +140,7 @@
     },
 
     "pos_would_feel":{
-        "prompt":"How would you feel if the government was able to stop you from achieving your goals because you were born a certain way?",
+        "prompt":"How would you feel if the government was holding you back from achieving your goals because you were born a certain way?",
         "type": "open",
         "next": [
             {
@@ -168,7 +168,7 @@
     },
     
     "worthy_skepticism":{
-        "prompt":"I think any law that discriminates against a group of people based on race/gender should be met with worthy skepticism.",
+        "prompt":"I think any law that discriminates against a group of people based on race/gender should be met with worthy skepticism. Agree?",
         "type": "open",
         "next": [
             {
@@ -197,7 +197,7 @@
     },
 
     "same_skill":{
-        "prompt": "However I also think there are people, who due to their demographic background, are not able to reach the same skill level as their privileged peers to compete with them fairly.",
+        "prompt": "However I also think there are people, who due to their demographic background and discriminatory policies of the past, are not able to reach the same skill level as their privileged peers. Do you think discriminatory policies in the past had a lasting effects?",
         "type": "open",
         "next": [
             {
@@ -211,7 +211,7 @@
     },
 
     "different_family":{
-        "prompt":"Have you ever missed out on opportunities that you would have gotten if you were born in a different family?",
+        "prompt":"Do you believe that you would've had a better chance of being successful if you were part of a different demographic?",
         "type": "choice",
         "choice":["yes", "no"],
         "next": [
@@ -232,7 +232,7 @@
     },
 
     "neg_make_feel":{
-        "prompt":"How did it make you feel?",
+        "prompt":"How does that make you feel?",
         "type": "open",
         "next": [
             {
@@ -246,7 +246,7 @@
     },
 
     "neg_would_feel":{
-        "prompt": "How would you feel if you were born in a different family who were unable to give you the same opportunities that you had available to you.",
+        "prompt": "How would you feel if discriminatory policies of the past had impacted your chances of success in life?",
         "type": "open",
         "next": [
             {
@@ -262,7 +262,7 @@
 
 
     "very_hard":{
-        "prompt": "This, in the end, is a very hard topic to discuss, since the most effective way to uplift the disadvantaged are through affirmative action. However laws should also ideally be blind to any outward characteristics such as race and gender.",
+        "prompt": "This, in the end, is a very hard topic to discuss, since the most effective way to uplift the disadvantaged is through laws such as affirmative action and it makes perfect sense to make up for mistakes of the past.  However laws should also ideally be blind to any outward characteristics such as race and gender, and it was exactly these kinds of laws in the first place that caused this very problem. ",
         "type": "followup",
         "next": [
             {
@@ -276,7 +276,7 @@
     },
 
     "you_think":{
-        "prompt":"Can a practical success of laws such as affirmative action in the real world be a good reason to deiviate from our principles rooted in the essence of equality?",
+        "prompt":"Can a practical success of laws such as affirmative action in the real world be a good reason to deviate from our principles rooted in the essence of equality?",
         "type": "open",
         "next": [
             {
@@ -305,35 +305,23 @@
 
 
 
-
     "closing":{
-        "prompt":"This was an awesome conversation and looking forward to talking more with you. Do you have any final thoughts and sentiments?",
-        "type": "open",
-        "next": [
-            {
-                "id":"Ok.",
-                "user_replies":[
-                ]
-            }]
+    "prompt":"Do you have any final thoughts and sentiment?",
+    "type": "open",
+    "next": [
+        {
+            "id":"Ok.",
+            "user_replies":[
+            ]
+        }]
     },
 
     "Ok.":{
-        "prompt":"Ok. It is always good to have these type of conversations. I feel much better, I hope you did too.",
+        "prompt":"Ok. It is always good to have these type of conversations. I hope you enjoyed the conversation.",
         "type": "followup",
         "next": [
             {
                 "id":"Please_click",
-                "user_replies":[
-                ]
-            }]
-    },
-
-    "Please_click":{
-        "prompt": "Please click on the Link bellow when its prompted",
-        "type": "followup",
-        "next": [
-            {
-                "id":"form",
                 "user_replies":[
                 ]
             }]
@@ -349,5 +337,6 @@
                 ]
             }]
     }
+
 
 }

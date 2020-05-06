@@ -1,7 +1,6 @@
 {
-    "initial":{
-            
-        "prompt":"Hey, Biasy again. Lets talk about free speech once more and continue our discussion from before.",
+    "initial":{     
+        "prompt":"Hey, TopicBot again. Lets talk about free speech once more and continue our discussion from before.",
         "type": "followup",
         "next": [
             {
@@ -23,6 +22,7 @@
             }]
 
     },
+    
     "topic_prompt": {
         "prompt":"Do you believe in unrestricted free speech?",
         "type": "choice",
@@ -91,7 +91,7 @@
 
 
     "spread_freely":{
-        "prompt": "However, I do think that some speech should be controlled, speech that spreads hate and misinformation should not be allowed to spread freely.",
+        "prompt": "However, I do think that some speech should be controlled, speech that spreads hate and misinformation should not be allowed to spread freely. Do you think all speech are built equal?",
         "type": "open",
         "next": [
             {
@@ -105,7 +105,7 @@
     },
 
     "hate_personally":{
-        "prompt":"Have you been affected by hate speech or defamatory personally?",
+        "prompt":"Have you been affected by hate speech or false defamatory personally?",
         "type": "choice",
         "choice":["yes", "no"],
         "next": [
@@ -199,7 +199,7 @@
     },
 
     "too_big":{
-        "prompt":"However, I do think restricting free speech might be too big of a price to pay.",
+        "prompt":"However, I do think restricting free speech might be too big of a price to pay. Can we be sure that the speech we are restricting are causing harm to society?",
         "type": "open",
         "next": [
             {
@@ -213,7 +213,7 @@
     },
 
     "judgement_ridicule":{
-        "prompt":"Have you ever felt that you had to suppress your expression for fear of judgement, hate or ridicule?",
+        "prompt":"Have you ever felt that you had to suppress your self expression?",
         "type": "choice",
         "choice":["yes", "no"],
         "next": [
@@ -264,7 +264,7 @@
     
 
     "power_speech":{
-        "prompt": "This, in the end, is a very hard topic to discuss, since we rely on free speech to discuss it. But we should also give the power of speech its respect, especially in this digital age. False and hateful speech has the power to spread very fast and change society instantly. But to discuss what is false and what is true requires people to speak freely.",
+        "prompt": "This, in the end, is a very hard topic to discuss, since we rely on free speech to discuss it. But we should also give the power of speech its due respect, especially in this digital age. False and hateful speech has the power to spread very fast and change society instantly. But to even discuss what piece of information is false or true requires people to speak freely. So it is really a catch 22.",
         "type": "followup",
         "next": [
             {
@@ -306,47 +306,36 @@
     },
 
     "closing":{
-        "prompt":"This was an awesome conversation and looking forward to talking more with you. Do you have any final thoughts and sentiments?",
-        "type": "open",
-        "next": [
-            {
-                "id":"Ok.",
-                "user_replies":[
-                ]
-            }]
-    },
+    "prompt":"Do you have any final thoughts and sentiment?",
+    "type": "open",
+    "next": [
+        {
+            "id":"Ok.",
+            "user_replies":[
+            ]
+        }]
+},
 
-    "Ok.":{
-        "prompt":"Ok. It is always good to have these type of conversations. I feel much better, I hope you did too.",
-        "type": "followup",
-        "next": [
-            {
-                "id":"Please_click",
-                "user_replies":[
-                ]
-            }]
-    },
+"Ok.":{
+    "prompt":"Ok. It is always good to have these type of conversations. I hope you enjoyed the conversation.",
+    "type": "followup",
+    "next": [
+        {
+            "id":"Please_click",
+            "user_replies":[
+            ]
+        }]
+},
 
-    "Please_click":{
-        "prompt": "Please click on the Link bellow when its prompted",
-        "type": "followup",
-        "next": [
-            {
-                "id":"form",
-                "user_replies":[
-                ]
-            }]
-    },
-
-    "form":{
-        "prompt":"Here is a link to the form",
-        "type": "open",
-        "next": [
-            {
-                "id":"form",
-                "user_replies":[
-                ]
-            }]
-    }
+"form":{
+    "prompt":"Here is a link to the form",
+    "type": "open",
+    "next": [
+        {
+            "id":"form",
+            "user_replies":[
+            ]
+        }]
+}
 
 }

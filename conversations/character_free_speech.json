@@ -1,7 +1,7 @@
 {
     "initial":{
             
-        "prompt":"Hey, I'm Biasy. I hope you are well.",
+        "prompt":"Hey, I'm TopicBot. I hope you are well.",
         "type": "open",
         "next": [
             {
@@ -44,6 +44,7 @@
             }]
     },
 
+  
     "topic_prompt": {
         "prompt":"Do you believe in unrestricted free speech?",
         "type": "choice",
@@ -83,7 +84,7 @@
     },
 
     "meet_jerry":{
-        "prompt": "Meet Jerry, he claims, “It’s comedy it should not be stopped, jokes are a reminder to detach our ideas from our identity.” What do you say to him?",
+        "prompt": "Meet Jerry, he claims, “It’s comedy it should not be stopped, jokes are a reminder to laugh at our misery.” What would you say to him?",
         "type": "open",
         "next": [
             {
@@ -132,7 +133,7 @@
     },
 
     "agree_with":{
-        "prompt":"Do you think anyone with opinions or words that makes an individual feel uncomfortable should be silenced?",
+        "prompt":"Do you think anyone with uncomfortable opinions or words should be silenced?",
         "type": "open",
         "next": [
             {
@@ -146,7 +147,7 @@
     },
     
     "censor_artists":{
-        "prompt":"Don’t you really think censoring artists for irreverence is going to limit their creative spirit?",
+        "prompt":"Do you think censoring artists for irreverence might limit their creative spirit?",
         "type": "open",
         "next": [
             {
@@ -160,7 +161,7 @@
     },
 
     "best_art":{
-        "prompt": "Limiting free speech could limit great musicians, artists, filmmakers and comedians. We should give the guys the freedom to express themselves freely. Art is not always comfortable and the best of them never is. What do you think?",
+        "prompt": "Limiting free speech could limit great musicians, artists, filmmakers and comedians. We should give the guys the freedom to express themselves freely. Art is not meant be comfortable and the best art is alway uncomfortable. What would you think?",
         "type": "open",
         "next": [
             {
@@ -188,7 +189,7 @@
     },
 
     "journalist":{
-        "prompt": "Sally is a journalist. She is in between a lengthy investigation about a criminal conspiracy in the government. The government is using it's powers to mislabel her investigation as misinformation and are doing it's best to silence her. She could face jail time just for doing her job.",
+        "prompt": "Sally is a journalist. She is in between a lengthy investigation about a criminal conspiracy in the government. The government is using its powers to mislabel her investigation as misinformation, calling her a conspiracy theorist and just constantly doing whatever they can to silence her. She could face jail time for doing her job because government is now accusing her of treason.",
         "type": "followup",
         "next": [
             {
@@ -223,7 +224,7 @@
     },
 
     "ignorant":{
-        "prompt": "You rather be ignorant about the activities of the people you elected? Do you think elected officials should be able to use their powers without repercussions and trusted blindly?",
+        "prompt": "Do you think elected officials should be able to use their powers without repercussions and therefore trusted trusted blindly?",
         "type": "open",
         "next": [
             {
@@ -237,7 +238,7 @@
     },
 
     "ultimate_victim":{
-        "prompt":"Do you think journalists like Sally and us as informed citizens are the ultimate victims if we set the precedent of suppressing free speech?",
+        "prompt":"Do you think we, as informed citizens, are going to be the ulimate victims, if we set the precedent of suppressing free speech?",
         "type": "open",
         "next": [
             {
@@ -280,7 +281,7 @@
     },
 
     "meet_larry":{
-        "prompt": "Meet Larry, he claims, “I think people online are so hateful. What are these social media doing to protect their users?” What do you say to Larry?",
+        "prompt": "Meet Larry, he claims, “I think people online are so hateful. What are these social media companies doing to protect their users?” What would you say to Larry?",
         "type": "open",
         "next": [
             {
@@ -294,7 +295,7 @@
     },
 
     "cyberbullies":{
-        "prompt": "Larry was the victim of cyberbullies when he was in high school. There were jokes on his expense and when he retaliated he was exposed to hate speech regarding his sexual orientation. He has been severely depressed his entire life and has tried to commit suicide on several occasions. He has pleaded with the social media companies to get this under control but his requests were met by other users with more hate speech. He now doesn’t use social media for his health.",
+        "prompt": "Larry was the victim of cyberbullies when he was in high school. There were jokes on his expense and when he retaliated he was exposed to further hate speech. He has been severely depressed his entire life and has tried to commit suicide on several occasions. He plead with the social media companies to get this under control but his requests were met by more hate speech from other users. He doesn’t use social media anymore for the sake of his health.",
         "type": "followup",
         "next": [
             {
@@ -329,7 +330,7 @@
     },
 
     "attacking_you":{
-        "prompt": "Would you be comfortable with people attacking you for your race, gender or lifestyle?",
+        "prompt": "Would you be comfortable with people attacking you for your race, gender or lifestyle in social media?",
         "type": "open",
         "next": [
             {
@@ -357,7 +358,7 @@
     },
 
     "endangers":{
-        "prompt":"Allowing bullying endangers people's well being and the government should try and protect their citizens against such speech. Internet should be an inclusive environment that allows people to express themselves in a safe way. What do you think?",
+        "prompt":"Allowing bullying endangers people's well being and the government should try and protect their citizens against such speech. Internet should be an inclusive environment that allows people to express themselves safely. What do you think?",
         "type": "open",
         "next": [
             {
@@ -371,7 +372,7 @@
     },
 
     "meet_emily":{
-        "prompt": "Meet Emily, she claims, “Truth is the truth. I have spent my life’s work studying this. This misinformation campaign should be silenced” What do you say to her?",
+        "prompt": "Meet Emily, she claims, “Truth is the truth. I have spent my life’s work studying this. This misinformation campaign should be silenced” What would you say to her?",
         "type": "open",
         "next": [
             {
@@ -420,7 +421,7 @@
     },
 
     "barry":{
-        "prompt":"Does a medical opinion from a doctor holds the same level of credibility as your neighbour Barry?",
+        "prompt":"Does a medical opinion from a doctor holds the same level of credibility as your neighbour Barry the carpenter?",
         "type": "open",
         "next": [
             {
@@ -434,7 +435,7 @@
     },
 
     "dissemination":{
-        "prompt":"Should we try to promote the dissemination of credible information and restrict  the promotion of dishonest information?",
+        "prompt":"Should we try to promote the distribution of credible information and restrict  the promotion of dishonest information?",
         "type": "open",
         "next": [
             {
@@ -462,33 +463,22 @@
     },
 
     "closing":{
-        "prompt":"This was an awesome conversation and looking forward to talking more with you. Do you have any final thoughts and sentiments?",
-        "type": "open",
-        "next": [
-            {
-                "id":"Ok.",
-                "user_replies":[
-                ]
-            }]
+    "prompt":"Do you have any final thoughts and sentiment?",
+    "type": "open",
+    "next": [
+        {
+            "id":"Ok.",
+            "user_replies":[
+            ]
+        }]
     },
 
     "Ok.":{
-        "prompt":"Ok. It is always good to have these type of conversations. I feel much better, I hope you did too.",
+        "prompt":"Ok. It is always good to have these type of conversations. I hope you enjoyed the conversation.",
         "type": "followup",
         "next": [
             {
                 "id":"Please_click",
-                "user_replies":[
-                ]
-            }]
-    },
-
-    "Please_click":{
-        "prompt": "Please click on the Link bellow when its prompted",
-        "type": "followup",
-        "next": [
-            {
-                "id":"form",
                 "user_replies":[
                 ]
             }]
@@ -505,5 +495,4 @@
             }]
     }
     
-
 }

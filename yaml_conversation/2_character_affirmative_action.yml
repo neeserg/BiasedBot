@@ -2,7 +2,7 @@ initial:
   next:
   - id: topic_intro
     user_replies: []
-  prompt: Hey, Biasy again. Lets talk about affirmative action once more and continue
+  prompt: Hey, TopicBot again. Lets talk about affirmative action once more and continue
     our discussion from before.
   type: followup
 
@@ -49,8 +49,8 @@ meet_sheela:
   - id: young_indeginous
     user_replies: []
   prompt: Meet Sheela, she claims, “There are people who have it a lot easier in life.
-    People like me had to work much harder to get where we are now?”What do you say
-    to her?
+    People like me had to work much harder to get where we are now.” What would you
+    say to her?
   type: open
 
 
@@ -63,7 +63,7 @@ young_indeginous:
     earning money to raise her kid brother. Her studies had been severely affected
     by her home life and her part-time job. She recently applied for an internship
     that she got rejected from, in favour of someone who had grown up in a rich household.
-    He was afforded with many opportunities to enrich his learning and did not  have
+    He was afforded with many opportunities to enrich his learning and did not have
     to work too hard to polish his resume.
   type: followup
 
@@ -79,8 +79,8 @@ experiences:
   - id: not_effort
     user_replies:
     - 'no'
-  prompt: Do you think Sheela’s life experiences count towards something when considering
-    her for a role?
+  prompt: Do you Sheela's accomplishments are more impressive due to the hardship
+    she endured?
   type: choice
 
 
@@ -88,7 +88,7 @@ hardship:
   next:
   - id: reward_effort
     user_replies: []
-  prompt: How can we account this hardship?
+  prompt: How can we take this hardship into consideration?
   type: open
 
 
@@ -96,11 +96,10 @@ reward_effort:
   next:
   - id: meet_charlie
     user_replies: []
-  prompt: I think the effort Sheela had to put in, to get to the position she is in,
-    should be taken into consideration when evaluating her as a potential candidate
-    for any position. This not only rewards the effort people like Sheela for the
-    work she put in, but also ensures a business hire the most industrious candidates.
-    What do uoy think?
+  prompt: I think the effort Sheela exerted should be taken into consideration when
+    evaluating her as a potential candidate for any position. This not only rewards
+    the effort people put in, but also ensures a business hire the most industrious
+    candidates. What do you think?
   type: open
 
 
@@ -108,8 +107,8 @@ not_effort:
   next:
   - id: reward_effort
     user_replies: []
-  prompt: Are Sheela's accomplishments are just as impressive as accomplishment of
-    someone who was provided with every opportunity to succeed?
+  prompt: Would Sheela's accomplishments be as impressive if she did not have to put
+    in the effort she did?
   type: open
 
 
@@ -117,8 +116,8 @@ meet_charlie:
   next:
   - id: black_man
     user_replies: []
-  prompt: Meet Charlie, he claims “The rulers don’t care about us. The world is rigged
-    against us man” What do you say to him?
+  prompt: Meet Charlie, he claims “The government does not care about us. The world
+    is rigged against us.” What would you say to him?
   type: open
 
 
@@ -132,7 +131,7 @@ black_man:
     of marijuana, which has given him a criminal record, making it impossible for
     him to get a job anywhere. He sees everyone smoking marijuana and with some countries
     and states even legalizing it now. He feels laws apply differently to him.
-  type: open
+  type: followup
 
 
 discriminatory_laws:
@@ -146,8 +145,8 @@ discriminatory_laws:
   - id: causally_isolated
     user_replies:
     - 'no'
-  prompt: Do you think that our discriminatory laws in the past had some effect on
-    how society is structured today?
+  prompt: Do you think the discriminatory laws in the past had some effect on how
+    society is structured today?
   type: choice
 
 
@@ -172,10 +171,9 @@ i_think:
   next:
   - id: closing
     user_replies: []
-  prompt: I think if there were discriminatory laws in the past there should be some
-    repairation in place to counteract the damage done by those laws, so talented
-    individuals that were impacted by those laws are afforded the opportunities they
-    deserve. What do you think?
+  prompt: There should be some repairation to counteract the lasting damage of discriminatory
+    laws of the past, so talented individuals that were impacted by those laws are
+    afforded the opportunities they deserve. What do you think?
   type: open
 
 
@@ -192,7 +190,7 @@ meet_robert:
   - id: reasonably_wealthy
     user_replies: []
   prompt: Meet Robert, he claims, “Just because I was born a certain way, doesn’t
-    mean I don’t deserve the fruits of my labour.”  What do you say to him?
+    mean I don’t deserve the fruits of my labour.”  What would you say to him?
   type: open
 
 
@@ -202,12 +200,12 @@ reasonably_wealthy:
     user_replies:
     - 'yes'
   prompt: Robert was born as a second generation chinese immigrant. From an early
-    age he dreamt of going to an ivy league school to study law. He worked very hard,
-    got great grades with extracurricular activities to match. When it came time to
-    go to the university he dreamt of going, he was very confident that he would be
-    selected. It turns out that the university has a law that makes sure only a certain
-    percentage of a race can be granted admission. He got rejected and was very hurt  when
-    he found out about the university policy.
+    age he dreamt of going to a prestiguous university to study law. He worked very
+    hard, got great grades with extracurricular activities to match. When it came
+    time to go to the university he dreamt of going, he was very confident that he
+    would be selected. It turns out that the university has a law that makes sure
+    only a certain percentage of a race can be granted admission. He got rejected
+    and was very hurt when he found out about the university policy.
   type: followup
 
 
@@ -222,7 +220,7 @@ dreams:
   - id: eligibility
     user_replies:
     - 'no'
-  prompt: Do you think Robert should miss out on his dreams because of of his race?
+  prompt: Do you think Robert should miss out on his dreams because of his race?
   type: choice
 
 
@@ -239,7 +237,7 @@ eligibility:
   next:
   - id: merit
     user_replies: []
-  prompt: What else can be the  measure someone’s eligibility, other than the actions
+  prompt: What can be the  measure of someone’s eligibility, other than the actions
     they have taken in their lives?
   type: open
 
@@ -250,7 +248,7 @@ merit:
     user_replies: []
   prompt: I think merit and merit alone should be a measure of someone's eligibility
     for a job, college admission or any oportunity along those lines. Any other measures
-    will always come with unintended consequences. What do yout think?
+    will always come with unintended consequences. What do you think?
   type: open
 
 
@@ -259,7 +257,7 @@ meet_conor:
   - id: wealthy_white
     user_replies: []
   prompt: Meet Conor, he claims, “I haven’t really benefited in my life because of
-    me being a straight white man” What do you say to him?
+    me being a straight white man.” What would you say to him?
   type: open
 
 
@@ -295,8 +293,8 @@ outwardly:
   next:
   - id: statistics
     user_replies: []
-  prompt: Do you think it’s fair for us to minimise one’s entire life just to their
-    outwardly appearances.
+  prompt: Do you think it is fair for us to minimise one’s entire life just to their
+    outwardly appearances?
   type: open
 
 
@@ -313,7 +311,7 @@ complexities:
   - id: statistics
     user_replies: []
   prompt: Can we ever begin to comprehend the complexities that make an individual
-    who they are.
+    who they are?
   type: open
 
 
@@ -321,11 +319,10 @@ statistics:
   next:
   - id: closing
     user_replies: []
-  prompt: I think gender, race or religion are good ways to divide our people and
-    useful for giving out statistics about our demography. But we cannot ever expect
-    numbers or stats to tell a story on the individual level. We should never use
-    global statistics to discriminate against an individual no matter what our intention.
-    What do you think?
+  prompt: I think gender, race or religion are good ways to divide our people. We
+    cannot ever expect demographics statistics to tell a story on an individual level.
+    We should never use global statistics to discriminate against an individual no
+    matter what our intention. What do you think?
   type: open
 
 
@@ -333,8 +330,7 @@ closing:
   next:
   - id: Ok.
     user_replies: []
-  prompt: This was an awesome conversation and looking forward to talking more with
-    you. Do you have any final thoughts and sentiments?
+  prompt: Do you have any final thoughts and sentiment?
   type: open
 
 
@@ -342,16 +338,8 @@ Ok.:
   next:
   - id: Please_click
     user_replies: []
-  prompt: Ok. It is always good to have these type of conversations. I feel much better,
-    I hope you did too.
-  type: followup
-
-
-Please_click:
-  next:
-  - id: form
-    user_replies: []
-  prompt: Please click on the Link bellow when its prompted
+  prompt: Ok. It is always good to have these type of conversations. I hope you enjoyed
+    the conversation.
   type: followup
 
 

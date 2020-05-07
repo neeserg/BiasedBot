@@ -2,7 +2,7 @@ initial:
   next:
   - id: Ihope
     user_replies: []
-  prompt: Hey, I'm Biasy. I hope you are well.
+  prompt: Hey, I'm TopicBot. I hope you are well.
   type: open
 
 
@@ -84,7 +84,7 @@ perfectly_comfortable:
   - id: abusive_speech
     user_replies: []
   prompt: Would you be perfectly comfortable with someone spreading a rumour that
-    you were a kleptomaniac (someone who compulsively steals) in social media.
+    you were a kleptomaniac (someone who compulsively steals) in social media?
   type: open
 
 
@@ -92,7 +92,7 @@ rumour_protect:
   next:
   - id: abusive_speech
     user_replies: []
-  prompt: Shouldn’t there be laws that protect you from such rumours?
+  prompt: Should there be laws that protect you from such rumours?
   type: open
 
 
@@ -100,7 +100,7 @@ abusive_speech:
   next:
   - id: safe_happy
     user_replies: []
-  prompt: What about speech that is abusive or incite violence towards you or your
+  prompt: What about speech that thows abuses or incites violence towards you or your
     loved ones?
   type: open
 
@@ -109,7 +109,7 @@ safe_happy:
   next:
   - id: by_majority
     user_replies: []
-  prompt: I think the speech is a powerful tool. It can impact an individual’s ability
+  prompt: I think speech is a powerful tool. It can impact an individual’s ability
     to live a safe and happy life. I think such speech should be restricted by a governing
     body for the safety of their citizens. What do you think?
   type: open
@@ -126,8 +126,7 @@ by_majority:
   - id: informed_decision
     user_replies:
     - 'no'
-  prompt: Do you believe that ideas believed by the majority is necessarily the one
-    that is true?
+  prompt: Suppose an idea was believed by the majority? Would this idea be correct?
   type: choice
 
 
@@ -136,8 +135,8 @@ flat_earth:
   - id: informed_decision
     user_replies: []
   prompt: Few hundred years ago the majority believed earth was flat, the sun went
-    around earth and other outdated beliefs. Now we know these to be false. Maybe
-    popularity doesn’t always imply truth. What do you think?
+    around the earth and other outdated beliefs. Now we know these are false. Do you
+    think ideas believed by the world change over time?
   type: open
 
 
@@ -153,7 +152,7 @@ informed_decision:
     user_replies:
     - 'no'
   prompt: Do you think we need citizens to know the truth to make informed decisions
-    on things like an election, consumer choice and other major decisions?
+    on things like an election, consumer choice and other important decisions?
   type: choice
 
 
@@ -161,9 +160,8 @@ climate_catastrophe:
   next:
   - id: spreads_fast
     user_replies: []
-  prompt: Do you think if people were to believe misinformation that allowed them
-    to undermine scientific views on serious and critical issues, they would endanger
-    themselves and the everyone around them?
+  prompt: Do you think decision made based on truth are as good as decisions made
+    based on lies?
   type: open
 
 
@@ -171,7 +169,7 @@ restrict_misinfo:
   next:
   - id: spreads_fast
     user_replies: []
-  prompt: Should there be some way to restrict the flow of misinformation?
+  prompt: Should there be some way to restrict the flow of misinformation or lies?
   type: open
 
 
@@ -179,11 +177,10 @@ spreads_fast:
   next:
   - id: closing
     user_replies: []
-  prompt: I think certain critical information should be put under heavy scrutiny
-    before it is allowed to be disseminated. Information in this age of the internet
-    spreads fast, and is prone to damage society or an individual irreparably. We
-    need new rules that preserve both the sanctity of truth and the freedom to speak.
-    What do you think?
+  prompt: I think certain critical information should be put under scrutiny before
+    it is allowed to be distributed. Information in this age of internet spreads fast,
+    and is prone to damage society irreparably. We need new rules that preserve both
+    the sanctity of truth and the freedom to speak. What do you think?
   type: open
 
 
@@ -216,7 +213,7 @@ no_vote:
   - id: free_discuss
     user_replies: []
   prompt: Few years ago women were not allowed to vote, people colour were regarded
-    to be lesser and homosexuality was a crime
+    to be lesser and homosexuality was a crime. Do you think this was right?
   type: open
 
 
@@ -231,7 +228,7 @@ free_discuss:
   - id: new_ideas
     user_replies:
     - 'no'
-  prompt: Do you believe freely discussing new ideas is essential for us to grow as
+  prompt: Do you believe freely discussing new ideas is essential for the growth of
     society?
   type: choice
 
@@ -240,10 +237,8 @@ challenged_freely:
   next:
   - id: who_restricts
     user_replies: []
-  prompt: Restricting free speech based on our beliefs today limits the introduction
-    of new ideas and therefore limiting the growth of our society. We can never know
-    we are right if we don’t allow our ideas to be challenged freely. What do you
-    think?
+  prompt: How do we decide which ideas can be freely discussed and which ideas should
+    be restricted?
   type: open
 
 
@@ -259,7 +254,7 @@ who_restricts:
   next:
   - id: how_right
     user_replies: []
-  prompt: Who do you think should restrict our speech?
+  prompt: Who do you think would or should censor our ideas?
   type: open
 
 
@@ -267,7 +262,7 @@ how_right:
   next:
   - id: censor_certain
     user_replies: []
-  prompt: How do you know they always have the best intention whilst doing it?
+  prompt: Do you know think this person/commitee will always make the right decisons?
   type: open
 
 
@@ -316,7 +311,7 @@ horrendous:
     user_replies: []
   prompt: I think silencing any type of speech is ultimately dangerous. The societies
     who have restricted such speech have always been destroyed and have done horrendous
-    things to their citizens. We should never fall for this trap. What do you think?
+    things to their citizens. We should never fall for this trap. Do you agree?
   type: open
 
 
@@ -324,8 +319,7 @@ closing:
   next:
   - id: Ok.
     user_replies: []
-  prompt: This was an awesome conversation and looking forward to talking more with
-    you. Do you have any final thoughts and sentiment?
+  prompt: Do you have any final thoughts and sentiment?
   type: open
 
 
@@ -333,16 +327,8 @@ Ok.:
   next:
   - id: Please_click
     user_replies: []
-  prompt: Ok. It is always good to have these type of conversations. I feel much better,
-    I hope you did too.
-  type: followup
-
-
-Please_click:
-  next:
-  - id: form
-    user_replies: []
-  prompt: Please click on the Link bellow when its prompted
+  prompt: Ok. It is always good to have these type of conversations. I hope you enjoyed
+    the conversation.
   type: followup
 
 

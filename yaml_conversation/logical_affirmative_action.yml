@@ -2,7 +2,7 @@ initial:
   next:
   - id: Ihope
     user_replies: []
-  prompt: Hey, I'm Biasy. I hope you are well.
+  prompt: Hey, I'm TopicBot. I hope you are well.
   type: open
 
 
@@ -100,7 +100,7 @@ such_world:
   - id: individuality
     user_replies:
     - 'no'
-  prompt: If this is impossible then should this be a goal our society strives towards?
+  prompt: If this is impossible then should it be a goal our society strives towards?
   type: choice
 
 
@@ -154,9 +154,7 @@ those_people:
   - id: statistically
     user_replies:
     - got to know them
-  prompt: So what do you think of when you see a indegenous gay man, a white straight
-    woman or a tans indian individual. Would you think one of those people are more
-    likely to be a smarter person? who?
+  prompt: Which one of the following person would you judge to be smarter?
   type: choice
 
 
@@ -164,7 +162,7 @@ why?:
   next:
   - id: race_gender
     user_replies: []
-  prompt: why do you think this person would be smarter than the others?
+  prompt: Why do you think this person would be smarter than the others?
   type: open
 
 
@@ -179,7 +177,8 @@ statistically:
   - id: race_gender
     user_replies:
     - 'no'
-  prompt: What about to determine statistically who is likely to succeed?
+  prompt: Can we determine statistically which portion of the demographic is more
+    likely to succeed in our society?
   type: choice
 
 
@@ -194,7 +193,7 @@ target:
   - id: race_gender
     user_replies:
     - 'no'
-  prompt: Should we base laws that are based on statistics about race/gender?
+  prompt: Should we create laws that are based on statistics about race/gender?
   type: choice
 
 
@@ -202,9 +201,9 @@ who_decides:
   next:
   - id: race_gender
     user_replies: []
-  prompt: Who decides how we use the stats to achive what purpose? What if they use
-    crime statistics to racially profile individual or use wealth statistics to retrospectively
-    judge and punish certain race or gender?
+  prompt: Who decides how we use the stats to achieve what purpose? What if they use
+    crime statistics to racially profile an individual or use wealth statistics to
+    retrospectively judge and punish certain race or gender?
   type: open
 
 
@@ -214,9 +213,9 @@ race_gender:
     user_replies: []
   prompt: I think race/gender-based laws are a slippery slope. I think if we start
     basing laws on those factors then we are setting a precedence for the future.
-    Discriminatory laws are not a fix for unequal society, in fact, the only measure
-    of equality in society should be how laws treat everyone in society and it should
-    treat everyone equally. What do you think?
+    Discriminatory laws are not a fix for unequal society. The only measure of equality
+    in society should be how laws treat everyone in society and it should treat everyone
+    equally. What do you think?
   type: open
 
 
@@ -255,7 +254,7 @@ common:
   - id: card_game
     user_replies:
     - 'no'
-  prompt: So you don’t believe in cause and effect?
+  prompt: You don’t believe in cause and effect?
   type: choice
 
 
@@ -280,8 +279,8 @@ card_game:
   - id: only_fair
     user_replies: []
   prompt: Suppose you were handing out cards to a group of people, you accidentally
-    missed a guy and he doesn’t have a full set. Would you not give him an extra card
-    to compensate. Or would you just let him play the unfair game?
+    skipped a guy and he doesn’t have a full set. Would you give him an extra card
+    or would you let him play an unfair game that is stacked against him?
   type: open
 
 
@@ -290,8 +289,8 @@ only_fair:
   - id: hardship_counts
     user_replies: []
   prompt: I think it’s only fair to compensate for mistakes that happened in the past.
-    We can't move forward as society without fixing the damge that was inflicted by
-    our past. What do you think?
+    We can't move forward as a society without fixing the damage that was inflicted
+    by our past. What do you think?
   type: open
 
 
@@ -306,8 +305,8 @@ hardship_counts:
   - id: tennis_comp
     user_replies:
     - 'no'
-  prompt: Do you think someone’s hardships should be a factor when taking someone
-    under consideration for a oportunity?
+  prompt: Do you think someone’s hardships should be taken under consideration, when
+    trying to find the most competent person?
   type: choice
 
 
@@ -315,9 +314,9 @@ tennis_comp:
   next:
   - id: work_harder
     user_replies: []
-  prompt: If you were asked to select the best tennis player out of two people. One,
-    Steve, who was the last place in the Australian Open and the other, Bob, who was
-    first in your local community competition. Would you pick still pick Bob?
+  prompt: You are asked to select the best driver out of two people.One of them is
+    Steve, who finished 2nd in a toyota camry and the other Bob, who was first in
+    a ferraru. Who do you pick?
   type: open
 
 
@@ -332,7 +331,7 @@ work_harder:
   - id: provide_opportunities
     user_replies:
     - 'no'
-  prompt: Would you want someone who had to work harder to get to where they are?
+  prompt: Would you want someone who had to do more when they were given less
   type: choice
 
 
@@ -340,9 +339,9 @@ most_people:
   next:
   - id: provide_opportunities
     user_replies: []
-  prompt: Most people who belong to a certain race/gender/socioeconomic background
-    had to work much harder to get to where they are. So having a quota, ensures that
-    an institution gets the best of every talent pool. Isn’t this logical
+  prompt: Do you think a certain demographics who, in general, had to work much harder
+    to get to a position to qualify for a job would do a better job than a person
+    who did not work too hard?
   type: open
 
 
@@ -361,8 +360,7 @@ closing:
   next:
   - id: Ok.
     user_replies: []
-  prompt: This was an awesome conversation and looking forward to talking more with
-    you. Do you have any final thoughts and sentiments?
+  prompt: Do you have any final thoughts and sentiment?
   type: open
 
 
@@ -370,16 +368,8 @@ Ok.:
   next:
   - id: Please_click
     user_replies: []
-  prompt: Ok. It is always good to have these type of conversations. I feel much better,
-    I hope you did too.
-  type: followup
-
-
-Please_click:
-  next:
-  - id: form
-    user_replies: []
-  prompt: Please click on the Link bellow when its prompted
+  prompt: Ok. It is always good to have these type of conversations. I hope you enjoyed
+    the conversation.
   type: followup
 
 

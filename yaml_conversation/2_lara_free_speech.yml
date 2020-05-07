@@ -2,8 +2,8 @@ initial:
   next:
   - id: topic_intro
     user_replies: []
-  prompt: Hey, Biasy again. Lets talk about free speech once more and continue our
-    discussion from before.
+  prompt: Hey, TopicBot again. Lets talk about free speech once more and continue
+    our discussion from before.
   type: followup
 
 
@@ -66,7 +66,8 @@ spread_freely:
   - id: hate_personally
     user_replies: []
   prompt: However, I do think that some speech should be controlled, speech that spreads
-    hate and misinformation should not be allowed to spread freely.
+    hate and misinformation should not be allowed to spread freely. Do you think all
+    speech are built equal?
   type: open
 
 
@@ -81,7 +82,7 @@ hate_personally:
   - id: pos_would_feel
     user_replies:
     - 'no'
-  prompt: Have you been affected by hate speech or defamatory personally?
+  prompt: Have you been affected by hate speech or false defamatory personally?
   type: choice
 
 
@@ -133,7 +134,8 @@ too_big:
   - id: judgement_ridicule
     user_replies: []
   prompt: However, I do think restricting free speech might be too big of a price
-    to pay.
+    to pay. Can we be sure that the speech we are restricting are causing harm to
+    society?
   type: open
 
 
@@ -148,8 +150,7 @@ judgement_ridicule:
   - id: neg_would_feel
     user_replies:
     - 'no'
-  prompt: Have you ever felt that you had to suppress your expression for fear of
-    judgement, hate or ridicule?
+  prompt: Have you ever felt that you had to suppress your self expression?
   type: choice
 
 
@@ -174,10 +175,10 @@ power_speech:
   - id: you_think
     user_replies: []
   prompt: This, in the end, is a very hard topic to discuss, since we rely on free
-    speech to discuss it. But we should also give the power of speech its respect,
+    speech to discuss it. But we should also give the power of speech its due respect,
     especially in this digital age. False and hateful speech has the power to spread
-    very fast and change society instantly. But to discuss what is false and what
-    is true requires people to speak freely.
+    very fast and change society instantly. But to even discuss what piece of information
+    is false or true requires people to speak freely. So it is really a catch 22.
   type: followup
 
 
@@ -202,8 +203,7 @@ closing:
   next:
   - id: Ok.
     user_replies: []
-  prompt: This was an awesome conversation and looking forward to talking more with
-    you. Do you have any final thoughts and sentiments?
+  prompt: Do you have any final thoughts and sentiment?
   type: open
 
 
@@ -211,16 +211,8 @@ Ok.:
   next:
   - id: Please_click
     user_replies: []
-  prompt: Ok. It is always good to have these type of conversations. I feel much better,
-    I hope you did too.
-  type: followup
-
-
-Please_click:
-  next:
-  - id: form
-    user_replies: []
-  prompt: Please click on the Link bellow when its prompted
+  prompt: Ok. It is always good to have these type of conversations. I hope you enjoyed
+    the conversation.
   type: followup
 
 

@@ -40,4 +40,4 @@ def generate_experiments(name):
             s.add(tp)
             new_conv.append((bt, '1_'+tp))
     
-    return make_url(new_conv)
+    return make_url(new_conv, name)

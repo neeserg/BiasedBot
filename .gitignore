@@ -24,3 +24,7 @@
 model/database/authentication.json
 model/nlp/model_file_url
 ngrok/
+__pycache__/extra_functions.cpython-36.pyc
+__pycache__/flask_page.cpython-36.pyc
+model/database/__pycache__/Experiment.cpython-36.pyc
+__pycache__/flask_page.cpython-36.pyc

@@ -38,8 +38,7 @@ function insertChoices(choices){
         button.textContent = element;
         button.addEventListener("click",()=>{
             insert_user(element);
-            sendMessage(element)
-            document.getElementById("choice_container").remove()
+            sendMessage(element);
         })
         choice_container.appendChild(button) 
             
@@ -65,6 +64,11 @@ function sendMessage(message){
             'Content-Type': 'application/json'
         }
     }
+    let choice_cont = document.getElementById("choice_container");
+    if(choice_cont){
+        choice_cont.remove();
+    }
+    
 
     thinking();
     setTimeout(() => {

@@ -12,7 +12,7 @@ class Experiment:
         with open("model/database/authentication.json") as file:
             self.auth = json.load(file)
     
-    def _get_mongo_url(self):
+    def get_mongo_url(self):
         username = self.auth["username"]
         password = self.auth["password"]
         ip = self.auth["ip"]
@@ -69,7 +69,7 @@ class Experiment:
         result = col.find_one({"user_id": user_id})
         if(result):
             client.close()
-            if not self._update_counter(user_id):
+            if self._update_counter(user_id):
                 return result[bot_type+topic]
             else:
                 return False
@@ -101,8 +101,8 @@ class Experiment:
                 password = "unimelb_biasedbot_314"
                 uid = uuid.UUID(user_id).hex[:16]
                 sha = sha256()
-                sha.update(password)
-                sha.update(uid)
+                sha.update(password.encode())
+                sha.update(uid.encode())
                 return uid+"-"+sha.hexdigest()[:16]
         else:
             client.close()

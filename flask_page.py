@@ -65,8 +65,8 @@ def generateform(name):
 @app.route("/finished/<string:user_id>")
 def finish_experiment(user_id):
     experiment = Experiment()
-    code = experiment.finished()
-    return render_template("finished.html", user_id = user_id)
+    code = experiment.finished(user_id)
+    return render_template("finished.html", user_id = code)
 
 @app.route("/form/<string:bot_type1>/<string:bot_type2>/<string:topic1>/<string:topic2>")
 def experiment(bot_type1, bot_type2, topic1,topic2):

@@ -1,15 +1,17 @@
 import random
 import uuid
 
-def make_url(conv):
+
+def make_url(conv, name):
     user_id = str( uuid.uuid1())
     conv = conv + [("done", "done")]
     domain = "https://neesergp.typeform.com/to"
     before = "RInkXP"
     after = "yLqwfQ"
     form_data = {"user_id":user_id,
+                  "experiment_mode": name,
                   "chat":[],
-                  "forms":[]}
+                  "forms":[], "num_conv": len(conv)-1, "conv_done":0}
     form_data["before"] = "%s/%s?user_id=%s&nexttopic=%s&nexttype=%s"%\
         (domain,before,user_id, conv[0][1], conv[0][0])
     for i in range(len(conv)-1):
@@ -21,7 +23,7 @@ def make_url(conv):
 
     
 
-def generate_experiments():
+def generate_experiments(name):
     bot_types = ["character", "lara", "logical"]
     topic = ["affirmative_action", "free_speech"]
     conv_order = []

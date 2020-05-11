@@ -55,14 +55,18 @@ def chat(bot_type, topic):
 
 #########################EXPERIMENT API####################################################################################################################################################
 ''' creates a random experiment'''
-@app.route("/form/generate")
-def generateform():
-    from_data = generate_experiments()
+@app.route("/form/generate/<string:name>")
+def generateform(name):
+    from_data = generate_experiments(name)
     experiment = Experiment()
     experiment.create_experiment(from_data)
     return redirect(from_data["before"])
 
-
+@app.route("/finished/<string:user_id>")
+def finish_experiment(user_id):
+    experiment = Experiment()
+    code = experiment.finished()
+    return render_template("finished.html", user_id = user_id)
 
 @app.route("/form/<string:bot_type1>/<string:bot_type2>/<string:topic1>/<string:topic2>")
 def experiment(bot_type1, bot_type2, topic1,topic2):

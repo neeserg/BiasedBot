@@ -2,6 +2,7 @@ import json
 from model.database.UserReplies import UserReplies
 from model.database.Experiment import Experiment
 from model.nlp.universal_classifier import classify
+from datetime import datetime
 file_stuff = {
     "empathy":{
         "climatechange": "conversations/old_stuff/empathy_climatechange.json"
@@ -86,6 +87,9 @@ class EmpathyStrategy:
         usermessage = {"user_id": message["user_id"], "prompt": message["prompt_id"], "next": message["next_id"], "message": message["message"]}
         usermessage["topic"] = self.topic
         usermessage["type"] = self.bot_type
+        now = datetime.now()
+        timestamp = datetime.timestamp(now)
+        usermessage["timestamp"] = timestamp
         result = self.userReplies.insert(usermessage)
         return result
 
@@ -147,8 +151,12 @@ class EmpathyStrategy:
         elif next_id == "form" and not self.experiment:
             #######################do some thinf skf
             url = self.userReplies.get_url(self.topic, self.bot_type, message["user_id"])
-            reply = {"prompt_id": next_id,"prompt": "Please fill out the following form:",\
-                 "type": next_conv["type"], "url": url, "url_text": "Link to Form"}
+            if url:
+                reply = {"prompt_id": next_id,"prompt": "Please fill out the following form:",\
+                    "type": next_conv["type"], "url": url, "url_text": "Link to Form"}
+            else:
+                reply = {"prompt_id": next_id,"prompt": "Something went wrong!",\
+                    "type": next_conv["type"]}
             return reply
         else:
             reply = {"prompt_id": next_id,"prompt": next_conv["prompt"], "type": next_conv["type"]}
